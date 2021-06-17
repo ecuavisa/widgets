@@ -8,52 +8,12 @@
 <body>
   <div id="blockVideos"></div>
 
-<script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-      function sortByKeyDesc(array, key) {
-        return array.sort(function (a, b) {
-          var x = a[key];
-          var y = b[key];
-          x = parseInt(x.replace(/[^0-9.]+/g, ""));
-          y = parseInt(y.replace(/[^0-9.]+/g, ""));
-          return x > y ? -1 : x < y ? 1 : 0;
-        });
-      }
-
-      function getVideoList(idcontainer, url) {
-        let headers = new Headers();
-        //headers.append('Content-Type', 'application/json');
-        //headers.append('Accept', 'application/json');
-        headers.append('Access-Control-Allow-Origin', '*');
-        headers.append('X-API-Token', '645e5b4a29d27769f60f12ecb708b872');
-      
-        fetch("https://platform.mediastre.am/api/media" + url, {
-            headers
-        }).then(function(response) {
-            return response.text();
-        }).then(function(data) {
-            console.log(data);
-        }).catch(function(error) {
-            console.log('Request failed', error)
-        });
-
-
-      }
-
-
-$(document).ready(function () {
-  let urlReferer = "";
-  let api = "?token=645e5b4a29d27769f60f12ecb708b872";
-  getVideoList("#blockVideos", api);
-});
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="main.js"></script>
 
 
 
-  </script>
+
 </body>
 </html>
 
