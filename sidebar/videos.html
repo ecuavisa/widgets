@@ -25,28 +25,23 @@
       }
 
       function getVideoList(idcontainer, url) {
-         $.ajax({
-              url: "https://platform.mediastre.am/api/media" + url,
-              type: "GET",
-              dataType: "json",
-              headers: {
-                  "Access-Control-Allow-Origin": "*"
-              },
-              contentType: "application/json; charset=utf-8",
-              success: function (result) {
-                  let data = result.data;
-                  /*$.each(data, function (key, video) {
-                    let codigo = video.id;
-                    $(idcontainer).append(`
-                        <div id="videoSidebar" class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="//mdstrm.com/embed/${codigo}" allowfullscreen></iframe>
-                        </div>
-                    `);
-                  });*/
-                  console.log(data);
-              },
-              error: function (error) { },
-          });
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Accept', 'application/json');
+        headers.append('Access-Control-Allow-Origin', '*');
+        var request = new Request("https://platform.mediastre.am/api/media" + url);
+
+        fetch(request, {
+            headers: headers
+        }).then(function(response) {
+            return response.json();
+        }).then(function(j) {
+            console.log(JSON.stringify(j));
+        }).catch(function(error) {
+            console.log('Request failed', error)
+        });
+
+
       }
 
 
