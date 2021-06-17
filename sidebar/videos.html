@@ -1,6 +1,12 @@
-aqui va la api de videos
-
-<div id="blockVideos">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi api de videos</title>
+</head>
+<body>
+  <div id="blockVideos">
 </div>
 
 <script
@@ -20,19 +26,21 @@ aqui va la api de videos
       }
 
       function getVideoList(idcontainer, url) {
-        $.ajax({
-          url: "https://platform.mediastre.am/api/media" + url,
-          type: "GET",
-          dataType: "json",
-          headers: {
-            "X-API-Token": "215979b6242fdd636897c19bb6428cb5"
-          },
-          success: function (result) {
-            let data = result.data;
-            console.log(data);
-          },
-          error: function (error) {},
-        });
+         $.ajax({
+              url: "https://platform.mediastre.am/api/show",
+              type: "GET",
+              dataType: "json",
+              headers: {
+                  "X-API-Token": "215979b6242fdd636897c19bb6428cb5",
+              },
+              contentType: "application/json; charset=utf-8",
+              success: function (result) {
+                  let data = result.data;
+                  console.log(data);
+
+              },
+              error: function (error) { },
+          });
       }
 
 
@@ -59,3 +67,6 @@ $(document).ready(function () {
 
 
   </script>
+</body>
+</html>
+
