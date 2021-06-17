@@ -20,24 +20,18 @@ function sortByKeyAsc(array, key) {
 }
 
 
-function mostrarVideo(key) {
-  $("#img-" + key).hide();
-  let urlvideo = $("#video-" + key).attr("data-src");
-  $("#video-" + key).html(
-    `<iframe class="embed-responsive-item" src="${urlvideo}" allowfullscreen></iframe>`
-  );
-}
+
 
 function getVideoList(idcontainer, url) {
   $.ajax({
     url: "https://platform.mediastre.am/api/media/" + url,
     type: "GET",
     dataType: "json",
-    
+
     //data: data,
-     headers: {
-       "X-API-Token": "645e5b4a29d27769f60f12ecb708b872",
-     },
+    headers: {
+      "X-API-Token": "645e5b4a29d27769f60f12ecb708b872",
+    },
     //contentType: "application/json",
     success: function (result) {
       let data = result.data;
@@ -46,21 +40,22 @@ function getVideoList(idcontainer, url) {
       console.log(data);
       //data.sort(function(a, b){return a-b});
 
-      $.each(data, function (key, category) {
+      $.each(data, function (key, video) {
 
-        console.log(key + ' : ' + category.title);
+        console.log(key + ' : ' + video.title);
 
-        if (category != null) {
+        if (video != null) {
           let id = key;
           $(idcontainer).append(`
         <div class="video">
             <div class="card">
-            <a id="img-${id}" onclick="mostrarVideo(${id})" href="javascript:;">
-            <img class="d-block card-img-top" src="${category.thumbnails[0].url}" alt="${category.title}" >
+            <a id="img-${id}" href="javascript:;">
+            <img class="d-block card-img-top" src="${video.thumbnails[0].url}" alt="${video.title}" >
           </a>
-          <div id="video-${id}" data-src="//mdstrm.com/embed/${category.meta[0].id}" class="embed-responsive embed-responsive-16by9"></div>
+          <div id="video-${id}" class="embed-responsive embed-responsive-16by9"></div>
             <div class="card-body">
-              <div class="p-3 m-2 bg-primary text-white title">${category.title}</div>
+              <iframe class="embed-responsive-item" src="//mdstrm.com/embed/${video.id}" allowfullscreen></iframe>
+              <div class="p-3 m-2 bg-primary text-white title">${video.title}</div>
             </div>
             </div>
         </div>
