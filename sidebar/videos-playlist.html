@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi api de videos</title>
+</head>
+<body>
+  <div id="blockVideos"></div>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+      function sortByKeyDesc(array, key) {
+        return array.sort(function (a, b) {
+          var x = a[key];
+          var y = b[key];
+          x = parseInt(x.replace(/[^0-9.]+/g, ""));
+          y = parseInt(y.replace(/[^0-9.]+/g, ""));
+          return x > y ? -1 : x < y ? 1 : 0;
+        });
+      }
+
+      function getVideoList(idcontainer, url) {
+         $.ajax({
+              url: "https://platform.mediastre.am/api/playlist/" + url,
+              type: "GET",
+              dataType: "json",
+              headers: {
+                  "X-API-Token": "215979b6242fdd636897c19bb6428cb5",
+              },
+              contentType: "application/json; charset=utf-8",
+              success: function (result) {
+                  let data = result.data;
+                  /*$.each(data, function (key, video) {
+                    let codigo = video.id;
+                    $(idcontainer).append(`
+                        <div id="videoSidebar" class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="//mdstrm.com/embed/${codigo}" allowfullscreen></iframe>
+                        </div>
+                    `);
+                  });*/
+                  console.log(data);
+              },
+              error: function (error) { },
+          });
+      }
+
+
+$(document).ready(function () {
+  let urlReferer = "";
+  let api = "603e76e0dc619107be83606a?limit=3";
+  getVideoList("#blockVideos", api);
+});
+
+
+
+  </script>
+</body>
+</html>
+
