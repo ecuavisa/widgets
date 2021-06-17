@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi api de videos</title>
+  <title>Random</title>
 </head>
 <body>
   <div id="blockVideos"></div>
@@ -26,7 +26,7 @@ let requestOptions = {
   headers
 };
 
-fetch("https://platform.mediastre.am/api/media?token=645e5b4a29d27769f60f12ecb708b872&limit=5", requestOptions).then(function(response) {
+fetch("https://randomuser.me/api", requestOptions).then(function(response) {
     return response.text();
 }).then(function(data) {
     console.log(data);
