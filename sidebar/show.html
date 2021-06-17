@@ -26,7 +26,7 @@
 
       function getVideoList(idcontainer, url) {
          $.ajax({
-              url: "https://platform.mediastre.am/api/playlist/" + url,
+              url: "https://platform.mediastre.am/api/show",
               type: "GET",
               dataType: "json",
               headers: {
@@ -52,7 +52,7 @@
 
 $(document).ready(function () {
   let urlReferer = "";
-  let api = "603e76e0dc619107be83606a";
+  let api = "";
   getVideoList("#blockVideos", api);
 });
 
