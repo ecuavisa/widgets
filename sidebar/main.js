@@ -1,27 +1,3 @@
-function sortByKeyDesc(array, key) {
-  return array.sort(function (a, b) {
-    var x = a[key];
-    var y = b[key];
-    x = parseInt(x.replace(/[^0-9.]+/g, ""));
-    y = parseInt(y.replace(/[^0-9.]+/g, ""));
-    return x > y ? -1 : x < y ? 1 : 0;
-  });
-}
-
-
-function sortByKeyAsc(array, key) {
-  return array.sort(function (a, b) {
-    var x = b[key];
-    var y = a[key];
-    x = parseInt(x.replace(/[^0-9\.]+/g, ""));
-    y = parseInt(y.replace(/[^0-9\.]+/g, ""));
-    return x > y ? -1 : x < y ? 1 : 0;
-  });
-}
-
-
-
-
 function getVideoList(idcontainer, url) {
   $.ajax({
     url: "https://platform.mediastre.am/api/media/" + url,
@@ -35,10 +11,8 @@ function getVideoList(idcontainer, url) {
     //contentType: "application/json",
     success: function (result) {
       let data = result.data;
-      //data.splice(0, 1); //en el caso de secretos se elimina el primero, verificar con las otras series si el primero tiene content o no
-      data = sortByKeyAsc(data, "title");
+
       console.log(data);
-      //data.sort(function(a, b){return a-b});
 
       $.each(data, function (key, video) {
 
