@@ -35,14 +35,15 @@
               contentType: "application/json; charset=utf-8",
               success: function (result) {
                   let data = result.data;
-                  $.each(data, function (key, video) {
+                  /*$.each(data, function (key, video) {
                     let codigo = video.id;
                     $(idcontainer).append(`
                         <div id="videoSidebar" class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" src="//mdstrm.com/embed/${codigo}" allowfullscreen></iframe>
                         </div>
                     `);
-                });
+                  });*/
+                  console.log(data);
               },
               error: function (error) { },
           });
@@ -50,21 +51,8 @@
 
 
 $(document).ready(function () {
-
-  let urlReferer = "noticias/ecuador";
-
+  let urlReferer = "";
   let api = "?category_id=6064cb5b00adc97db261b719&limit=5";
-
-  /*if (window.location.href.indexOf(urlnoticias) > -1) {
-    api = "?category_id=6064cb5b00adc97db261b719&limit=5";
-  }
-
-  if(window.location.href.indexOf(urlestadio) > -1) {
-    api = "?category_id=6064cb5b00adc97db261b719&limit=5";
-  }*/
-
-
-
   getVideoList("#blockVideos", api);
 });
 
