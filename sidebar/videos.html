@@ -30,7 +30,7 @@
               type: "GET",
               dataType: "json",
               headers: {
-                  "X-API-Token": "215979b6242fdd636897c19bb6428cb5",
+                  "Access-Control-Allow-Origin": "*"
               },
               contentType: "application/json; charset=utf-8",
               success: function (result) {
@@ -52,7 +52,7 @@
 
 $(document).ready(function () {
   let urlReferer = "";
-  let api = "?limit=3";
+  let api = "?token=215979b6242fdd636897c19bb6428cb5&limit=3";
   getVideoList("#blockVideos", api);
 });
 
