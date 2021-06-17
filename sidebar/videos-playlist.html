@@ -14,49 +14,25 @@
   crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-      function sortByKeyDesc(array, key) {
-        return array.sort(function (a, b) {
-          var x = a[key];
-          var y = b[key];
-          x = parseInt(x.replace(/[^0-9.]+/g, ""));
-          y = parseInt(y.replace(/[^0-9.]+/g, ""));
-          return x > y ? -1 : x < y ? 1 : 0;
-        });
-      }
 
-      function getVideoList(idcontainer, url) {
-         $.ajax({
-              url: "https://platform.mediastre.am/api/playlist/" + url,
-              type: "GET",
-              dataType: "json",
-              headers: {
-                  "Access-Control-Allow-Origin": "*"
-              },
-              contentType: "application/json; charset=utf-8",
-              success: function (result) {
-                  let data = result.data;
-                  /*$.each(data, function (key, video) {
-                    let codigo = video.id;
-                    $(idcontainer).append(`
-                        <div id="videoSidebar" class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="//mdstrm.com/embed/${codigo}" allowfullscreen></iframe>
-                        </div>
-                    `);
-                  });*/
-                  console.log(data);
-              },
-              error: function (error) { },
-          });
-      }
+let headers = new Headers();
+//headers.append('Content-Type', 'application/json');
+//headers.append('Accept', 'application/json');
+headers.append('Access-Control-Allow-Origin', '*');
+headers.append('X-API-Token', '645e5b4a29d27769f60f12ecb708b872');
 
+let requestOptions = {
+  method: "GET",
+  headers
+};
 
-$(document).ready(function () {
-  let urlReferer = "";
-  let api = "603e76e0dc619107be83606a?token=215979b6242fdd636897c19bb6428cb5";
-  getVideoList("#blockVideos", api);
+fetch("https://platform.mediastre.am/api/media?token=645e5b4a29d27769f60f12ecb708b872&limit=5", requestOptions).then(function(response) {
+    return response.text();
+}).then(function(data) {
+    console.log(data);
+}).catch(function(error) {
+    console.log('Request failed', error)
 });
-
-
 
   </script>
 </body>

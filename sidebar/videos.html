@@ -29,10 +29,10 @@
         //headers.append('Content-Type', 'application/json');
         //headers.append('Accept', 'application/json');
         headers.append('Access-Control-Allow-Origin', '*');
-        headers.append('X-API-Token', '215979b6242fdd636897c19bb6428cb5');
+        headers.append('X-API-Token', '645e5b4a29d27769f60f12ecb708b872');
       
         fetch("https://platform.mediastre.am/api/media" + url, {
-            headers: headers
+            headers
         }).then(function(response) {
             return response.text();
         }).then(function(data) {
@@ -47,7 +47,7 @@
 
 $(document).ready(function () {
   let urlReferer = "";
-  let api = "?token=215979b6242fdd636897c19bb6428cb5&limit=3";
+  let api = "?token=645e5b4a29d27769f60f12ecb708b872";
   getVideoList("#blockVideos", api);
 });
 
