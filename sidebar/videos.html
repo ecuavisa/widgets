@@ -1,0 +1,62 @@
+aqui va la api de videos
+
+<div id="blockVideos">
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+      function sortByKeyDesc(array, key) {
+        return array.sort(function (a, b) {
+          var x = a[key];
+          var y = b[key];
+          x = parseInt(x.replace(/[^0-9.]+/g, ""));
+          y = parseInt(y.replace(/[^0-9.]+/g, ""));
+          return x > y ? -1 : x < y ? 1 : 0;
+        });
+      }
+
+      function getVideoList(idcontainer, url) {
+        $.ajax({
+          url: "https://platform.mediastre.am/api/media" + url,
+          type: "GET",
+          dataType: "json",
+          headers: {
+            "X-API-Token": "215979b6242fdd636897c19bb6428cb5",
+            'Content-Type' : 'application/json; charset=UTF-8'
+          },
+          success: function (result) {
+            let data = result.data;
+            console.log(data);
+          },
+          error: function (error) {},
+        });
+      }
+
+
+$(document).ready(function () {
+
+  let urlnoticias = "noticias/ecuador";
+  let urlestadio = "estadio";
+
+  let api = "?category_id=6064cb5b00adc97db261b719&limit=5";
+
+  /*if (window.location.href.indexOf(urlnoticias) > -1) {
+    api = "?category_id=6064cb5b00adc97db261b719&limit=5";
+  }
+
+  if(window.location.href.indexOf(urlestadio) > -1) {
+    api = "?category_id=6064cb5b00adc97db261b719&limit=5";
+  }*/
+
+
+
+  getVideoList("#blockVideos", api);
+});
+
+
+
+  </script>
