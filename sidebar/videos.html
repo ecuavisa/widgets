@@ -26,17 +26,17 @@
 
       function getVideoList(idcontainer, url) {
         let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        headers.append('Accept', 'application/json');
+        //headers.append('Content-Type', 'application/json');
+        //headers.append('Accept', 'application/json');
         headers.append('Access-Control-Allow-Origin', '*');
-        var request = new Request("https://platform.mediastre.am/api/media" + url);
-
-        fetch(request, {
+        headers.append('X-API-Token', '215979b6242fdd636897c19bb6428cb5');
+      
+        fetch("https://platform.mediastre.am/api/media" + url, {
             headers: headers
         }).then(function(response) {
-            return response.json();
-        }).then(function(j) {
-            console.log(JSON.stringify(j));
+            return response.text();
+        }).then(function(data) {
+            console.log(data);
         }).catch(function(error) {
             console.log('Request failed', error)
         });
