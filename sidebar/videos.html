@@ -6,8 +6,7 @@
   <title>Mi api de videos</title>
 </head>
 <body>
-  <div id="blockVideos">
-</div>
+  <div id="blockVideos"></div>
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -27,7 +26,7 @@
 
       function getVideoList(idcontainer, url) {
          $.ajax({
-              url: "https://platform.mediastre.am/api/show",
+              url: "https://platform.mediastre.am/api/media" + url,
               type: "GET",
               dataType: "json",
               headers: {
@@ -36,8 +35,14 @@
               contentType: "application/json; charset=utf-8",
               success: function (result) {
                   let data = result.data;
-                  console.log(data);
-
+                  $.each(data, function (key, video) {
+                    let codigo = video.id;
+                    $(idcontainer).append(`
+                        <div id="videoSidebar" class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="//mdstrm.com/embed/${codigo}" allowfullscreen></iframe>
+                        </div>
+                    `);
+                });
               },
               error: function (error) { },
           });
@@ -46,8 +51,7 @@
 
 $(document).ready(function () {
 
-  let urlnoticias = "noticias/ecuador";
-  let urlestadio = "estadio";
+  let urlReferer = "noticias/ecuador";
 
   let api = "?category_id=6064cb5b00adc97db261b719&limit=5";
 
