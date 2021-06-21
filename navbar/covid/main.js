@@ -9,6 +9,7 @@ $('#principalSheet').sheetrock({
             const value = principalData.cellsArray[index];
             valObject[key] = value;
         }
+        $("#ajaxLoad").html("<span>" + valObject.PVPrimeraDosis + "<span>");
         console.log(valObject);
     }
 });
