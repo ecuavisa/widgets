@@ -1,33 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="assets/loading-bar.css" />
+    <script type="text/javascript" src="assets/loading-bar.min.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-<body>
-    <div class="container pt-5">
-        <div class="table-responsive" style="display: none;">
-            <table id="principalSheet" class="table table-bordered table-sm table-striped"></table>
+    <style>
+      .jc-center {
+        justify-content: center;
+      }
+      .br-1 {
+        border-right: 1px solid #ddd;
+      }
+      .v-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .v-center-content {
+        align-content: center;
+        display: grid;
+      }
+
+      .ldBar {
+        width: initial !important;
+        height: 45px !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="m-2 pt-5">
+      <div class="table-responsive" style="display: none">
+        <table
+          id="principalSheet"
+          class="table table-bordered table-sm table-striped"
+        ></table>
+      </div>
+
+      <h1 class="text-center">Tabla Covid-19</h1>
+
+      <hr />
+
+      <div>
+        <div class="row">
+          <div class="col-sm-6 br-1">
+            <div
+              class="
+                row
+                row-cols-1
+                row-cols-sm-2
+                row-cols-md-2
+                row-cols-lg-2
+                row-cols-xl-4
+              "
+            >
+              <div class="col text-center v-center-content">
+                <h5>Vacunación:</h5>
+                <p>Monitor en tiempo real</p>
+              </div>
+              <div class="col text-center v-center">
+                <img src="mapa_ecuador.png" alt="mapa" width="140" />
+              </div>
+              <div class="col text-center">
+                <h6 class="">PERSONAS VACUNADAS</h6>
+
+                <div class="mb-3">
+                  <p class="mb-0 me-2">1 dosis</p>
+                  <span class="badge bg-primary">
+                    <div id="pv-1dosis"></div>
+                  </span>
+                </div>
+                <div class="mb-3">
+                  <p class="mb-0 me-2">2 dosis</p>
+                  <span class="badge bg-primary">
+                    <div id="pv-2dosis"></div>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-4 text-center">
+                <h6 class="">EN % DE LA POBLACIÓN</h6>
+                <div class="mb-3">
+                  <div id="por-1dosis"></div>
+                </div>
+                <div class="mb-3">
+                  <div id="por-2dosis"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- lado derecho -->
+
+          <div class="col-sm-6">
+            <div
+              class="
+                row
+                row-cols-1
+                row-cols-sm-2
+                row-cols-md-2
+                row-cols-lg-2
+                row-cols-xl-4
+              "
+            >
+              <div class="col text-center v-center-content">
+                <h5>En vivo:</h5>
+                <p>El avance del virus en Ecuador</p>
+              </div>
+              <div class="col text-center v-center">
+                <img
+                  src="mapa_ecuador.png"
+                  alt="mapa"
+                  width="140"
+                  style="filter: sepia(1)"
+                />
+              </div>
+              <div class="col text-center">
+                <h6 class="">TOTALES</h6>
+
+                <div class="">
+                  <p class="mb-0 me-2">Infectados</p>
+                  <span class="badge bg-warning">
+                    <div id="tot-infectados"></div>
+                  </span>
+                </div>
+                <div class="">
+                  <p class="mb-0 me-2">Recuperados</p>
+                  <span class="badge bg-warning">
+                    <div id="tot-recuperados"></div>
+                  </span>
+                </div>
+                <div class="">
+                  <p class="mb-0 me-2">Fallecidos</p>
+                  <span class="badge bg-warning">
+                    <div id="tot-fallecidos"></div>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-4 text-center">
+                <h6 class="">VARIACIÓN ÚLTIMOS 14 DÍAS</h6>
+                <div class="">
+                  <h5><div class="text-danger" id="var-fallecidos"></div></h5>
+                  <p>Fallecidos</p>
+                </div>
+                <div class="">
+                  <h5><div class="text-danger" id="var-infectados"></div></h5>
+                  <p>Infectados</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div>Tabla con ajax</div>
-        <hr>
-        <div id="ajaxLoad">
-
-        </div>
-        <!--<div class="table-responsive">
+      </div>
+      <!--<div class="table-responsive">
             <table id="generalSheet" class="table table-bordered table-sm table-striped"></table>
         </div>-->
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>

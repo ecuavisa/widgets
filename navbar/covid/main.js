@@ -9,7 +9,25 @@ $('#principalSheet').sheetrock({
             const value = principalData.cellsArray[index];
             valObject[key] = value;
         }
-        $("#ajaxLoad").html("<span>" + valObject.PVPrimeraDosis + "<span>");
+        $("#pv-1dosis").html(valObject.PVPrimeraDosis);
+        $("#pv-2dosis").html(valObject.PVSegundaDosis);
+
+        $("#por-2dosis").html( "<div  data-stroke='data:ldbar/res,gradient(0,1,#f99,#ff9)' class='ldBar' data-value='" + valObject.PorcentajePrimeraDosis + "' ></div>" );
+
+        $("#por-1dosis").html( "<div data-stroke='data:ldbar/res,gradient(0,1,#f99,#ff9)' class='ldBar ' data-value='" + valObject.PorcentajeSegundaDosis + "' ></div>" );
+
+
+
+        $("#tot-fallecidos").html(valObject.TotalFallecidos);
+        $("#tot-infectados").html(valObject.TotalInfectados);
+        $("#tot-recuperados").html(valObject.TotalRecuperados);
+
+        $("#var-fallecidos").html(valObject.VariaciónFallecidos);
+        $("#var-infectados").html(valObject.VariaciónInfectados);
+
+
+        
+
         console.log(valObject);
     }
 });
