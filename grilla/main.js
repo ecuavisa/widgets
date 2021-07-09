@@ -22,11 +22,14 @@ function fechasSemana() {
  * Generando template para tablas
  */
 var diasSemana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+var fechaTemporal = new Date();
+var diaActual = diasSemana[fechaTemporal.getDay() - 1];
+
 var fechas = fechasSemana();
 for (let ds = 0; ds < diasSemana.length; ds++) {
     const diaSemana = diasSemana[ds];
     let classA = "";
-    if (ds == 0) {
+    if (diaSemana == diaActual) {
         classA = "active";
     }
     $('#pills-tab').append(` <li class="nav-item" role="presentation">
@@ -68,7 +71,7 @@ sheetrock({
                      * Validacion de hora
                      */
                     let claseActiva = "";
-                    if (horaActual >= horaInicio.format('HH:mm') && horaActual <= horaFin.format('HH:mm')) {
+                    if (horaActual >= horaInicio.format('HH:mm') && horaActual <= horaFin.format('HH:mm') && diasSemana[fi] == diaActual) {
                         claseActiva = "bg-success";
                     }
                     $('#tbody-' + clase).append(`<tr class="${claseActiva}">
