@@ -72,7 +72,7 @@ sheetrock({
                      */
                     let claseActiva = "";
                     if (horaActual >= horaInicio.format('HH:mm') && horaActual <= horaFin.format('HH:mm') && diasSemana[fi] == diaActual) {
-                        claseActiva = "bg-success";
+                        claseActiva = "bg-info";
                     }
                     $('#tbody-' + clase).append(`<tr class="${claseActiva}">
                         <td class="text-center">
