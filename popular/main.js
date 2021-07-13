@@ -6,58 +6,65 @@ function dateToYMD(date) {
     return '' + y + '-' + (m <= 9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
 }
 
-let url = "?sort=-views_stream_metrics&limit=20&status=OK";
+function reproductor(id) {
+    $("#allList").addClass("d-none");
+    $("#playVideo").removeClass("d-none");
+    $("#closeVideo").removeClass("d-none");
+    $("#playVideo").empty();
+    $("#playVideo").html(`<iframe class="videoecv" src="//mdstrm.com/embed/${id}" allowfullscreen></iframe>`);
+}
 
-$.ajax({
-    url: "https://platform.mediastre.am/api/media/" + url,
-    type: "GET",
-    dataType: "json",
+function getVideos(url = "?sort=-views_stream_metrics&limit=20&status=OK") {
+    $.ajax({
+        url: "https://platform.mediastre.am/api/media/" + url,
+        type: "GET",
+        dataType: "json",
 
-    //data: data,
-    headers: {
-        "X-API-Token": "645e5b4a29d27769f60f12ecb708b872",
-    },
-    //contentType: "application/json",
-    success: function (result) {
-        let data = result.data;
-        console.log(data);
+        //data: data,
+        headers: {
+            "X-API-Token": "645e5b4a29d27769f60f12ecb708b872",
+        },
+        //contentType: "application/json",
+        success: function (result) {
+            let data = result.data;
+            console.log(data);
 
-        $.each(data, function (key, video) {
-            if (video != null) {
-                let thumbnail = "";
-                let id = key;
-                video.thumbnails.forEach(img => {
-                    if (img.is_default == true) {
-                        thumbnail = img.url;
+            $.each(data, function (key, video) {
+                if (video != null) {
+                    let thumbnail = "";
+                    let id = key;
+                    video.thumbnails.forEach(img => {
+                        if (img.is_default == true) {
+                            thumbnail = img.url;
+                        }
+                    });
+                    if (thumbnail == "") {
+                        thumbnail = video.thumbnails[0].url;
                     }
-                });
-                if (thumbnail == "") {
-                    thumbnail = video.thumbnails[0].url;
-                }
-                /**
-                 * Tags
-                 */
-                let tags = "";
-                if (video.tags) {
-                    video.tags.forEach(tag => {
-                        tags += `<a class="tag-item" href="javascript:;" onclick="showTags('${tag}')">
+                    /**
+                     * Tags
+                     */
+                    let tags = "";
+                    if (video.tags) {
+                        video.tags.forEach(tag => {
+                            tags += `<a class="tag-item" href="javascript:;" onclick="showTags('${tag}')">
                                 ${tag}
                             </a>`;
-                    });
-                }
-                /**
-                 * Categorias
-                 */
-                let categories = "";
-                if (video.categories) {
-                    video.categories.forEach(category => {
-                        categories += `<a class="category-item" href="javascript:;" onclick="showCategories('${category.id}')">
+                        });
+                    }
+                    /**
+                     * Categorias
+                     */
+                    let categories = "";
+                    if (video.categories) {
+                        video.categories.forEach(category => {
+                            categories += `<a class="category-item" href="javascript:;" onclick="showCategories('${category.id}')">
                                 ${category.name}
                             </a>`;
-                    });
-                }
-                let dateVideo = dateToYMD(video.date_created);
-                $("#mostVideos").append(`
+                        });
+                    }
+                    let dateVideo = dateToYMD(video.date_created);
+                    $("#mostVideos").append(`
           
                     <div class="col-md-4 col-xl-3 col-lg-3">
                         <div class="video-popular">
@@ -77,8 +84,20 @@ $.ajax({
                     </div>
         
                  `);
-            }
-        });
-    },
-    error: function (error) { },
+                }
+            });
+        },
+        error: function (error) { },
+    });
+}
+
+$(document).ready(function () {
+    getVideos();
+
+    $("#closeVideo").on("click", function () {
+        $("#playVideo").addClass("d-none");
+        $("#playVideo").empty();
+        $("#closeVideo").addClass("d-none");
+        $("#allList").removeClass("d-none");
+    });
 });
