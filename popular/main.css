@@ -49,7 +49,7 @@ body {
 
 #titleSection {
     margin: 0 0 20px;
-    padding: 5px 25px;
+    padding: 5px 0px;
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
@@ -74,6 +74,13 @@ body .bg-dark{
     border-top: 1px solid #ccc;
     margin-top: 14px;
     padding-top: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.video-popular .title:hover {
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .video-popular img{
@@ -82,16 +89,26 @@ body .bg-dark{
     border-radius: 4px;
 }
 
-.video-popular .categories{
+.video-popular .info{
     margin-top: 4px;
+    border-bottom: 1px solid #f7f7f7;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
 }
 
+.video-popular .categories {
+    display: inline-block;
+    width: 50%;
+}
+
+
+
 .video-popular .categories .category-item {
-    border: 1px solid #8bc34a;
+    border: 1px solid #2AA7F3;
     display: inline-block;
     margin-right: 8px;
     margin-bottom: 4px;
-    color: #8bc34a;
+    color: #2AA7F3;
     text-decoration: none;
     background: #8bc34a17;
     border-radius: 30px;
@@ -101,7 +118,8 @@ body .bg-dark{
 }
 
 .video-popular .categories .category-item:hover{
-    font-weight: bold;
+    opacity: 0.8;
+    transition: 0.5s;
 }
 
 .video-popular .tags{
@@ -109,31 +127,37 @@ body .bg-dark{
 }
 
 .video-popular .tags .tag-item {
-    border: 1px solid #ff5c6c;
+    border: 1px solid #538DF7;
     display: inline-block;
-    margin-right: 8px;
-    margin-bottom: 4px;
-    color: #ff5c6c;
+    margin-right: 1px;
+    margin-bottom: -2px;
+    color: #fff;
     text-decoration: none;
-    background: #ffd0d4;
-    border-radius: 30px;
-    padding: 2px 8px;
-    font-size: 12px;
+    background: #538DF7;
+    border-radius: 10px;
+    padding: 2px 6px;
+    font-size: 11px;
     text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 90px;
 }
 
 .video-popular .tags .tag-item:hover{
-    color: #fff;
+    opacity: 0.8;
+    transition: 0.5s;
 }
 
 .video-popular .date {
-    font-size: 12px;
-    border-top: 1px solid #f7f7f7;
-    margin-top: 4px;
-    padding-top: 6px;
+    font-size: 13px;
+    display: inline-block;
+    text-align: right;
+    width: 48%;
+    font-weight: 700;
 }
 
-.video-popular .img-vid {
+.video-popular .img-vid, .shows .img-vid{
     cursor: pointer;
     position: relative;
     width: 100%;
@@ -141,7 +165,7 @@ body .bg-dark{
     display: block;
 }
 
-.video-popular .iconPlay{
+.video-popular .iconPlay, .shows .video_serie .iconPlay{
     background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='white' class='bi bi-play-circle-fill' viewBox='0 0 16 16'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z'/></svg>");
     background-size:contain;
     background-repeat:no-repeat;
@@ -154,6 +178,94 @@ body .bg-dark{
     left:10px;
 }
 
-.video-popular .img-vid:hover .iconPlay{
+.video-popular .img-vid:hover .iconPlay, .shows .video_serie .img-vid:hover .iconPlay{
     background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='dodgerblue' class='bi bi-play-circle-fill' viewBox='0 0 16 16'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z'/></svg>");
+}
+.flickity-slider{
+    left: 10px!important;
+}
+.video_serie{
+    height: 260px;
+}
+
+.shows .flickity-prev-next-button.previous {
+    left: -55px;
+    background: #e8e8e8;
+    top: 40%;
+}
+.shows .flickity-prev-next-button.next {
+    right: -55px;
+    background: #e8e8e8;
+    top: 40%;
+}
+.shows .video_serie .netimg{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 172px;
+}
+
+.shows .show-title {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e8e7e7;
+    padding-bottom: 16px;
+}
+.img-serie {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+}
+
+.episode-list {
+    max-height: 380px;
+    margin-top: 12px;
+    overflow: auto;
+}
+
+.closeTop {
+    color: #fff;
+    background: #f44336;
+    font-size: 14px;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    float: right;
+    text-decoration: none;
+}
+.closeTop:hover{
+    color: #fff;
+    opacity: 0.8;
+}
+
+.video_serie .season-title {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 500;
+    border-top: 1px solid #ccc;
+    margin-top: 14px;
+    padding-top: 10px;
+    text-decoration: none;
+    display: block;
+}
+.video_serie .season-title:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.title-list {
+    color: #222;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.title-list:hover{
+    font-weight: bold;
+}
+
+.img-list img:hover {
+    opacity: 0.8;
+    transition: 0.5s;
 }
