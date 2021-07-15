@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "trashhandregular";
+  
+  src: url("TrashHand-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Tablero - simple*/
+.bg-bronce {
+  background-color: rgb(220, 179, 134);
+}
+.table > :not(caption) > * > * {
+  padding: 0rem 0.5rem;
+}
+.table {
+  border-color: transparent !important;
+}
+
+.table tbody,
+.table thead {
+  font-size: 15px;
+  color: white;
+}
+.table tbody img {
+  width: 25px;
+}
+
+.b-m-movil {
+  display: none;
+}
+
+#medContent {
+  background: yellow;
+  float: right;
+  /* position: absolute;
+  top: 13%;
+  right: 38%; */
+}
+
+#medContent-ecuador{
+  background-color: #333;
+}
+@media (max-width: 600px) and (min-width: 300px) {
+  .b-m-movil {
+    display: block;
+  }
+  .b-m-desktop {
+    display: none;
+  }
+  .table tbody,
+  .table thead {
+    font-size: 9px;
+  }
+  #medContent {
+    top: 3%;
+    right: 2%;
+  }
+  .table tbody img{
+    width: 17px;
+  }
+}
+
+@media (max-width: 1366px) and (min-width: 1366px) {
+  .table tbody,
+  .table thead {
+    font-size: 19px;
+  }
+  #medContent {
+    top: 11%;
+    right: 33%;
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 1440px) {
+  .table tbody,
+  .table thead {
+    font-size: 19px;
+  }
+  #medContent {
+    top: 9%;
+    right: 33%;
+  }
+}
+@media (max-width: 2048px) and (min-width: 1920px) {
+  .table tbody,
+  .table thead {
+    font-size: 26px;
+  }
+  #medContent {
+    top: 9%;
+    right: 36%;
+  }
+}
+@media (max-width: 1024px) and (min-width: 1024px) {
+  .table tbody,
+  .table thead {
+    font-size: 13px;
+  }
+  #medContent {
+    top: 5%;
+    right: 32%;
+  }
+}
+
+/*Tablero - simple*/
