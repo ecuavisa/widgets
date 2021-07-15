@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medallero</title>
+    <link
+      href="https://allfont.es/allfont.css?fonts=trashhand"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="main.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .bg-bronce {
+        background-color: rgb(220, 179, 134);
+      }
+      .table > :not(caption) > * > * {
+        padding: 0rem 0.5rem;
+      }
+      .table {
+        border-color: transparent !important;
+      }
+
+      .table tbody,
+      .table thead {
+        font-size: 15px;
+        color: white;
+      }
+      .table tbody img {
+        width: 25px;
+      }
+
+      .b-m-movil {
+        display: none;
+      }
+
+      #medContent {
+        float: right;
+        position: absolute;
+        top: 13%;
+        right: 38%;
+      }
+      @media (max-width: 600px) and (min-width: 300px) {
+        .b-m-movil {
+          display: block;
+        }
+        .b-m-desktop {
+          display: none;
+        }
+        .table tbody,
+        .table thead {
+          font-size: 9px;
+        }
+        #medContent {
+          top: 3%;
+          right: 2%;
+        }
+        .table tbody img{
+          width: 17px;
+        }
+      }
+
+      @media (max-width: 1366px) and (min-width: 1366px) {
+        .table tbody,
+        .table thead {
+          font-size: 19px;
+        }
+        #medContent {
+          top: 11%;
+          right: 33%;
+        }
+      }
+
+      @media (max-width: 1440px) and (min-width: 1440px) {
+        .table tbody,
+        .table thead {
+          font-size: 19px;
+        }
+        #medContent {
+          top: 9%;
+          right: 33%;
+        }
+      }
+      @media (max-width: 2048px) and (min-width: 1920px) {
+        .table tbody,
+        .table thead {
+          font-size: 26px;
+        }
+        #medContent {
+          top: 9%;
+          right: 36%;
+        }
+      }
+      @media (max-width: 1024px) and (min-width: 1024px) {
+        .table tbody,
+        .table thead {
+          font-size: 13px;
+        }
+        #medContent {
+          top: 5%;
+          right: 32%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="m-2">
+      <div class="">
+        <div id="medContent"></div>
+        <img
+          width="100%"
+          class="b-m-movil"
+          src="https://ecuavisa.com/ecuavisa/main/medallero-t-movil-.png"
+          alt="banner-medallero"
+        />
+        <img
+          class="b-m-desktop"
+          width="100%"
+          src="https://www.ecuavisa.com/ecuavisa/main/medallero-tabla.png"
+          alt="banner-medallero"
+        />
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
