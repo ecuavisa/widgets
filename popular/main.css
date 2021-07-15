@@ -74,6 +74,13 @@ body .bg-dark{
     border-top: 1px solid #ccc;
     margin-top: 14px;
     padding-top: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.video-popular .title:hover {
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .video-popular img{
@@ -97,11 +104,11 @@ body .bg-dark{
 
 
 .video-popular .categories .category-item {
-    border: 1px solid #8bc34a;
+    border: 1px solid #2AA7F3;
     display: inline-block;
     margin-right: 8px;
     margin-bottom: 4px;
-    color: #8bc34a;
+    color: #2AA7F3;
     text-decoration: none;
     background: #8bc34a17;
     border-radius: 30px;
@@ -111,7 +118,8 @@ body .bg-dark{
 }
 
 .video-popular .categories .category-item:hover{
-    font-weight: bold;
+    opacity: 0.8;
+    transition: 0.5s;
 }
 
 .video-popular .tags{
@@ -119,16 +127,16 @@ body .bg-dark{
 }
 
 .video-popular .tags .tag-item {
-    border: 1px solid #ff5c6c;
+    border: 1px solid #538DF7;
     display: inline-block;
-    margin-right: 8px;
-    margin-bottom: 4px;
-    color: #ff5c6c;
+    margin-right: 1px;
+    margin-bottom: -2px;
+    color: #fff;
     text-decoration: none;
-    background: #ffd0d4;
-    border-radius: 30px;
-    padding: 2px 8px;
-    font-size: 12px;
+    background: #538DF7;
+    border-radius: 10px;
+    padding: 2px 6px;
+    font-size: 11px;
     text-transform: uppercase;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -137,14 +145,16 @@ body .bg-dark{
 }
 
 .video-popular .tags .tag-item:hover{
-    color: #fff;
+    opacity: 0.8;
+    transition: 0.5s;
 }
 
 .video-popular .date {
-    font-size: 12px;
+    font-size: 13px;
     display: inline-block;
     text-align: right;
     width: 48%;
+    font-weight: 700;
 }
 
 .video-popular .img-vid, .shows .img-vid{
@@ -176,14 +186,6 @@ body .bg-dark{
 }
 .video_serie{
     height: 260px;
-}
-.video_serie .season-title{
-    font-size: 1rem;
-    color: #3f4142;
-    font-weight: 500;
-    border-top: 1px solid #ccc;
-    margin-top: 14px;
-    padding-top: 10px;
 }
 
 .shows .flickity-prev-next-button.previous {
@@ -235,4 +237,35 @@ body .bg-dark{
 .closeTop:hover{
     color: #fff;
     opacity: 0.8;
+}
+
+.video_serie .season-title {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 500;
+    border-top: 1px solid #ccc;
+    margin-top: 14px;
+    padding-top: 10px;
+    text-decoration: none;
+    display: block;
+}
+.video_serie .season-title:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.title-list {
+    color: #222;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.title-list:hover{
+    font-weight: bold;
+}
+
+.img-list img:hover {
+    opacity: 0.8;
+    transition: 0.5s;
 }

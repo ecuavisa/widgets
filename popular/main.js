@@ -80,7 +80,7 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=20&status=OK") {
                                         <img class="netimg d-block w-100 h-200 hvr-grow" src="${thumbnail}" alt="${video.title}" >
                                         <span class="iconPlay  left bottom"></span>
                                     </a>
-                                    <div class="title">${video.title}</div>
+                                    <a class="title" href="javascript:;" onclick="reproductor('${video.id}')" >${video.title}</a>
                                     <div class="info">
                                         <div class="categories">${categories}</div>
                                         <div class="date">${dateVideo}</div>
@@ -185,7 +185,7 @@ function getVideosInShows(serieid, seasonsid) {
                                     <img class="netimg d-block w-100 hvr-grow" src="${serie.images[0].path}" alt="${serie.title}" >
                                     <span class="iconPlay  left bottom"></span>
                                 </a>
-                                <div class="pt-3 season-title">${serie.title}</div>
+                                <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${serie.content[0].value._id}')">${serie.title}</a>
                             </div>
                         </div>
                     
@@ -323,12 +323,12 @@ function getVideoList(json) {
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <a id="episode-${episode._id}" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${jsonData.serie}')">
+                                    <a class="img-list" id="episode-${episode._id}" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${jsonData.serie}')">
                                         <img class="netimg d-block w-100 h-100 hvr-grow" src="${episode.images[0].path}" alt="${episode.title}" >
                                     </a>
                                 </div>
                                 <div class="col-md-10">
-                                    ${episode.title}
+                                   <a class="title-list" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${jsonData.serie}')"> ${episode.title}</a>
                                 </div>
                             </div>
                         </li>
@@ -373,7 +373,7 @@ function getPlaylist(playlist = "603e76e0dc619107be83606a") {
                                     <img class="netimg d-block w-100 hvr-grow" src="${thumbnail}" alt="${play.title}" >
                                     <span class="iconPlay  left bottom"></span>
                                 </a>
-                                <div class="pt-3 season-title">${play.title}</div>
+                                <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${play._id}')">${play.title}</a>
                             </div>
                         </div>
                     
