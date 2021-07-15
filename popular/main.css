@@ -49,7 +49,7 @@ body {
 
 #titleSection {
     margin: 0 0 20px;
-    padding: 5px 25px;
+    padding: 5px 0px;
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
@@ -171,10 +171,11 @@ body .bg-dark{
 .video-popular .img-vid:hover .iconPlay, #shows .video_serie .img-vid:hover .iconPlay{
     background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='dodgerblue' class='bi bi-play-circle-fill' viewBox='0 0 16 16'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z'/></svg>");
 }
-
+.flickity-slider{
+    left: 10px!important;
+}
 .video_serie{
     height: 260px;
-    margin-right: 20px;
 }
 .video_serie .season-title{
     font-size: 1rem;
@@ -206,4 +207,32 @@ body .bg-dark{
     margin-bottom: 20px;
     border-bottom: 1px solid #e8e7e7;
     padding-bottom: 16px;
+}
+.img-serie {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+}
+
+.episode-list {
+    max-height: 380px;
+    margin-top: 12px;
+    overflow: auto;
+}
+
+.closeTop {
+    color: #fff;
+    background: #f44336;
+    font-size: 14px;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    float: right;
+    text-decoration: none;
+}
+.closeTop:hover{
+    color: #fff;
+    opacity: 0.8;
 }

@@ -14,12 +14,18 @@ function reproductor(id, serieid = "") {
     $("#playVideo").removeClass("d-none");
     $("#closeVideo").removeClass("d-none");
     $("#playVideo").empty();
-    $("#playVideo").html(`<iframe class="videoecv" src="//mdstrm.com/embed/${id}" allowfullscreen></iframe>`);
+    $("#playVideo").html(`<iframe class="videoecv" src="//mdstrm.com/embed/${id}?autoplay=true" allowfullscreen></iframe>`);
+}
+
+function closeTop() {
+    $("#titleSection").html(`Top 20 vídeos más vistos`);
+    $("#mostVideos").empty();
+    getVideos();
 }
 
 function getVideos(url = "?sort=-views_stream_metrics&limit=20&status=OK") {
     $.ajax({
-        url: "https://platform.mediastre.am/api/media/" + url,
+        url: "https://platform.mediastre.am/api/media" + url,
         type: "GET",
         dataType: "json",
 
@@ -60,7 +66,7 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=20&status=OK") {
                      */
                     let categories = "";
                     if (video.categories) {
-                        categories += `<a class="category-item" href="javascript:;" onclick="showCategories('${video.categories[0].id}')">
+                        categories += `<a class="category-item" href="javascript:;" onclick="showCategories('${video.categories[0]._id}', '${video.categories[0].name}')">
                             ${video.categories[0].name}
                         </a>`;
                     }
@@ -93,7 +99,24 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=20&status=OK") {
         error: function (error) { },
     });
 }
-
+/**
+ * Mostrar tags
+ */
+function showTags(tag) {
+    let url = "?limit=20&status=OK&tag=" + tag;
+    $("#titleSection").html(`Tag: ${tag} <a class="closeTop" href="javascript:;" onclick="closeTop()"> Cerrar </a>`);
+    $("#mostVideos").empty();
+    getVideos(url);
+}
+/**
+ * Mostrar categorias
+ */
+function showCategories(category, categoryName) {
+    let url = "?limit=20&status=OK&category_id=" + category;
+    $("#titleSection").html(`Categoría: ${categoryName} <a class="closeTop" href="javascript:;" onclick="closeTop()"> Cerrar </a>`);
+    $("#mostVideos").empty();
+    getVideos(url);
+}
 /**
  * Cargar todas las series
  */
