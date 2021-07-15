@@ -15,7 +15,7 @@ sheetrock({
     fetchSize: 10,
     callback: function (data, sheetrock, response) {
         let rows = response.raw.table.rows;
-
+        rows.shift();
         $("#Sheet-ecuador").append(`<thead>
             <tr>
                 <th ></th>
@@ -25,15 +25,17 @@ sheetrock({
             </tr>
             </thead><tbody id="tbody-ecuador"></tbody>`);
         rows.forEach((row, i) => {
+            console.log(row);
             let foto = (row.c[0].v);
             let nombre = (row.c[1].v);
-            let disc = (row.c[2].f);
-            let medalla = row.c[3].f;
-                     
+            let disc = (row.c[2].v);
+            let medalla = row.c[3].v;
+
 
             $('#tbody-ecuador').append(`
             <tr>              
-                <td><img src="${foto}" alt="${nombre}"> ${nombre}</td>
+                <td><img src="${foto}" alt="${nombre}"> </td>
+                <td>${nombre}</td>
                 <td><span class="">${disc}</span></td>
                 <td><span class="">${medalla}</span></td>
             </tr>`);
