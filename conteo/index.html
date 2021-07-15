@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medallero</title>
+    <link href="https://allfont.es/allfont.css?fonts=trashhand" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="main.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .letra {
+        color: #fec301;
+        font-family: "trashhandregular";
+        text-align: center;
+      }
+
+      .numero {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 50%;
+        color: #333;
+        text-align: center;
+        background: #fff;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 20px;
+        -webkit-box-shadow: 1px 3px 5px -1px #333;
+        -moz-box-shadow: 1px 3px 5px -1px #333;
+        box-shadow: 1px 3px 5px -1px #333;
+      }
+
+      #countdown,
+      .bg {
+        display: flex;
+        float: right;
+        position: absolute;
+        top: 14%;
+        right: 7%;
+      }
+      .puntos {
+        line-height: 50px;
+        margin-left: 5px;
+        font-size: 30px;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="m-2 pt-5">
+      <div class="conteo-new">
+        <div id="countdown"></div>
+        <img
+          width="100%"
+          src="https://www.ecuavisa.com/ecuavisa/main/banner-japon-conteo.png"
+          alt="banner-japon-conteo"
+        />
+      </div>
+    </div>
+
+    <!-- <div class="bg">
+        <div class="me-2">
+          <div class="numero float-start">4</div>
+          <span class="text-warning puntos">:</span>
+          <div class="letra">Días</div>
+        </div>
+        <div class="me-2">
+          <div class="numero float-start">6</div>
+          <span class="text-warning puntos">:</span>
+          <div class="letra">Días</div>
+        </div>
+        <div class="me-2">
+          <div class="numero float-start">2</div>
+          <span class="text-warning puntos">:</span>
+          <div class="letra">Días</div>
+        </div>
+        <div class="me-2">
+          <div class="numero float-start">2</div>
+          <div class="letra">Días</div>
+        </div>
+      </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+
+    <script src="conteo.js"></script>
+  </body>
+</html>
