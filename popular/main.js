@@ -36,7 +36,6 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=20&status=OK") {
         //contentType: "application/json",
         success: function (result) {
             let data = result.data;
-            console.log(data);
 
             $.each(data, function (key, video) {
                 if (video != null) {
@@ -341,9 +340,63 @@ function getVideoList(json) {
     });
 }
 
+
+function getPlaylist(playlist = "603e76e0dc619107be83606a") {
+    $.ajax({
+        url: "https://platform.mediastre.am/api/playlist/" + playlist,
+        type: "GET",
+        dataType: "json",
+        headers: {
+            "X-API-Token": "215979b6242fdd636897c19bb6428cb5",
+        },
+        success: function (result) {
+            let data = result.data;
+            let medias = data.medias;
+            console.log(medias);
+            $.each(medias, function (key, play) {
+                if (play.id) {
+                    let id = key;
+                    let thumbnail = "";
+                    play.thumbnails.forEach(img => {
+                        if (img.is_default == true) {
+                            thumbnail = img.url;
+                        }
+                    });
+                    if (thumbnail == "") {
+                        thumbnail = play.thumbnails[0].url;
+                    }
+                    $("#playlist").append(`
+                
+                        <div class="col-md-3 video_serie">
+                            <div class="episodio"> 
+                                <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${play._id}')">
+                                    <img class="netimg d-block w-100 hvr-grow" src="${thumbnail}" alt="${play.title}" >
+                                    <span class="iconPlay  left bottom"></span>
+                                </a>
+                                <div class="pt-3 season-title">${play.title}</div>
+                            </div>
+                        </div>
+                    
+                    `);
+                }
+            });
+
+            $("#playlist").flickity({
+                cellAlign: 'left',
+                contain: true,
+                pageDots: false
+            });
+            $("#playlist .flickity-slider").addClass("row");
+
+        },
+        error: function (error) { },
+    });
+}
+
 $(document).ready(function () {
     getVideos();
     getShows();
+    getPlaylist();
     $("#closeVideo").on("click", function () {
         $("#playVideo").addClass("d-none");
         $("#playVideo").empty();
