@@ -242,18 +242,19 @@ body .bg-dark{
 }
 
 .video_serie .season-title {
-    font-size: 1rem;
-    color: #000;
-    font-weight: 500;
+    font-size: 1.25rem;
+    color: black;
+    font-weight: bold;
+    line-height: 1.4rem;
     border-top: 1px solid #ccc;
     margin-top: 14px;
     padding-top: 10px;
-    text-decoration: none;
     display: block;
+    text-decoration: none;
+    margin-bottom: 14px;
 }
 .video_serie .season-title:hover {
-    font-weight: bold;
-    cursor: pointer;
+    opacity: 0.8;
 }
 
 .title-list {
