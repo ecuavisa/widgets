@@ -1,6 +1,6 @@
 @font-face {
   font-family: "trashhandregular";
-  
+
   src: url("TrashHand-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -17,13 +17,18 @@
   border-color: transparent !important;
 }
 
+
+
 .table tbody,
 .table thead {
   font-size: 15px;
   color: white;
 }
 .table tbody img {
-  width: 25px;
+  width: 47px;
+  height: 47px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .b-m-movil {
@@ -38,9 +43,6 @@
   right: 38%; */
 }
 
-#medContent-ecuador{
-  background-color: #333;
-}
 @media (max-width: 600px) and (min-width: 300px) {
   .b-m-movil {
     display: block;
@@ -56,7 +58,7 @@
     top: 3%;
     right: 2%;
   }
-  .table tbody img{
+  .table tbody img {
     width: 17px;
   }
 }
@@ -103,4 +105,43 @@
   }
 }
 
-/*Tablero - simple*/
+/*Tablero + ecuador*/
+#medContent-ecuador {
+  background-color: #333333f2;
+  height: 164px;
+
+  overflow-y: scroll;
+  float: right;
+  border-radius: 5px;
+
+   position: absolute;
+  top: 13%;
+  right: 38%; 
+}
+
+#medContent-ecuador::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+#medContent-ecuador::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+#medContent-ecuador::-webkit-scrollbar-button:increment,#medContent-ecuador::-webkit-scrollbar-button {
+  display: none;
+} 
+
+#medContent-ecuador::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+#medContent-ecuador::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  
+}
+
+#medContent-ecuador::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+/*Tablero + ecuador*/
