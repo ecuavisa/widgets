@@ -190,12 +190,12 @@ body .bg-dark{
     height: 260px;
 }
 
-.flickity-prev-next-button.previous {
+.shows .flickity-prev-next-button.previous, #showsCovers .flickity-prev-next-button.previous {
     left: -55px;
     background: #e8e8e8;
     top: 40%;
 }
-.flickity-prev-next-button.next {
+.shows .flickity-prev-next-button.next ,#showsCovers .flickity-prev-next-button.next {
     right: -55px;
     background: #e8e8e8;
     top: 40%;
