@@ -18,12 +18,12 @@ function reproductor(id, serieid = "") {
 }
 
 function closeTop() {
-    $("#titleSection").html(`Top 20 vídeos más vistos`);
+    $("#titleSection").html(`Top 12 vídeos más vistos`);
     $("#mostVideos").empty();
     getVideos();
 }
 
-function getVideos(url = "?sort=-views_stream_metrics&limit=20&status=OK") {
+function getVideos(url = "?sort=-views_stream_metrics&limit=12&status=OK") {
     $.ajax({
         url: "https://platform.mediastre.am/api/media" + url,
         type: "GET",
@@ -102,7 +102,7 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=20&status=OK") {
  * Mostrar tags
  */
 function showTags(tag) {
-    let url = "?limit=20&status=OK&tag=" + tag;
+    let url = "?limit=12&status=OK&tag=" + tag;
     $("#titleSection").html(`Tag: ${tag} <a class="closeTop" href="javascript:;" onclick="closeTop()"> Cerrar </a>`);
     $("#mostVideos").empty();
     getVideos(url);
@@ -111,7 +111,7 @@ function showTags(tag) {
  * Mostrar categorias
  */
 function showCategories(category, categoryName) {
-    let url = "?limit=20&status=OK&category_id=" + category;
+    let url = "?limit=12&status=OK&category_id=" + category;
     $("#titleSection").html(`Categoría: ${categoryName} <a class="closeTop" href="javascript:;" onclick="closeTop()"> Cerrar </a>`);
     $("#mostVideos").empty();
     getVideos(url);
@@ -132,6 +132,22 @@ function getShows() {
         success: function (result) {
             let data = result.data;
             $.each(data, function (key, serie) {
+                $("#showsCovers").append(`
+                <section class="col-12 col-md-3 show-${serie._id} mb-5">
+                    <a href="javascript:;" onclick="verSerie(${key})">
+                        <img class="ser-show effect d-block w-100 hvr-grow" src="${serie.images[0].path}" alt="${serie.title}" >
+                        <h3 class="serie-title effect">${serie.title}</h3>
+                    </a>
+                </section>
+                `);
+            });
+            $("#showsCovers").flickity({
+                cellAlign: 'left',
+                contain: true,
+                pageDots: false
+            });
+            $("#showsCovers .flickity-slider").addClass("row");
+            $.each(data, function (key, serie) {
                 $("#shows").append(`
                 <section class="show-${serie._id} mb-5">
                     <h4 class="show-title">${serie.title} 
@@ -142,6 +158,7 @@ function getShows() {
                 `);
                 getVideosInShows(serie._id, serie.seasons[0]._id);
             });
+
 
             window.localStorage.setItem('series', JSON.stringify(data));
 
@@ -179,7 +196,7 @@ function getVideosInShows(serieid, seasonsid) {
 
                     $("#vid-" + serieid).append(`
                 
-                        <div class="col-md-3 video_serie">
+                        <div class="col-12 col-md-3 video_serie">
                             <div class="episodio"> 
                                 <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${serie.content[0].value._id}')">
                                     <img class="netimg d-block w-100 hvr-grow" src="${serie.images[0].path}" alt="${serie.title}" >
@@ -340,7 +357,7 @@ function getVideoList(json) {
     });
 }
 
-
+/*
 function getPlaylist(playlist = "603e76e0dc619107be83606a") {
     $.ajax({
         url: "https://platform.mediastre.am/api/playlist/" + playlist,
@@ -352,7 +369,6 @@ function getPlaylist(playlist = "603e76e0dc619107be83606a") {
         success: function (result) {
             let data = result.data;
             let medias = data.medias;
-            console.log(medias);
             $.each(medias, function (key, play) {
                 if (play.id) {
                     let id = key;
@@ -392,11 +408,12 @@ function getPlaylist(playlist = "603e76e0dc619107be83606a") {
         error: function (error) { },
     });
 }
-
+*/
 $(document).ready(function () {
-    getVideos();
+    /*let url = "?sort=-views_stream_metrics&limit=12&status=OK&category_id=" + ms_category_id;
+    getVideos(url);*/
     getShows();
-    getPlaylist();
+    /*getPlaylist();*/
     $("#closeVideo").on("click", function () {
         $("#playVideo").addClass("d-none");
         $("#playVideo").empty();

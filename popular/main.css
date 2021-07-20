@@ -190,12 +190,12 @@ body .bg-dark{
     height: 260px;
 }
 
-.shows .flickity-prev-next-button.previous {
+.flickity-prev-next-button.previous {
     left: -55px;
     background: #e8e8e8;
     top: 40%;
 }
-.shows .flickity-prev-next-button.next {
+.flickity-prev-next-button.next {
     right: -55px;
     background: #e8e8e8;
     top: 40%;
@@ -241,7 +241,7 @@ body .bg-dark{
     opacity: 0.8;
 }
 
-.video_serie .season-title {
+.video_serie .season-title, .serie-title {
     font-size: 1.25rem;
     color: black;
     font-weight: bold;
@@ -271,4 +271,21 @@ body .bg-dark{
 .img-list img:hover {
     opacity: 0.8;
     transition: 0.5s;
+}
+
+#showsCovers a{
+    text-decoration: none;
+}
+.ser-show {
+    height: 380px;
+    object-fit: cover;
+}
+
+.effect:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.serie-title{
+    text-align: center;
 }
