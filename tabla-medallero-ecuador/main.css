@@ -1,49 +1,179 @@
-@font-face {
-  font-family: "trashhandregular";
+/*----medallero----*/
 
-  src: url("TrashHand-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+/*comentar ahora*/
+#medContent-ecuador.solo {
+  display: none;
 }
 
-/*Tablero - simple*/
-.bg-bronce {
+#medContent.solo .table > :not(caption) > * > * {
+  padding: 0rem 2.5rem;
+}
+
+#medContent.solo {
+  right: 10%;
+}
+/*comentar ahora*/
+
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+  font-size: 30px !important;
+}
+
+.slideratletas .slick-next {
+  right: -15px;
+}
+
+.slideratletas {
+  width: 90%;
+  margin: auto;
+}
+
+.slideratletas article .multimedia img {
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 50%;
+}
+
+.slideratletas .headline {
+  width: 45%;
+  margin: 0 auto;
+}
+
+#medContent .table {
+  margin-bottom: 0rem;
+}
+
+#medContent .bg-bronce {
   background-color: rgb(220, 179, 134);
 }
-.table > :not(caption) > * > * {
-  padding: 0rem 0.5rem;
+#medContent .table > :not(caption) > * > * {
+  padding: 0rem 1rem;
 }
 .table {
   border-color: transparent !important;
 }
 
-
-
-.table tbody,
-.table thead {
+#medContent .table tbody,
+#medContent .table thead {
   font-size: 15px;
   color: white;
 }
 .table tbody img {
-  width: 47px;
-  height: 47px;
-  object-fit: cover;
-  border-radius: 50%;
+  width: 25px;
 }
 
 .b-m-movil {
   display: none;
 }
-
-#medContent {
-  background: yellow;
-  float: right;
-  /* position: absolute;
-  top: 13%;
-  right: 38%; */
+.b-m-tablet {
+  display: none;
 }
 
-@media (max-width: 600px) and (min-width: 300px) {
+#medContent {
+  float: right;
+  position: absolute;
+  top: 13%;
+  right: 38%;
+}
+
+/*Tablero + Ecuador - Inico*/
+#medContent-ecuador {
+  background-color: #333;
+  border-radius: 5px;
+  position: absolute;
+  top: 13%;
+  right: 5%;
+  padding: 10px 10px;
+}
+
+#medContent-ecuador .letra-ecu {
+  z-index: 2;
+  display: block;
+  color: #fec301;
+  font-family: "trashhandregular";
+  font-size: 25px;
+  position: absolute;
+  top: -32px;
+}
+#medContent-ecuador .c-ec {
+  height: 170px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#medContent-ecuador .table {
+  margin-bottom: 0rem;
+}
+#medContent-ecuador .table tbody,
+#medContent-ecuador.table thead {
+  font-size: 13px;
+  color: white;
+}
+
+#medContent-ecuador .table tbody img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#medContent-ecuador .c-ec::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+#medContent-ecuador .c-ec::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+#medContent-ecuador .c-ec::-webkit-scrollbar-button:increment,
+#medContent-ecuador .c-ec::-webkit-scrollbar-button {
+  display: none;
+}
+
+#medContent-ecuador .c-ec::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+#medContent-ecuador .c-ec::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+
+#medContent-ecuador .c-ec::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+/*Tablero + Ecuador - Fin*/
+
+#medContent table {
+    text-align: center;
+}
+#medContent td:nth-child(1) {
+    text-align: left;
+}
+.titclasificados.mt-3 {
+    margin-top: -1.5rem!important;
+}
+.titclasificados.mb-3 {
+    margin-bottom: 0!important;
+}
+.slideratletas article .headline a h2 {
+    margin-top: -9px;
+ }
+@media (max-width: 600px) {
+  .slideratletas {
+    width: 80%;
+    margin: auto;
+  }
+  .slideratletas article .multimedia img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  #r01c01 {
+    padding-left: initial;
+    padding-right: initial;
+  }
   .b-m-movil {
     display: block;
   }
@@ -55,93 +185,212 @@
     font-size: 9px;
   }
   #medContent {
-    top: 3%;
-    right: 2%;
+    top: 18%;
+    right: 16%;
   }
   .table tbody img {
     width: 17px;
   }
+  #medContent-ecuador {
+    top: 46%;
+    right: 11%;
+  }
+  #medContent .table > :not(caption) > * > * {
+    padding: 0rem 4px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+.titclasificados.mt-3 {
+    margin-top: 0.5rem!important;
+}
 }
 
+/*Responsive*/
+@media (max-width: 360px) and (min-width: 360px){
+   #medContent {
+      top: 21%;
+      right: 11%;
+   }
+   #medContent-ecuador {
+      top: 52%;
+      right: 6%;
+   }
+   #medContent-ecuador{
+      padding: 7px 10px;
+   }
+}
+@media (max-width: 375px) and (min-width: 375px) {
+  #medContent-ecuador {
+    right: 7%;
+    top: 52%;
+  }
+  #medContent {
+    top: 21%;
+    right: 14%;
+  }
+}
+@media (max-width: 393px) and (min-width: 393px) {
+  #medContent-ecuador {
+    right: 9%;
+
+    top: 44%;
+  }
+}
+@media (max-width: 411px) and (min-width: 411px) {
+  #medContent-ecuador {
+    right: 10%;
+    top: 53%;
+  }
+#medContent {
+    top: 22%;
+    right: 16%;
+}
+}
+@media (max-width: 414px) and (min-width: 414px) {
+  #medContent-ecuador {
+    right: 11%;
+    top: 52%;
+  }
+  #medContent {
+    top: 22%;
+  }
+#medContent .table>:not(caption)>*>* {
+    padding: 0rem 10px;
+}
+#medContent {
+    right: 9%;
+}
+}
+@media (max-width: 424px) and (min-width: 424px) {
+  #medContent-ecuador {
+    top: 21%;
+    right: 5%;
+  }
+}
+@media (max-width: 768px) and (min-width: 768px) {
+  #medContent-ecuador {
+    top: 21%;
+    right: 2%;
+  }
+  #medContent {
+    top: 21%;
+    right: 45%;
+  }
+  .b-m-tablet {
+    display: block;
+  }
+  .b-m-desktop {
+    display: none;
+  }
+  .titclasificados.mt-3 {
+    margin-top: 0.5rem!important;
+  }
+.slideratletas article .headline a h2 {
+    margin-top: -28px;
+    font-size: 18px;
+}
+.slideratletas article .multimedia img {
+    width: 100px!important;
+    height: 100px!important;
+    border-radius: 50%;
+}
+}
+/*Fin*/
+
 @media (max-width: 1366px) and (min-width: 1366px) {
-  .table tbody,
-  .table thead {
-    font-size: 19px;
+  #medContent .table tbody,
+  #medContent .table thead {
+    font-size: 17px;
   }
   #medContent {
     top: 11%;
-    right: 33%;
+    right: 34%;
+  }
+  #medContent-ecuador {
+    top: 14%;
+    right: 9%;
   }
 }
 
 @media (max-width: 1440px) and (min-width: 1440px) {
-  .table tbody,
-  .table thead {
-    font-size: 19px;
+  #medContent .table tbody,
+  #medContent .table thead {
+    font-size: 18px;
   }
   #medContent {
-    top: 9%;
-    right: 33%;
+    top: 8%;
+    right: 35%;
+  }
+  #medContent-ecuador {
+    top: 11%;
+    right: 10%;
   }
 }
-@media (max-width: 2048px) and (min-width: 1920px) {
-  .table tbody,
-  .table thead {
-    font-size: 26px;
+@media (max-width: 2560px) and (min-width: 1920px) {
+  #medContent .table tbody,
+  #medContent .table thead {
+    font-size: 28px;
   }
   #medContent {
-    top: 9%;
+    top: 7%;
     right: 36%;
+  }
+  #medContent-ecuador {
+    top: 11%;
+    right: 9%;
+  }
+  #medContent-ecuador .table tbody,
+  #medContent-ecuador .table thead {
+    font-size: 23px;
+  }
+
+  #medContent-ecuador .c-ec {
+    height: 252px;
+  }
+
+  #medContent-ecuador .letra-ecu {
+    font-size: 40px;
+    top: -51px;
   }
 }
 @media (max-width: 1024px) and (min-width: 1024px) {
-  .table tbody,
-  .table thead {
-    font-size: 13px;
+  #medContent .table tbody,
+  #medContent .table thead {
+    font-size: 10px;
   }
   #medContent {
-    top: 5%;
+    top: 4.6%;
     right: 32%;
   }
+  #medContent .btn{
+    margin-top: -16px;
+    font-size: 10px;
+    border: transparent;
+  }
+.slideratletas article .headline a h2 {
+    margin-top: 8px;
 }
-
-/*Tablero + ecuador*/
-#medContent-ecuador {
-  background-color: #333333f2;
-  height: 164px;
-
-  overflow-y: scroll;
-  float: right;
-  border-radius: 5px;
-
-   position: absolute;
-  top: 13%;
-  right: 38%; 
-}
-
-#medContent-ecuador::-webkit-scrollbar {
-  -webkit-appearance: none;
-}
-
-#medContent-ecuador::-webkit-scrollbar:vertical {
-  width:10px;
-}
-
-#medContent-ecuador::-webkit-scrollbar-button:increment,#medContent-ecuador::-webkit-scrollbar-button {
-  display: none;
-} 
-
-#medContent-ecuador::-webkit-scrollbar:horizontal {
-  height: 10px;
-}
-
-#medContent-ecuador::-webkit-scrollbar-thumb {
-  background-color: #797979;
-  border-radius: 20px;
+  #medContent-ecuador .table tbody,
+  #medContent-ecuador.table thead {
+    font-size: 10px;
+  }
+  #medContent-ecuador .c-ec{
+    height: 142px;
+  }
+  #medContent-ecuador .table tbody img{
+    width: 30px;
+    height: 30px;
+  }
+  #medContent-ecuador .letra-ecu{
+    top: -27px;
+    font-size: 22px;
+  }
   
+  #medContent-ecuador {
+    top: 6%;
+    right: 6%;
+    padding: 5px 5px;
+    
+  }
 }
-
-#medContent-ecuador::-webkit-scrollbar-track {
-  border-radius: 10px;  
-}
-/*Tablero + ecuador*/

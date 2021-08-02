@@ -5,7 +5,10 @@ for (let me = 0; me < medallas.length; me++) {
     $('#medContent').append(`
     <div>
         <div class="table-responsive"><table id="Sheet" class="table table-bordered"></table></div>
+        <div class="text-center">
+        <a class="btn btn-dark" href="/medallero-olimpico-2021" target="_blank">Ver la tabla completa <b>aquí</b> </a></div>
     </div>`);
+    
 }
 
 sheetrock({

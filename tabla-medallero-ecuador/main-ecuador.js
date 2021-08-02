@@ -4,7 +4,8 @@ var medallasec = [""];
 for (let me = 0; me < medallasec.length; me++) {
     $('#medContent-ecuador').append(`
     <div>
-        <div class="table-responsive"><table id="Sheet-ecuador" class="table table-bordered"></table></div>
+    
+        <div class="table-responsive c-ec"><table id="Sheet-ecuador" class="table table-bordered"></table></div>
     </div>`);
 }
 
@@ -12,15 +13,13 @@ sheetrock({
     url: principalSheetEcuador,
 
     query: "select A,B,C,D",
-    fetchSize: 10,
+    fetchSize: 50,
     callback: function (data, sheetrock, response) {
         let rows = response.raw.table.rows;
         //rows.shift();
         $("#Sheet-ecuador").append(`<thead>
             <tr>
-                <th ></th>
-                <th ></th>
-                <th ></th>             
+                   
 
             </tr>
             </thead><tbody id="tbody-ecuador"></tbody>`);
@@ -47,4 +46,9 @@ sheetrock({
         });
     }
 });
+
+
+
+
+
 
