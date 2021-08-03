@@ -10,24 +10,78 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="main.css" />
+
+    <style>
+       
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top animate__animated animate__fadeIn">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="https://ecuavisa.com/ecuavisa/main/logo-ecu-go.png" alt="ecgo" width="93" class="d-inline-block align-text-top">  
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              
+              
+            </ul>
+           
+            <div class="nav-item dropdown d-flex">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://ecuavisa.com/ecuavisa/main/user_1.png" alt="ecgo" width="23" class="d-inline-block align-text-top">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark m-le-55" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
+           
+          </div>
+        </div>
+      </nav>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top animate__animated animate__fadeIn">
         <div class="p-2 w-100 text-center">
             <a class="logo" href="index.html">ECUAVISA</a>
         </div>
-    </nav>
+    </nav> -->
     <div id="closeVideo" class="d-none">
         <img src="data:image/png;base64,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"
             alt="close" />
     </div>
     <div id="playVideo" class="d-none"></div>
+    <div id="showsCoversPortada"></div>
     <div id="allList" class="mt-5 pt-5 pb-5 container">
+        
+
+
         <div id="titleSection">Ecuavisa Go</div>
         <!--<div class="row justify-content-center" id="mostVideos">
         </div>-->
+
+
+      
         <!-- Temporadas -->
+
         <div id="showsCovers"></div>
         <div id="shows" class="shows"></div>
         <!--<div class="shows">
@@ -42,6 +96,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="main.js"></script>
+
+   
 </body>
 
 </html>
