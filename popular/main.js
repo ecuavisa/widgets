@@ -294,11 +294,15 @@ function verSerie(id) {
             getVideoList(this.value);
         });
     } else {
+        let arry = serieData.images;
+        let ultElement = arry[arry.length - 1];
+        let img = ultElement.path;
+        //console.log(img);
         let image = "";
-        if (serieData.images) {
+        if (arry) {
             image = `
                 <div class="img-serie">
-                    <img class="d-block w-100" src="${serieData.images[1].path}" alt="${serieData.title}" >
+                    <img class="d-block w-100" src="${img}" alt="${serieData.title}" >
                 </div>
             `;
         }
