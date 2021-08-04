@@ -154,23 +154,18 @@ function getShows() {
 
             $.each(data, function (key, serie, id, _id) {
 
-                //let series = window.localStorage.getItem('series');
-                //series = JSON.parse(series);
-                //let serie = "";
-                //let serieData = series[id];
-                
-                    let image = "";
-                    if (serie.images) {
-                        image = `
+                let image = "";
+                if (serie.images) {
+                    image = `
                         <div class="img-serie">
                             <img class="ser-show effect d-block w-100 hvr-grow" 
                             src="${serie.images[1].path}" alt="${serie.title}" >
                         </div>
                     `;
-                    }
-                    if (key != 0) {
+                }
+                if (key != 0) {
 
-                        $("#showsCovers").append(`
+                    $("#showsCovers").append(`
                         <section class="col-12 col-md-3 show-${serie._id} mb-5">
                             <a href="javascript:;" onclick="verSerie(${key})">
                                 ${image}
@@ -178,8 +173,8 @@ function getShows() {
                             </a>
                         </section>
                     `);
-                    }
-                
+                }
+
             });
 
             $("#showsCovers").flickity({
