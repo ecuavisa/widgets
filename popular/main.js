@@ -131,17 +131,42 @@ function getShows() {
         contentType: "application/json; charset=utf-8",
         success: function (result) {
             let data = result.data;
-            //data.shift();
-            $.each(data, function (key, serie) {
-                $("#showsCovers").append(`
-                <section class="col-12 col-md-3 show-${serie._id} mb-5">
-                    <a href="javascript:;" onclick="verSerie(${key})">
-                        <img class="ser-show effect d-block w-100 hvr-grow" src="${serie.images[0].path}" alt="${serie.title}" >
-                        <h3 class="serie-title effect">${serie.title}</h3>
-                    </a>
+            let seriePortada = data[0];
+            let img = (seriePortada.images[1,0].path);
+            $("#showsCoversPortada").append(`
+                <section class="new__portada show-${seriePortada._id} mb-5">
+                    <div class="new__content">
+                        <img class=" d-block w-100 hvr-grow" src="${img}" alt="${seriePortada.title}" >
+                        <div class="cont__des__butt">
+                            <h3 class="serie-desc effect">${seriePortada.description}</h3>
+                            <div class="btn__portada">
+                                <button type="button" class="btn btn-light"><img src="https://img.icons8.com/material-rounded/48/000000/play--v1.png" style="width: 24px;height: 24px;-webkit-mask-image: linear-gradient(to top, transparent 0, black 0%);"/> Play</button>
+                                <a class="btn btn-dark" href="javascript:;" onclick="verSerie(0)">Ver más </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
                 </section>
-                `);
+            `);
+            //     let dataTem = data;
+            // dataTem.shift();
+
+            $.each(data, function (key, serie, _id) {
+                if (key != 0) {
+              let img = serie.images[0].path;
+                    $("#showsCovers").append(`
+                        <section class="col-12 col-md-3 show-${serie._id} mb-5">
+                            <a href="javascript:;" onclick="verSerie(${key})">
+                                <img class="ser-show effect d-block w-100 hvr-grow" 
+                                src="${img}" alt="${serie.title}" >
+                                <h3 class="serie-title effect">${serie.title}</h3>
+                            </a>
+                        </section>
+                    `);
+                }
             });
+
             $("#showsCovers").flickity({
                 cellAlign: 'left',
                 contain: true,
@@ -167,49 +192,6 @@ function getShows() {
         error: function (error) { },
     });
 }
-
-
-
-/*** NEW - PORTADA 1 ITEM - INICIO***/
-
-function getShowsPortada() {
-    window.localStorage.clear();
-    $.ajax({
-        url: "https://platform.mediastre.am/api/show?limit=1",
-        type: "GET",
-        dataType: "json",
-        headers: {
-            "X-API-Token": "215979b6242fdd636897c19bb6428cb5",
-        },
-        contentType: "application/json; charset=utf-8",
-        success: function (result) {
-            let data = result.data;
-            $.each(data, function (key, serie) {
-                $("#showsCoversPortada").append(`
-                <section class="new__portada show-${serie._id} mb-5">
-                    <div class="new__content">
-                        <img class=" d-block w-100 hvr-grow" src="${serie.images[0].path}" alt="${serie.title}" >
-                        <div class="cont__des__butt">
-                            <h3 class="serie-desc effect">${serie.description}</h3>
-                            <div class="btn__portada">
-                                <button type="button" class="btn btn-light">Play</button>
-                                <a class="btn btn-dark" href="javascript:;" onclick="verSerie(${key})">Ver más </a>
-                            </div>
-                        </div>
-                        
-                    </div>
-                   
-                </section>
-                `);
-            });
-            window.localStorage.setItem('series', JSON.stringify(data));
-        },
-        error: function (error) { },
-    });
-}
-
-
-/*** NEW - PORTADA 1 ITEM - FIN ***/
 
 
 /**
@@ -457,7 +439,6 @@ function getPlaylist(playlist = "603e76e0dc619107be83606a") {
 $(document).ready(function () {
     /*let url = "?sort=-views_stream_metrics&limit=12&status=OK&category_id=" + ms_category_id;
     getVideos(url);*/
-    getShowsPortada();
     getShows();
     /*getPlaylist();*/
     $("#closeVideo").on("click", function () {

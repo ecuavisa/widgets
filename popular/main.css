@@ -70,7 +70,7 @@ body {
   }
 }
 
-@media (max-width: 892px) {
+@media (max-width: 992px) {
   .m-le-55 {
     left: 0 !important;
   }
