@@ -154,12 +154,16 @@ function getShows() {
 
             $.each(data, function (key, serie, id, _id) {
 
+                let arry = serie.images;
+                let ultElement = arry[arry.length - 1];
+                let img = ultElement.path;
+                console.log(img);
                 let image = "";
-                if (serie.images) {
+                if (arry) {
                     image = `
                         <div class="img-serie">
                             <img class="ser-show effect d-block w-100 hvr-grow" 
-                            src="${serie.images[1].path}" alt="${serie.title}" >
+                            src="${img}" alt="${serie.title}" >
                         </div>
                     `;
                 }
