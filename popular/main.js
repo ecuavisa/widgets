@@ -132,7 +132,7 @@ function getShows() {
         success: function (result) {
             let data = result.data;
             let seriePortada = data[0];
-            let img = (seriePortada.images[1,0].path);
+            let img = (seriePortada.images[1, 0].path);
             $("#showsCoversPortada").append(`
                 <section class="new__portada show-${seriePortada._id} mb-5">
                     <div class="new__content">
@@ -152,19 +152,34 @@ function getShows() {
             //     let dataTem = data;
             // dataTem.shift();
 
-            $.each(data, function (key, serie, _id) {
-                if (key != 0) {
-              let img = serie.images[0].path;
-                    $("#showsCovers").append(`
+            $.each(data, function (key, serie, id, _id) {
+
+                //let series = window.localStorage.getItem('series');
+                //series = JSON.parse(series);
+                //let serie = "";
+                //let serieData = series[id];
+                
+                    let image = "";
+                    if (serie.images) {
+                        image = `
+                        <div class="img-serie">
+                            <img class="ser-show effect d-block w-100 hvr-grow" 
+                            src="${serie.images[1].path}" alt="${serie.title}" >
+                        </div>
+                    `;
+                    }
+                    if (key != 0) {
+
+                        $("#showsCovers").append(`
                         <section class="col-12 col-md-3 show-${serie._id} mb-5">
                             <a href="javascript:;" onclick="verSerie(${key})">
-                                <img class="ser-show effect d-block w-100 hvr-grow" 
-                                src="${img}" alt="${serie.title}" >
+                                ${image}
                                 <h3 class="serie-title effect">${serie.title}</h3>
                             </a>
                         </section>
                     `);
-                }
+                    }
+                
             });
 
             $("#showsCovers").flickity({
@@ -284,7 +299,7 @@ function verSerie(id) {
         if (serieData.images) {
             image = `
                 <div class="img-serie">
-                    <img class="d-block w-100" src="${serieData.images[0].path}" alt="${serieData.title}" >
+                    <img class="d-block w-100" src="${serieData.images[1].path}" alt="${serieData.title}" >
                 </div>
             `;
         }
