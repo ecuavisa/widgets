@@ -37,7 +37,7 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=12&status=OK") {
         success: function (result) {
             let data = result.data;
 
-            $.each(data, function (key, video) {
+            $.each(data, function (key, video, id) {
                 if (video != null) {
                     let thumbnail = "";
                     let id = key;
@@ -80,11 +80,11 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=12&status=OK") {
                                         
                                         <div class="date">${dateVideo}</div>
                                     </div>
-                                    <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${video.id}')">
-                                        <img class="netimg d-block w-100 h-200 hvr-grow" src="${thumbnail}" alt="${video.title}" >
-                                        <span class="iconPlay  left bottom"></span>
-                                    </a>
-                                    <a class="title" href="javascript:;" onclick="reproductor('${video.id}')" >${video.title}</a>
+                                    <iframe class="videoecv netimg d-block w-100 h-200 hvr-grow" src="//mdstrm.com/embed/${video.id}?autoplay=false" allowfullscreen></iframe>
+                                    
+                                    <p class="title">${video.title} </p>
+                                   
+                                    
                                     
                                     <div class="tags">${tags}</div>
                                 </div>
