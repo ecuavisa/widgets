@@ -54,6 +54,17 @@ new codido 3 portadas*/
 *
 new codido 3 portadas*/
 
+
+#showsCovers .slick-prev {
+  left: 20px;
+  z-index: 2;
+}
+
+#showsCovers  .slick-next {
+  right: 20px;
+  z-index: 2;
+}
+
 #showsCoversPortada .new__portada img {
   height: 500px;
   object-fit: cover;
