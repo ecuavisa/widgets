@@ -36,7 +36,7 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=12&status=OK") {
         //contentType: "application/json",
         success: function (result) {
             let data = result.data;
-            data.shift();
+
             $.each(data, function (key, video) {
                 if (video != null) {
                     let thumbnail = "";
@@ -76,15 +76,16 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=12&status=OK") {
                         <div class="video-popular">
                             <div id="video-${id}">
                                 <div class="content">
+                                  <div class="info">
+                                        
+                                        <div class="date">${dateVideo}</div>
+                                    </div>
                                     <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${video.id}')">
                                         <img class="netimg d-block w-100 h-200 hvr-grow" src="${thumbnail}" alt="${video.title}" >
                                         <span class="iconPlay  left bottom"></span>
                                     </a>
                                     <a class="title" href="javascript:;" onclick="reproductor('${video.id}')" >${video.title}</a>
-                                    <div class="info">
-                                        <div class="categories">${categories}</div>
-                                        <div class="date">${dateVideo}</div>
-                                    </div>
+                                    
                                     <div class="tags">${tags}</div>
                                 </div>
                             </div>
@@ -93,6 +94,12 @@ function getVideos(url = "?sort=-views_stream_metrics&limit=12&status=OK") {
         
                  `);
                 }
+            });
+
+            $("#mostVideos").flickity({
+                cellAlign: 'left',
+                contain: true,
+                pageDots: false
             });
         },
         error: function (error) { },
@@ -131,129 +138,6 @@ function getShows() {
         contentType: "application/json; charset=utf-8",
         success: function (result) {
             let data = result.data;
-            //let seriePortada = data[0];
-
-            /* $.each(data, function (key, serie, id, _id) {
- 
-                 let list = data;
-                 let size = 3
-                 let items = list.slice(0, size)
-                 console.log(items);
- 
-                 //let img = (items.images[0].path);
-                 $("#showsCoversPortada").append(`
-                     <section class="new__portada show-${items._id} mb-5">
-                         <div class="new__content">
-                             <img class=" d-block w-100 hvr-grow" src="hhh" alt="${items.title}" >
-                             <div class="cont__des__butt">
-                                 <h3 class="serie-desc effect">${items.description}</h3>
-                                 <div class="btn__portada">
-                                     <button type="button" class="btn btn-light"><img src="https://img.icons8.com/material-rounded/48/000000/play--v1.png" style="width: 24px;height: 24px;-webkit-mask-image: linear-gradient(to top, transparent 0, black 0%);"/> Play</button>
-                                     <a class="btn btn-dark" href="javascript:;" onclick="verSerie(0)">Ver más </a>
-                                 </div>
-                             </div>
-                             
-                         </div>
-                        
-                     </section>
-                 `);
- 
-             });*/
-       
-            
-
-            $.each(data, function (key, serie, id, _id) {
-
-                let arry = serie.images;
-                let ultElement = arry[arry.length - 1];
-                let img = ultElement.path;
-                //console.log(img);
-                let image = "";
-                if (arry) {
-                    image = `
-                        <div class="img-serie">
-                            <img class="ser-show effect d-block w-100 hvr-grow" 
-                            src="${img}" alt="${serie.title}" >
-                        </div>
-                    `;
-                }
-
-                let imagePortada = "";
-                if (arry) {
-                    imagePortada = `                       
-                        <img class="d-block w-100 hvr-grow" 
-                        src="${img}" alt="${serie.title}" >
-                    `;
-                }
-                if (key != 0 && key != 1 && key != 2 ) {
-
-                    $("#showsCovers").append(`
-                        <section class="col-12 col-md-3 show-${serie._id} mb-5">
-                            <a href="javascript:;" onclick="verSerie(${key})">
-                                ${image}
-                                <h3 class="serie-title effect">${serie.title}</h3>
-                            </a>
-                        </section>
-                    `);
-                } else {
-                    $("#showsCoversPortada").append(`
-                        <section class="new__portada show-${serie._id} mb-5">
-                          <div class="new__content">
-                              ${imagePortada}"
-                              <div class="cont__des__butt">
-                                  <h3 class="serie-desc effect">${serie.description}</h3>
-                                  <div class="btn__portada">
-                                      <button type="button" class="btn btn-light"><img src="https://img.icons8.com/material-rounded/48/000000/play--v1.png" style="width: 24px;height: 24px;-webkit-mask-image: linear-gradient(to top, transparent 0, black 0%);"/> Play</button>
-                                      <a class="btn btn-dark" href="javascript:;" onclick="verSerie(${key})">Ver más </a>
-                                  </div>
-                              </div>                                
-                          </div>                        
-                      </section>
-                    `);
-                }
-
-            });
-            $("#showsCoversPortada").slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                
-            });
-
-            $("#showsCovers").slick({
-                infinite: true,
-                slidesToShow: 6,
-                slidesToScroll: 3,
-                responsive: [
-                    {
-                      breakpoint: 1024,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: true
-                      }
-                    },
-                    {
-                      breakpoint: 600,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                      }
-                    },
-                    {
-                      breakpoint: 480,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                      }
-                    }
-                    // You can unslick at a given breakpoint now by adding:
-                    // settings: "unslick"
-                    // instead of a settings object
-                  ]
-            });
-            $("#showsCovers .flickity-slider").addClass("row");
             $.each(data, function (key, serie) {
                 $("#shows").append(`
                 <section class="show-${serie._id} mb-5">
@@ -266,14 +150,12 @@ function getShows() {
                 getVideosInShows(serie._id, serie.seasons[0]._id);
             });
 
-
             window.localStorage.setItem('series', JSON.stringify(data));
 
         },
         error: function (error) { },
     });
 }
-
 
 /**
  * Ver listado de episodios
@@ -304,7 +186,7 @@ function getVideosInShows(serieid, seasonsid) {
 
                     $("#vid-" + serieid).append(`
                 
-                        <div class="col-12 col-md-3 video_serie">
+                        <div class="col-md-3 video_serie">
                             <div class="episodio"> 
                                 <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${serie.content[0].value._id}')">
                                     <img class="netimg d-block w-100 hvr-grow" src="${serie.images[0].path}" alt="${serie.title}" >
@@ -339,8 +221,8 @@ function sortByKeyAsc(array, key) {
     return array.sort(function (a, b) {
         var x = b[key];
         var y = a[key];
-        x = parseInt(x.replace(/[^0-9\.]+/g, ""));
-        y = parseInt(y.replace(/[^0-9\.]+/g, ""));
+        x = parseInt(x.replace(/[^0-9.]+/g, ""));
+        y = parseInt(y.replace(/[^0-9.]+/g, ""));
         return x > y ? -1 : x < y ? 1 : 0;
     });
 }
@@ -361,15 +243,11 @@ function verSerie(id) {
             getVideoList(this.value);
         });
     } else {
-        let arry = serieData.images;
-        let ultElement = arry[arry.length - 1];
-        let img = ultElement.path;
-        //console.log(img);
         let image = "";
-        if (arry) {
+        if (serieData.images) {
             image = `
-                <div class="img-serie m-auto">
-                    <img class="d-block w-100" src="${img}" alt="${serieData.title}" >
+                <div class="img-serie">
+                    <img class="d-block w-100" src="${serieData.images[0].path}" alt="${serieData.title}" >
                 </div>
             `;
         }
@@ -469,7 +347,7 @@ function getVideoList(json) {
     });
 }
 
-/*
+
 function getPlaylist(playlist = "603e76e0dc619107be83606a") {
     $.ajax({
         url: "https://platform.mediastre.am/api/playlist/" + playlist,
@@ -481,6 +359,7 @@ function getPlaylist(playlist = "603e76e0dc619107be83606a") {
         success: function (result) {
             let data = result.data;
             let medias = data.medias;
+            console.log(medias);
             $.each(medias, function (key, play) {
                 if (play.id) {
                     let id = key;
@@ -520,12 +399,12 @@ function getPlaylist(playlist = "603e76e0dc619107be83606a") {
         error: function (error) { },
     });
 }
-*/
+
 $(document).ready(function () {
-    /*let url = "?sort=-views_stream_metrics&limit=12&status=OK&category_id=" + ms_category_id;
-    getVideos(url);*/
-    getShows();
-    /*getPlaylist();*/
+    let url = "?sort=-views_stream_metrics&limit=12&status=OK&category_id=6064cb5b00adc97db261b719";
+    getVideos(url);
+    /*getShows();
+    getPlaylist();*/
     $("#closeVideo").on("click", function () {
         $("#playVideo").addClass("d-none");
         $("#playVideo").empty();

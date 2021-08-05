@@ -17,6 +17,43 @@ body {
 }
 
 /* NEW CSS PORTADA - INICIO*/
+
+/*
+*
+*
+*
+new codido 3 portadas*/
+
+#showsCoversPortada .slick-prev {
+  left: 33px;
+  display: block;
+  z-index: 2;
+}
+#showsCoversPortada .slick-next {
+  right: 33px;
+}
+
+#showsCoversPortada .slick-prev,
+#showsCoversPortada .slick-next,
+#showsCovers .slick-prev,
+#showsCovers .slick-next {
+  color: black;
+}
+
+#showsCoversPortada .slick-list.draggable {
+  height: 600px;
+}
+
+.slick-slide img {
+  display: initial;
+}
+
+/*
+*
+*
+*
+new codido 3 portadas*/
+
 #showsCoversPortada .new__portada img {
   height: 500px;
   object-fit: cover;
@@ -24,14 +61,12 @@ body {
   -webkit-mask-image: linear-gradient(to top, transparent 0, black 60%);
 }
 
-#showsCoversPortada .new__portada .cont__des__butt{
-    position: absolute;
-    top: 50%;
-    left: 35%;
-    transform: translate(-50%, -50%);
-
+#showsCoversPortada .new__portada .cont__des__butt {
+  /* position: absolute; */
+  top: 50%;
+  left: 35%;
+  transform: translate(2%, -100%);
 }
-
 
 #showsCoversPortada .new__portada .serie-desc {
   /* position: absolute;
@@ -43,7 +78,7 @@ body {
   border-top: none;
   text-align: left;
   display: block;
-  width: 60%;
+  width: 40%;
 }
 
 #showsCoversPortada .new__portada .btn__portada {
@@ -65,8 +100,8 @@ body {
   #showsCoversPortada .new__portada img {
     height: auto;
   }
-  #showsCoversPortada .new__portada .serie-desc{
-      display: none;
+  #showsCoversPortada .new__portada .serie-desc {
+    display: none;
   }
 }
 
@@ -285,7 +320,9 @@ body .bg-dark {
   height: 350px;
   overflow: hidden;
   max-width: 600px;
-  margin: auto;
+  
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .episode-list {
