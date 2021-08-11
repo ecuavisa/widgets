@@ -6,6 +6,28 @@ function dateToYMD(date) {
     return '' + (d <= 9 ? '0' + d : d) + '/' + (m <= 9 ? '0' + m : m) + '/' + y;
 }
 
+//ORDEN DESCENDENTE
+function sortByKeyDesc(array, key) {
+    return array.sort(function (a, b) {
+        var x = a[key];
+        var y = b[key];
+        x = parseInt(x.replace(/[^0-9\.]+/g, ""));
+        y = parseInt(y.replace(/[^0-9\.]+/g, ""));
+        return x > y ? -1 : x < y ? 1 : 0;
+    });
+}
+
+//ORDEN ASCENDENTE
+function sortByKeyAsc(array, key) {
+    return array.sort(function (a, b) {
+        var x = b[key];
+        var y = a[key];
+        x = parseInt(x.replace(/[^0-9\.]+/g, ""));
+        y = parseInt(y.replace(/[^0-9\.]+/g, ""));
+        return x > y ? -1 : x < y ? 1 : 0;
+    });
+}
+
 function reproductor(id, serieid = "") {
     if ($("#serieModal-" + serieid).length > 0) {
         $("#serieModal-" + serieid + ' .btn-close').click();
@@ -131,36 +153,14 @@ function getShows() {
         contentType: "application/json; charset=utf-8",
         success: function (result) {
             let data = result.data;
-            //let seriePortada = data[0];
 
-            /* $.each(data, function (key, serie, id, _id) {
- 
-                 let list = data;
-                 let size = 3
-                 let items = list.slice(0, size)
-                 console.log(items);
- 
-                 //let img = (items.images[0].path);
-                 $("#showsCoversPortada").append(`
-                     <section class="new__portada show-${items._id} mb-5">
-                         <div class="new__content">
-                             <img class=" d-block w-100 hvr-grow" src="hhh" alt="${items.title}" >
-                             <div class="cont__des__butt">
-                                 <h3 class="serie-desc effect">${items.description}</h3>
-                                 <div class="btn__portada">
-                                     <button type="button" class="btn btn-light"><img src="https://img.icons8.com/material-rounded/48/000000/play--v1.png" style="width: 24px;height: 24px;-webkit-mask-image: linear-gradient(to top, transparent 0, black 0%);"/> Play</button>
-                                     <a class="btn btn-dark" href="javascript:;" onclick="verSerie(0)">Ver más </a>
-                                 </div>
-                             </div>
-                             
-                         </div>
-                        
-                     </section>
-                 `);
- 
-             });*/
-       
-            
+
+            //ordenar los item de showsCovers y showsCoversPortada
+           
+                /*dataOrd = sortByKeyDesc(data, "first_emision");
+                console.log(dataOrd);
+                console.log("SHOW - Bien");*/
+           
 
             $.each(data, function (key, serie, id, _id) {
 
@@ -185,7 +185,7 @@ function getShows() {
                         src="${img}" alt="${serie.title}" >
                     `;
                 }
-                if (key != 0 && key != 1 && key != 2 ) {
+                if (key != 0 && key != 1 && key != 2) {
 
                     $("#showsCovers").append(`
                         <section class="col-12 col-md-3 show-${serie._id} mb-5">
@@ -219,7 +219,7 @@ function getShows() {
                 slidesToScroll: 1,
                 prevArrow: false,
                 nextArrow: false
-                
+
             });
 
             $("#showsCovers").slick({
@@ -228,30 +228,30 @@ function getShows() {
                 slidesToScroll: 3,
                 responsive: [
                     {
-                      breakpoint: 1024,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,                        
-                      }
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                        }
                     },
                     {
-                      breakpoint: 600,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                      }
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
                     },
                     {
-                      breakpoint: 480,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                      }
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
                     }
                     // You can unslick at a given breakpoint now by adding:
                     // settings: "unslick"
                     // instead of a settings object
-                  ]
+                ]
             });
             $("#showsCovers .flickity-slider").addClass("row");
             $.each(data, function (key, serie) {
@@ -296,6 +296,8 @@ function getVideosInShows(serieid, seasonsid) {
             let str = data[2].title.toLowerCase();
             if (str.includes("episodio")) {
                 data = sortByKeyAsc(data, "title");
+                
+
             }
 
             $.each(data, function (key, serie) {
@@ -335,15 +337,7 @@ function getVideosInShows(serieid, seasonsid) {
  * @param {*} key 
  * @returns 
  */
-function sortByKeyAsc(array, key) {
-    return array.sort(function (a, b) {
-        var x = b[key];
-        var y = a[key];
-        x = parseInt(x.replace(/[^0-9\.]+/g, ""));
-        y = parseInt(y.replace(/[^0-9\.]+/g, ""));
-        return x > y ? -1 : x < y ? 1 : 0;
-    });
-}
+
 /**
  * Ver serie popup
  * @param {*} id 

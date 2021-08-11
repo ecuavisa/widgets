@@ -54,13 +54,12 @@ new codido 3 portadas*/
 *
 new codido 3 portadas*/
 
-
 #showsCovers .slick-prev {
   left: 20px;
   z-index: 2;
 }
 
-#showsCovers  .slick-next {
+#showsCovers .slick-next {
   right: 20px;
   z-index: 2;
 }
@@ -304,13 +303,13 @@ body .bg-dark {
 
 .shows .flickity-prev-next-button.previous,
 #showsCovers .flickity-prev-next-button.previous {
-  left: -55px;
+  left: -20px;
   background: #e8e8e8;
   top: 40%;
 }
 .shows .flickity-prev-next-button.next,
 #showsCovers .flickity-prev-next-button.next {
-  right: -55px;
+  right: -20px;
   background: #e8e8e8;
   top: 40%;
 }
@@ -331,7 +330,7 @@ body .bg-dark {
   height: 350px;
   overflow: hidden;
   max-width: 600px;
-  
+
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -360,12 +359,9 @@ body .bg-dark {
 .video_serie .season-title,
 .serie-title {
   font-size: 1.25rem;
-  color: black;
+  color: #fff;
   font-weight: bold;
-  line-height: 1.4rem;
-  border-top: 1px solid #ccc;
-  margin-top: 14px;
-  padding-top: 10px;
+  line-height: 1.2rem;
   display: block;
   text-decoration: none;
   margin-bottom: 14px;
