@@ -167,7 +167,7 @@ function getVideosInShows(serieid, seasonsid) {
             serieid +
             "/season/" +
             seasonsid +
-            "/episode?limit=15",
+            "/episode?limit=10",
         type: "GET",
         dataType: "json",
         headers: {
