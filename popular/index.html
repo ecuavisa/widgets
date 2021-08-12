@@ -8,6 +8,7 @@
     <title>Popular</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
@@ -15,20 +16,62 @@
 
     <style>
        body{
-        background: #1F2021;
+        background: #000 ;
        }
+
+        .slick-next:before, 
+        .slick-prev:before{
+          font: normal normal normal 14px/1 FontAwesome;
+          color: #046cdf;
+          font-size: 50px;
+        }        
+
+       .slick-next:before{
+          content: "\f105";          
+       }
+
+       .slick-prev:before {
+          content: "\f104";          
+        }
+
+       @media (max-width: 600px){
+        #showsCoversPortada .new__portada .serie-desc{
+          display: none;
+        }
+        #showsCoversPortada .new__portada .cont__des__butt{
+          text-align: center;
+          transform: translate(0%, -100%);
+        }
+        
+       }
+
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
+<div class="menu-mobile">
+  
+  <button class="navbar-toggler" type="button"  id="menu-button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div id="menu">
+    <ul>
+      <li><a href="#">Series</a> </li>
+      <li><a href="#">Comedia</a></li>
+      <li><a href="#">Drama</a></li>
+      <li><button class="navbar-toggler" type="button"  id="menu-button-cerrar">
+       
+        <i class="fa fa-times"></i>
+      </button></li>
+    </ul>
+  </div>
+</div>
           <a class="navbar-brand" href="#">
             <img src="https://ecuavisa.com/ecuavisa/main/logo-goArtboard.png" alt="ecgo" width="93" class="d-inline-block align-text-top">  
             </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
@@ -43,22 +86,19 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
               </li>
-              
-              
             </ul>
-           
-            <div class="nav-item dropdown d-flex">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://ecuavisa.com/ecuavisa/main/user_1.png" alt="ecgo" width="23" class="d-inline-block align-text-top">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark m-le-55" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-           
+          </div>
+
+          <div class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="https://ecuavisa.com/ecuavisa/main/user_1.png" alt="ecgo" width="23" class="d-inline-block align-text-top">
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark m-le-55" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
           </div>
         </div>
       </nav>
@@ -101,7 +141,17 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="main.js"></script>
-
+    
+<script>
+  		
+//Show-Hide the menu
+$("#menu-button").click(function() {
+	$("#menu").toggleClass("showmenu");
+});
+$("#menu-button-cerrar").click(function() {
+	$("#menu").toggleClass("showmenu");
+});
+</script>
    
 </body>
 

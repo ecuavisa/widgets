@@ -199,12 +199,12 @@ function getShows() {
                     $("#showsCoversPortada").append(`
                         <section class="new__portada show-${serie._id} mb-5">
                           <div class="new__content">
-                              ${imagePortada}"
+                              ${imagePortada}
                               <div class="cont__des__butt">
                                   <h3 class="serie-desc effect">${serie.description}</h3>
                                   <div class="btn__portada">
                                       <button type="button" class="btn btn-light"><img src="https://img.icons8.com/material-rounded/48/000000/play--v1.png" style="width: 24px;height: 24px;-webkit-mask-image: linear-gradient(to top, transparent 0, black 0%);"/> Play</button>
-                                      <a class="btn btn-dark" href="javascript:;" onclick="verSerie(${key})">Ver más </a>
+                                      <a class="btn btn-dark" href="javascript:;" onclick="verSerie(${key})">Ver más... </a>
                                   </div>
                               </div>                                
                           </div>                        
@@ -320,10 +320,39 @@ function getVideosInShows(serieid, seasonsid) {
                 }
             });
 
-            $("#vid-" + serieid).flickity({
-                cellAlign: 'left',
-                contain: true,
-                pageDots: false
+            $("#vid-" + serieid).slick({
+                infinite: false,
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                            centerMode: true,
+                            speed: 800,
+
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            centerMode: true,
+                            speed: 300,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    }
+                ]
+                
             });
             $("#vid-" + serieid + " .flickity-slider").addClass("row");
 

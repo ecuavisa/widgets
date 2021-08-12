@@ -1,3 +1,106 @@
+/*new-11-8-2021*/
+
+.navbar-dark .navbar-toggler{
+  border-color: transparent;
+}
+
+.btn{
+  font-weight: 500;
+}
+       
+
+.navbar-toggler:focus{
+  box-shadow: none !important; 
+ }
+
+
+#menu-button{
+
+left:20px;
+top:20px;
+width:30px;
+height:30px;
+z-index:100;
+background:transparent;
+border:0px; 
+padding:0px;
+}
+
+
+
+.menu-mobile #menu{
+position:fixed;
+left:0px;
+top:0px;
+right:0px;
+bottom:0px;
+width:100%;
+height:100%;
+border-radius:50%;
+background:rgba(0,0,0,1);
+transform:scale(0);
+z-index:99;
+opacity:0;
+-webkit-transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s;
+-moz-transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s;
+-ms-transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s;
+-o-transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s;
+transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s; 
+}
+
+.showmenu{
+transform:scale(1) !important;
+border-radius:0% !important;
+opacity:1 !important;
+-webkit-transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s;
+-moz-transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s;
+-ms-transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s;
+-o-transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s;
+transition: all cubic-bezier(.32, -0.6, .68, 1.6) .3s; 
+} 
+
+
+
+
+.menu-mobile ul{
+width:100%;
+text-align:center;
+max-width:400px;
+color: #fff;
+list-style:none;
+margin: 0 auto;
+padding :0px !important;
+position:relative;
+top:50%;
+transform:translateY(-50%);
+;
+}
+.menu-mobile ul li{
+width:100%;
+margin:0; padding:10px;
+
+}
+
+.menu-mobile .btn:focus {
+outline: none;
+}
+.menu-mobile .btn:focus,.menu-mobile .btn:active:focus,.menu-mobile .btn.active:focus,
+.menu-mobile .btn.focus,.menu-mobile .btn:active.focus,.menu-mobile .btn.active.focus {
+outline: none;
+}
+
+.menu-mobile  #menu a{
+color: white;
+text-decoration: none;
+font-weight: 500;
+
+}
+
+
+
+/*new-11-8-2021*/
+
+
 .logo {
   color: #fff;
   text-decoration: none;
@@ -56,12 +159,10 @@ new codido 3 portadas*/
 
 #showsCovers .slick-prev {
   left: 20px;
-  z-index: 2;
 }
 
 #showsCovers .slick-next {
   right: 20px;
-  z-index: 2;
 }
 
 #showsCoversPortada .new__portada img {
@@ -108,17 +209,15 @@ new codido 3 portadas*/
 
 @media (max-width: 600px) {
   #showsCoversPortada .new__portada img {
-    height: auto;
+    height: 390px;
   }
-  #showsCoversPortada .new__portada .serie-desc {
-    display: none;
-  }
+  
 }
 
 @media (max-width: 992px) {
-  .m-le-55 {
+  /*.m-le-55 {
     left: 0 !important;
-  }
+  }*/
   #showsCoversPortada .new__portada .serie-desc {
     width: 85%;
   }
