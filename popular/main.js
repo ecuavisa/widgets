@@ -205,27 +205,27 @@ function getVideosInShows(serieid, seasonsid) {
             $("#vid-" + serieid).slick({
                 infinite: false,
                 slidesToShow: 5,
-                slidesToScroll: 5,
+                slidesToScroll: 1,
                 responsive: [
                     {
                         breakpoint: 1024,
                         settings: {
                             slidesToShow: 3,
-                            slidesToScroll: 3,
+                            slidesToScroll: 1,
                         }
                     },
                     {
                         breakpoint: 600,
                         settings: {
                             slidesToShow: 3,
-                            slidesToScroll: 3
+                            slidesToScroll: 1
                         }
                     },
                     {
                         breakpoint: 480,
                         settings: {
                             slidesToShow: 3,
-                            slidesToScroll: 3
+                            slidesToScroll: 1
                         }
                     }
                 ]
@@ -364,11 +364,11 @@ function getVideoList(serieId) {
                         let episodeHtml = `
                         <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie">
                             <div class="episodio">
-                                <a id="img-${episode._id}" class="img-vid" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}')">
+                                <a id="img-${episode._id}" class="img-vid" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${serieId}')">
                                     <img class="netimg d-block w-100 hvr-grow" src="${episode.images[0].path}" alt="${episode.title}" >
                                     <span class="iconPlay  left bottom"></span>
                                 </a>
-                                <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}')">${episode.title}</a>
+                                <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${serieId}')">${episode.title}</a>
                             </div>
                         </div>`;
                         selfDiv.find(".season-episodes").append(episodeHtml);
