@@ -34,6 +34,25 @@
           content: "\f104";          
         }
 
+
+
+
+
+
+        .nav-link{
+          display: initial ;
+          padding: initial;
+        }
+        
+        .nav-link,.nav-link:focus, .nav-link:hover{
+          color: white;
+        }
+
+        .fa{
+          margin: 0px 10px;
+        }
+
+
        @media (max-width: 600px){
         #showsCoversPortada .new__portada .serie-desc{
           display: none;
@@ -65,6 +84,7 @@
       <li><button class="navbar-toggler" type="button"  id="menu-button-cerrar">
        
         <i class="fa fa-times"></i>
+       
       </button></li>
     </ul>
   </div>
@@ -90,9 +110,18 @@
           </div>
 
           <div class="nav-item dropdown ">
+            <a class="nav-link " href="#">
+             
+              <i class="fa fa-search" aria-hidden="true"></i>
+          </a>
+            <a class="nav-link " href="#">
+             
+              <i class="fa fa-bell-o"></i>
+          </a>
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <img src="https://ecuavisa.com/ecuavisa/main/user_1.png" alt="ecgo" width="23" class="d-inline-block align-text-top">
               </a>
+              
               <ul class="dropdown-menu dropdown-menu-dark m-le-55" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
