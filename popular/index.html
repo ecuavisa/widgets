@@ -34,11 +34,6 @@
           content: "\f104";          
         }
 
-
-
-
-
-
         .nav-link{
           display: initial ;
           padding: initial;
@@ -51,6 +46,7 @@
         .fa{
           margin: 0px 10px;
         }
+
 
 
        @media (max-width: 600px){
@@ -68,7 +64,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
         <div class="container-fluid">
 <div class="menu-mobile">
   
@@ -172,15 +168,26 @@
     <script src="main.js"></script>
     
 <script>
-  		
-//Show-Hide the menu
-$("#menu-button").click(function() {
-	$("#menu").toggleClass("showmenu");
-});
-$("#menu-button-cerrar").click(function() {
-	$("#menu").toggleClass("showmenu");
-});
-</script>
+  
+    //Show-Hide the menu
+    $("#menu-button").click(function() {
+      $("#menu").toggleClass("showmenu");
+    });
+    $("#menu-button-cerrar").click(function() {
+      $("#menu").toggleClass("showmenu");
+    });
+
+
+      // $(".video_serie.home__ .details").css("display", "none");
+      // $(".shows .video_serie .netimg").hover(function(){
+      //   $(".video_serie.home__ .details .details").css("display", "block");
+      //   }, function(){
+      //   $(".video_serie.home__ .details .details").css("display", "none");
+      // });
+  
+  </script>
+
+
    
 </body>
 

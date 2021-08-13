@@ -1,5 +1,82 @@
 /*new-11-8-2021*/
 
+.video_serie.home__ .season-title,
+.serie-title {
+  position: absolute;
+  bottom: 100px;
+  margin-left: 20px;
+  width: 158px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.shows .video_serie.home__ .netimg  {
+  /* transform: scale(1.2);
+  padding: 0 20px 14px 20px; */
+  
+  -webkit-mask-image: linear-gradient(to top, #28282838 40%, black 40%);
+}
+
+/* .video_serie.home__ .details{
+  display: none;
+} 
+.shows .video_serie.home__ .netimg:hover ~ .video_serie.home__ .details {
+  display: block;
+}  */
+
+.shows .video_serie.home__{
+  transition: transform .2s;
+
+}
+
+
+
+.netflix-row {
+  
+}
+.netflix-row--inner {
+  transition: 450ms transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 70.3125px 0;
+  padding-bottom: 10px;
+}
+.netflix-row--item {
+  display: inline-block;
+  width: 250px;
+  height: 140.625px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: center left;
+}
+.netflix-row--item:last-child {
+  transform-origin: center right;
+}
+/* HOVER EFFECT */
+.netflix-row {
+  opacity: 1;
+}
+.netflix-row--inner:hover {
+  /* transform: translate3d(-62.5px, 0, 0); */
+}
+.netflix-row--inner:hover .netflix-row--item {
+  opacity: 0.3;
+}
+.netflix-row--inner:hover .netflix-row--item:hover {
+  opacity: 1;
+  transform: scale(1.5);
+}
+.netflix-row--item:hover ~ .netflix-row--item {
+  transform: translate3d(125px, 0, 0);
+}
+
+
+/*--------------------otro------------------------*/
+
+
+
 .navbar-dark .navbar-toggler{
   border-color: transparent;
 }
@@ -386,7 +463,7 @@ body .bg-dark {
   position: absolute;
   cursor: pointer;
   bottom: 10px;
-  left: 10px;
+  left: 187px;
 }
 
 .video-popular .img-vid:hover .iconPlay,
@@ -464,6 +541,7 @@ body .bg-dark {
   display: block;
   text-decoration: none;
   margin-bottom: 14px;
+  
 }
 .video_serie .season-title:hover {
   opacity: 0.8;
