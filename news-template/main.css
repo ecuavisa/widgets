@@ -26,6 +26,9 @@ body{
   font-weight: bold;
   padding: 0 5% 0;
 }
+.tit_nota1 .imgpost {
+  position: relative;
+}
 .tit_nota1 .imgpost .imgn1 {
   width: 100%;
 }
@@ -34,8 +37,8 @@ body{
   height: 50%;
   background: #0b109f;
   position: absolute;
-  top: 132%;
-  left: 10%;
+  top: 60%;
+  left: 4%;
   color: #fff;
 }
 .tit_nota1 .imgpost .newpost .bloque1 {
@@ -63,14 +66,14 @@ body{
   font-weight: bold;
   font-size: 23px;
 }
-.tit_nota1 .imgpost .titulon1 {
+.tit_nota1 .titulon1 {
   font-size: 50px;
   margin: 75px 30px 0px 50px;
   font-weight: 700;
   line-height: 1;
   color: black;
 }
-.tit_nota1 .imgpost .resumen {
+.tit_nota1 .resumen {
   margin: 20px 30px 0px 50px;
   color: black;
   font-size: 20px;
