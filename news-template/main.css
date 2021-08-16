@@ -113,6 +113,15 @@ h2.title_principal {
 	align-items: stretch;
 	align-content: stretch;
 }
+
+.rows-2{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+}
 .w-50 {
     flex: 50%;
     margin: 5px;
@@ -190,3 +199,54 @@ h2.title_principal {
     width: 100%;
     bottom: 0px;
 }
+
+
+
+/*reponsive*/
+
+@media (max-width: 600px){
+  .tit_nota1 .title_principal{
+    font-size: 2rem;
+  }
+  .tit_nota1 .imgpost .newpost .bloque1{
+    margin: 45px 35px;
+  }
+  .tit_nota1 .imgpost .newpost .bloque1 .textpost{
+    font-size: 40px;
+    
+  }
+  .tit_nota1 .imgpost .newpost .bloque1 .textnew{
+    font-size: 25px;
+  }
+  .tit_nota1 .imgpost .newpost{
+    width: 189px;
+    height: 22vh;
+    top: 44%;
+  }
+  .tit_nota1 .imgpost .newpost .url{
+    font-size: 14px;
+    left: -8%;
+    top: 76%;
+    padding: 15px 40px;
+  }
+  .tit_nota1 .titulon1{
+    font-size: 2rem;
+  }
+  .rows .image_big{
+    object-fit: cover;
+    height: 100%;
+  }
+  .bg-text{
+    position: relative;
+  }
+
+  .group.pt-0 .rows.first{
+    display: block;
+  } 
+  .resumen_group_blue{
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+}
+
+/*reponsive*/
