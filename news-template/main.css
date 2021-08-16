@@ -1,0 +1,81 @@
+body{
+	background: #d8d8d8;
+}
+.containerblanco{
+	width: 90%;
+    margin: 40px auto;
+    background: #fff;
+}
+.tit_nota1 .logoecu {
+  position: absolute;
+  float: right;
+  right: 3%;
+  top: 12%;
+  width: 10%;
+}
+.tit_nota1 .text1 {
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: bold;
+  padding: 7% 5% 0;
+  line-height: 0.5;
+}
+.tit_nota1 .text2 {
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: bold;
+  padding: 0 5% 0;
+}
+.tit_nota1 .imgpost {
+  position: relative;
+}
+.tit_nota1 .imgpost .imgn1 {
+  width: 100%;
+}
+.tit_nota1 .imgpost .newpost {
+    width: 290px;
+    height: 50vh;
+    background: #0b109f;
+    position: absolute;
+    top: 68%;
+    left: 4%;
+    color: #fff;
+}
+.tit_nota1 .imgpost .newpost .bloque1 {
+  margin: 70px 35px;
+}
+.tit_nota1 .imgpost .newpost .bloque1 .textnew {
+  font-size: 50px;
+  color: #8190f9;
+  margin: 0;
+  line-height: 0.5;
+  font-weight: 300;
+}
+.tit_nota1 .imgpost .newpost .bloque1 .textpost {
+  font-size: 85px;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+.tit_nota1 .imgpost .newpost .url {
+  background: #5386d9;
+  position: absolute;
+  left: -20%;
+  top: 67%;
+  padding: 15px 60px;
+  font-weight: bold;
+  font-size: 23px;
+}
+.tit_nota1 .titulon1 {
+  font-size: 50px;
+  margin: 75px 30px 0px 50px;
+  font-weight: 700;
+  line-height: 1;
+  color: black;
+}
+.tit_nota1 .resumen {
+  margin: 20px 30px 0px 50px;
+  color: black;
+  font-size: 20px;
+  line-height: 1.3;
+}
