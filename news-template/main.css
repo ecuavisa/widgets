@@ -204,7 +204,7 @@ h2.title_principal {
 
 /*reponsive*/
 
-@media (max-width: 600px){
+@media (max-width: 768px){
   .tit_nota1 .title_principal{
     font-size: 2rem;
   }
@@ -246,6 +246,13 @@ h2.title_principal {
   .resumen_group_blue{
     font-size: 1.2rem;
     padding: 15px 30px;
+    height: 360px;
+  }
+  .bg-text .btn-center{
+    bottom: auto;
+  }
+  .resumen_group.second{
+    display: none;
   }
 }
 
