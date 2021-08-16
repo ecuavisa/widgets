@@ -188,20 +188,22 @@ function getVideosInShows(serieid, seasonsid) {
 
                     $("#vid-" + serieid).append(`
                 
-                        <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie">
+                        <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie netflix-row--item">
                             <div class="episodio"> 
                                 <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${serie.content[0].value._id}')">
                                     <img class="netimg d-block w-100 hvr-grow" src="${serie.images[0].path}" alt="${serie.title}" >
-                                    <span class="iconPlay  left bottom"></span>
                                 </a>
-                                <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${serie.content[0].value._id}')">${serie.title}</a>
+                                <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${serie.content[0].value._id}')">
+                                    <span class="title">${serie.title}</span>
+                                    <span class="iconPlay"></span>
+                                </a>
                             </div>
                         </div>
                     
                     `);
                 }
             });
-
+            activeHover();
             $("#vid-" + serieid).slick({
                 infinite: false,
                 slidesToShow: 5,
@@ -362,18 +364,21 @@ function getVideoList(serieId) {
                     if (episode.content && episode.content[0].value._id != null) {
                         let id = key;
                         let episodeHtml = `
-                        <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie">
+                        <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie netflix-row--item">
                             <div class="episodio">
                                 <a id="img-${episode._id}" class="img-vid" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${serieId}')">
                                     <img class="netimg d-block w-100 hvr-grow" src="${episode.images[0].path}" alt="${episode.title}" >
-                                    <span class="iconPlay  left bottom"></span>
                                 </a>
-                                <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${serieId}')">${episode.title}</a>
+                                <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${serieId}')">
+                                    <span class="title">${episode.title}</span>
+                                    <span class="iconPlay"></span>
+                                </a>
                             </div>
                         </div>`;
                         selfDiv.find(".season-episodes").append(episodeHtml);
                     }
                 });
+                activeHover();
                 selfDiv.find(".season-episodes").slick({
                     infinite: false,
                     slidesToShow: 4,
@@ -408,9 +413,15 @@ function getVideoList(serieId) {
     });
 }
 
+function activeHover() {
+    $('.netflix-row--item').on('mouseenter', function () {
+        $('.netflix-row--item').addClass('has-active-hover');
+    }).on('mouseleave', function () {
+        $('.netflix-row--item').removeClass('has-active-hover');
+    });
+}
 
 $(document).ready(function () {
-
     getShows();
     $("#closeVideo").on("click", function () {
         $("#playVideo").addClass("d-none");
