@@ -36,7 +36,7 @@ body{
 }
 .tit_nota1 .imgpost .newpost {
     width: 290px;
-    height: 35vh;
+    height: 40vh;
     background: #0b109f;
     position: absolute;
     top: 68%;
@@ -145,6 +145,7 @@ h2.title_principal {
 
 .rows .image_big {
     width: 100%;
+    max-height: 648px;
 }
 
 .bg-blue {
