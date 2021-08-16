@@ -204,9 +204,9 @@ h2.title_principal {
 
 /*reponsive*/
 
-@media (max-width: 768px){
+@media (max-width: 600px){
   .tit_nota1 .title_principal{
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .tit_nota1 .imgpost .newpost .bloque1{
     margin: 45px 35px;
@@ -226,11 +226,14 @@ h2.title_principal {
   .tit_nota1 .imgpost .newpost .url{
     font-size: 14px;
     left: -8%;
-    top: 76%;
+    top: 55%;
     padding: 15px 40px;
   }
+}
+
+@media (max-width: 768px){
   .tit_nota1 .titulon1{
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .rows .image_big{
     object-fit: cover;
@@ -239,7 +242,6 @@ h2.title_principal {
   .bg-text{
     position: relative;
   }
-
   .group.pt-0 .rows.first{
     display: block;
   } 
@@ -254,6 +256,7 @@ h2.title_principal {
   .resumen_group.second{
     display: none;
   }
+  
 }
 
 /*reponsive*/
