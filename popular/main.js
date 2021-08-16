@@ -194,7 +194,6 @@ function getVideosInShows(serieid, seasonsid) {
 
                     $("#vid-" + serieid).append(`
                 
-<<<<<<< HEAD
                         <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie netflix-row--item">
                             <div class="episodio"> 
                                 <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${serie.content[0].value._id}')">
@@ -204,19 +203,6 @@ function getVideosInShows(serieid, seasonsid) {
                                     <span class="title">${serie.title}</span>
                                     <span class="iconPlay"></span>
                                 </a>
-=======
-                        <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie home__ netflix-row--item">
-                            <div class="episodio"> 
-                                <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${serie.content[0].value._id}')">
-                                    <img class="netimg d-block w-100 hvr-grow" src="${serie.images[0].path}" alt="${serie.title}" >
-                                    <div class="details">
-                                    <span class="iconPlay left bottom"></span>
-                                    <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${serie.content[0].value._id}')">${serie.title}</a>
-                                  </div>
-                                  
-                                </a>
-                                
->>>>>>> 264c533fe6ed1f805d658a86f7a1ef65ef390cb2
                             </div>
                         </div>
                     
@@ -384,7 +370,6 @@ function getVideoList(serieId) {
                     if (episode.content && episode.content[0].value._id != null) {
                         let id = key;
                         let episodeHtml = `
-<<<<<<< HEAD
                         <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie netflix-row--item">
                             <div class="episodio">
                                 <a id="img-${episode._id}" class="img-vid" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${serieId}')">
@@ -395,19 +380,6 @@ function getVideoList(serieId) {
                                     <span class="iconPlay"></span>
                                 </a>
                             </div>
-=======
-                        <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie modal__">
-                            <div class="episodio">
-                                <a id="img-${episode._id}" class="img-vid" href="javascript:;" onclick="reproductor('${episode.content[0].value._id}', '${serieId}')">
-                                    <img class="netimg d-block w-100 hvr-grow" src="${episode.images[0].path}" alt="${episode.title}" >
-                                    <div>
-                                    
-                                        <span class="iconPlay left bottom"></span>
-                                        
-                                        </div>
-                                        <a class="pt-3 season-title" href="javascript:;"onclick="reproductor('${episode.content[0].value._id}', '${serieId}')">${episode.title}</a>
-                                </a>
->>>>>>> 264c533fe6ed1f805d658a86f7a1ef65ef390cb2
                         </div>`;
                         selfDiv.find(".season-episodes").append(episodeHtml);
                     }
