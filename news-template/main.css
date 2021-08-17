@@ -230,6 +230,15 @@ h2.title_principal {
   }
 }
 
+
+@media (min-width: 393px) and (max-width: 393px){
+  .tit_nota1 .imgpost .newpost{
+    height: 22vh; 
+  }
+}
+
+
+
 @media (min-width: 360px) and (max-width: 411px){
 	.tit_nota1 .imgpost .newpost{
 		height: 26vh;
