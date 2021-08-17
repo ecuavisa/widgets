@@ -64,7 +64,7 @@ body{
   position: absolute;
   left: -20%;
   top: 67%;
-  padding: 15px 60px;
+  padding: 15px 50px;
   font-weight: bold;
   font-size: 23px;
 }
@@ -219,7 +219,7 @@ h2.title_principal {
     font-size: 25px;
   }
   .tit_nota1 .imgpost .newpost{
-    width: 189px;
+    width: 185px;
     height: 22vh;
     top: 44%;
   }
@@ -227,7 +227,7 @@ h2.title_principal {
     font-size: 14px;
     left: -8%;
     top: 55%;
-    padding: 15px 40px;
+    padding: 15px 20px;
   }
 }
 
@@ -251,15 +251,29 @@ h2.title_principal {
     height: 360px;
   }
   .bg-text .btn-center{
-
-    bottom: -95px;
+    bottom: auto;
   }
   .resumen_group.second{
     display: none;
   }
-  .bg-blue{
-        height: 295px;
-  }
+  
 }
 
 /*reponsive*/
+
+@media (min-width: 1366px) and (max-width: 1366px){
+	.tit_nota1 .imgpost .newpost{
+		height: 50vh;
+	}
+	.tit_nota1 .imgpost .newpost .url{
+		top: 57%;
+	}
+}
+@media (min-width: 1440px) and (max-width: 1440px){
+		.tit_nota1 .imgpost .newpost{
+		height: 35vh;
+	}
+	.tit_nota1 .imgpost .newpost .url{
+		top: 60%;
+	}
+}
