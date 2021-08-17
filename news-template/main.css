@@ -269,3 +269,11 @@ h2.title_principal {
 		top: 57%;
 	}
 }
+@media (min-width: 1440px) and (max-width: 1440px){
+		.tit_nota1 .imgpost .newpost{
+		height: 35vh;
+	}
+	.tit_nota1 .imgpost .newpost .url{
+		top: 60%;
+	}
+}
