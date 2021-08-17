@@ -203,15 +203,6 @@ h2.title_principal {
 
 
 /*reponsive*/
-@media (min-width: 360px) and (max-width: 411px){
-	.tit_nota1 .imgpost .newpost{
-		height: 26vh;
-	}
-	.tit_nota1 .imgpost .newpost .url{
-		top: 52%;
-	}
-}
-
 @media (max-width: 600px){
   .tit_nota1 .title_principal{
     font-size: 1.5rem;
@@ -239,6 +230,14 @@ h2.title_principal {
   }
 }
 
+@media (min-width: 360px) and (max-width: 411px){
+	.tit_nota1 .imgpost .newpost{
+		height: 26vh;
+	}
+	.tit_nota1 .imgpost .newpost .url{
+		top: 52%;
+	}
+}
 @media (max-width: 768px){
   .tit_nota1 .titulon1{
     font-size: 1.6rem;
