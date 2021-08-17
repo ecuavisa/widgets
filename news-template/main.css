@@ -246,6 +246,9 @@ h2.title_principal {
   .tit_nota1 .imgpost .newpost .url {
     top: 52%;
   }
+  .tit_nota1 .logoecu {
+    top: 9%;
+  }
 }
 
 @media (min-width: 393px) and (max-width: 393px) {
