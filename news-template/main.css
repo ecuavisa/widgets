@@ -219,7 +219,7 @@ h2.title_principal {
     font-size: 25px;
   }
   .tit_nota1 .imgpost .newpost{
-    width: 189px;
+    width: 185px;
     height: 22vh;
     top: 44%;
   }
@@ -227,7 +227,7 @@ h2.title_principal {
     font-size: 14px;
     left: -8%;
     top: 55%;
-    padding: 15px 40px;
+    padding: 15px 20px;
   }
 }
 
