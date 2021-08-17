@@ -235,7 +235,7 @@ h2.title_principal {
 }
 
 
-@media (min-width: 360px) and (max-width: 360px) {
+@media (min-width: 360px) and (max-width: 375px) {
   .tit_nota1 .imgpost .newpost {
     height: 26vh;
   }
@@ -257,7 +257,9 @@ h2.title_principal {
     top: 50%;
   }
   .tit_nota1 .imgpost .newpost .url{
-    left: -7%;
+    left: -10%;
+    top: 60%;
+    padding: 15px 40px;
   }
   .tit_nota1 .logoecu{
     top: 7%;
@@ -296,8 +298,11 @@ h2.title_principal {
 /*reponsive*/
 
 @media (min-width: 1024px) and (max-width: 1024px) {
+  .tit_nota1 .imgpost .newpost .url{
+  	    top: 57%;
+   }
   .tit_nota1 .imgpost .newpost{
-    height: 20vh;
+    height: 21vh;
     top: 63%;
   }
   .tit_nota1 .title_principal{
