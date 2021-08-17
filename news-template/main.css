@@ -64,7 +64,7 @@ body{
   position: absolute;
   left: -20%;
   top: 67%;
-  padding: 15px 60px;
+  padding: 15px 50px;
   font-weight: bold;
   font-size: 23px;
 }
@@ -260,3 +260,12 @@ h2.title_principal {
 }
 
 /*reponsive*/
+
+@media (min-width: 1366px) and (max-width: 1366px){
+	.tit_nota1 .imgpost .newpost{
+		height: 50vh;
+	}
+	.tit_nota1 .imgpost .newpost .url{
+		top: 57%;
+	}
+}
