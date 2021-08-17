@@ -210,7 +210,8 @@ h2.title_principal {
 /*reponsive*/
 @media (max-width: 600px) {
   .tit_nota1 .logoecu{
-  	    width: 17%;
+  	width: 17%;
+  	top: 7%;
   }
   .tit_nota1 .title_principal {
     font-size: 1.5rem;
@@ -265,7 +266,7 @@ h2.title_principal {
     padding: 15px 40px;
   }
   .tit_nota1 .logoecu{
-    top: 7%;
+    top: 6%;
   }
  
 }
@@ -302,7 +303,7 @@ h2.title_principal {
 
 @media (min-width: 1024px) and (max-width: 1024px) {
   .tit_nota1 .logoecu{
-    top: 8%;
+    top: 6%;
     width: 13%;
   }
   .tit_nota1 .imgpost .newpost .url{
