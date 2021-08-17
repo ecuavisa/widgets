@@ -209,6 +209,9 @@ h2.title_principal {
 
 /*reponsive*/
 @media (max-width: 600px) {
+  .tit_nota1 .logoecu{
+  	    width: 20%;
+  }
   .tit_nota1 .title_principal {
     font-size: 1.5rem;
   }
