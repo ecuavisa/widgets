@@ -247,7 +247,27 @@ h2.title_principal {
     height: 22vh;
   }
 }
+
+
+@media (min-width: 768px) and (max-width: 768px) {
+  .tit_nota1 .imgpost .newpost{
+    height: 27vh;
+    top: 50%;
+  }
+  .tit_nota1 .imgpost .newpost .url{
+    left: -7%;
+  }
+  .tit_nota1 .logoecu{
+    top: 7%;
+  }
+ 
+}
+
 @media (max-width: 768px) {
+
+  .tit_nota1 .title_principal {
+    font-size: 2rem;
+  }
   .tit_nota1 .titulon1 {
     font-size: 1.6rem;
   }
