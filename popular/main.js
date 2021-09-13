@@ -25,6 +25,102 @@ function closeTop() {
     getVideos();
 }
 
+
+/**
+ * Top de videos
+ */
+ function topVideos(top) {
+    $.ajax({
+      url: "https://platform.mediastre.am/api/media" + top,
+      type: "GET",
+      dataType: "json",
+
+      //data: data,
+      headers: {
+        "X-API-Token": "645e5b4a29d27769f60f12ecb708b872",
+      },
+      //contentType: "application/json",
+      success: function (result) {
+        let data = result.data;
+        console.log(data);
+
+        $.each(data, function (key, video) {
+          if (video != null) {
+            let thumbnail = "";
+            let id = key;
+            video.thumbnails.forEach((img) => {
+              if (img.is_default == true) {
+                thumbnail = img.url;
+              }
+            });
+            if (thumbnail == "") {
+              thumbnail = video.thumbnails[0].url;
+            }
+            let dateVideo = dateToYMD(video.date_created);
+            $("#mostVideos").append(`
+
+                
+            <div class="col-12 col-xl-2 col-lg-3 col-md-3 video_serie ">
+                <div class="episodio"> 
+                    <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${video.id}')">
+                        <img class="netimg d-block w-100 hvr-grow" src="${thumbnail}" alt="${video.title}" >
+                        <span class="iconPlay  left bottom"></span>
+                    </a>
+
+                    <a class="pt-3 season-title" href="javascript:;" onclick="reproductor('${video.id}')">
+                            <span class="title">${video.title}</span>
+                            <span class="iconPlay"></span>
+                    </a>
+        
+                    
+                    </div>
+                </div>
+
+
+              `);
+
+          }
+        });
+
+
+        $("#mostVideos").slick({
+            infinite: false,
+                slidesToShow: 4,
+                slidesToScroll: 2,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    }
+
+                ]
+        });
+      },
+      error: function (error) {},
+    });
+  }
+
+
+
 /**
  * Cargar todas las series
  */
@@ -428,6 +524,9 @@ function activeHover() {
 }
 
 $(document).ready(function () {
+    let top =
+          "?status=OK&all=true&sort=-views_stream_metrics&limit=8&skip=0&query=&filter_categories%5B%5D=60f1e8f6043cbd11822bdcce&filter_categories%5B%5D=60f1e9101ce78b171f2fac84&filter_categories%5B%5D=60f1e935a58341082ab2bdf7&filter_categories%5B%5D=60f1e989eba4501a0df9c182&filter_categories%5B%5D=60f1e9b1a58341082ab2be04&filter_categories%5B%5D=60f1e9a1fe53db1a1ca3c3d1&filter_categories%5B%5D=60f1e9717d8b8718bd5bf208&filter_categories%5B%5D=60f1e94b7bcef60826386c02&without_category=false&include_images=false&_=1629984956202";
+          topVideos(top);
     getShows();
     $("#closeVideo").on("click", function () {
         $("#playVideo").addClass("d-none");
