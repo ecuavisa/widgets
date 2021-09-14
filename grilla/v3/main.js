@@ -47,10 +47,9 @@ sheetrock({
     url: principalSheet,
 
     query: "select A,B,C,D,E,F",
-    fetchSize: 50,
+    fetchSize: 500,
     callback: function (data, sheetrock, response) {
         let rows = response.raw.table.rows;
-        rows.splice(0, 2);
         for (let fi = 0; fi < fechas.length; fi++) {
             const fecha = fechas[fi];
             const clase = diasSemana[fi].toLowerCase();
