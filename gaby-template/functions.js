@@ -6,7 +6,7 @@ $(document).ready(function () {
     var min = d.getMinutes();
 
     console.log(hour,min);
-    
+   /* 
     if ((hour >= 17 && min <= 36) || (hour < 18) ) 
      { 
         $('#envivo').addClass('parpadea');
@@ -20,6 +20,6 @@ $(document).ready(function () {
 
     else {
        $('#envivo').remove('parpadea');
-       }
+       }*/
 
 });
