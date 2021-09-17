@@ -30,7 +30,7 @@ $(document).ready(function () {
             <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
           </div>`
       );
-    } else if ('17:13' <= timeOfDay && timeOfDay <= '17:30'){
+    } else if ('17:13' <= timeOfDay && timeOfDay <= '18:30'){
       console.log('outside ');
       $(".inner").append(`
           <div>
