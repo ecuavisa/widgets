@@ -20,20 +20,80 @@ $(document).ready(function () {
 
   // prueba si timeOfDay está dentro de un marco de tiempo determinado
   if ((day > 0 && day <= 5)) { //validacion de lunes a viernes
-    if ('13:10' <= timeOfDay && timeOfDay <= '17:10') {
+    if ('07:00' <= timeOfDay && timeOfDay <= '07:29') {
       console.log('inside');
       $(".inner").append(`
           <div>
-            <img  src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen">           
             <h2 class="ms-5">Estamos Presentado</h1>
-            <h1 class="ms-5"> Televistazo 13h00</h2>
+            <h1 class="ms-5">Contacto Directo</h2>
             <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
           </div>`
       );
-    } else if ('17:13' <= timeOfDay && timeOfDay <= '18:30'){
+    } else if ('07:30' <= timeOfDay && timeOfDay <= '09:00'){
       console.log('outside ');
       $(".inner").append(`
           <div>
+            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+            <h2 class="ms-5">Estamos Presentado</h1>
+            <h1 class="ms-5">Televistazo en la Comunidad</h2>
+            <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+          </div>`
+      );
+    }else if ('10:30' <= timeOfDay && timeOfDay <= '12:59'){
+      console.log('outside ');
+      $(".inner").append(`
+          <div>
+            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+            <h2 class="ms-5">Estamos Presentado</h1>
+            <h1 class="ms-5">En Contacto</h2>
+            <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+          </div>`
+      );
+    }else if ('13:00' <= timeOfDay && timeOfDay <= '13:59'){
+      console.log('outside ');
+      $(".inner").append(`
+          <div>
+            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+            <h2 class="ms-5">Estamos Presentado</h1>
+            <h1 class="ms-5">Televistazo 13h00</h2>
+            <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+          </div>`
+      );
+    }else if ('14:00' <= timeOfDay && timeOfDay <= '16:00'){
+      console.log('outside ');
+      $(".inner").append(`
+          <div>
+            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+            <h2 class="ms-5">Estamos Presentado</h1>
+            <h1 class="ms-5">El Poder del Amor</h2>
+            <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+          </div>`
+      );
+    }else if ('19:00' <= timeOfDay && timeOfDay <= '19:59'){
+      console.log('outside ');
+      $(".inner").append(`
+          <div>
+            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+            <h2 class="ms-5">Estamos Presentado</h1>
+            <h1 class="ms-5">Televistazo 19h00</h2>
+            <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+          </div>`
+      );
+    }else if ('20:00' <= timeOfDay && timeOfDay <= '23:30'){
+      console.log('outside ');
+      $(".inner").append(`
+          <div>
+            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+            <h2 class="ms-5">Estamos Presentado</h1>
+            <h1 class="ms-5">Novelas</h2>
             <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
           </div>`
       );
@@ -42,8 +102,54 @@ $(document).ready(function () {
     }
   } else if ((day === 6)) { //validacion de sabado
     console.log("es sabado");
+        if ('19:00' <= timeOfDay && timeOfDay <= '19:30'){
+          $(".inner").append(`
+              <div>
+                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+                <h2 class="ms-5">Estamos Presentado</h1>
+                <h1 class="ms-5">Televistazo 19h00</h2>
+                <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+              </div>`
+          );
+        } else if ('22:00' <= timeOfDay && timeOfDay <= '23:59'){
+          console.log('outside ');
+          $(".inner").append(`
+              <div>
+                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+                <h2 class="ms-5">Estamos Presentado</h1>
+                <h1 class="ms-5">El Poder del Amor</h2>
+                <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+              </div>`
+          );
+        }else{
+        }
   } else {
     console.log("es domingo"); //validacion de domingo
+    if ('19:00' <= timeOfDay && timeOfDay <= '20:00'){
+          $(".inner").append(`
+              <div>
+                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+                <h2 class="ms-5">Estamos Presentado</h1>
+                <h1 class="ms-5">Televistazo 19h00</h2>
+                <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+              </div>`
+          );
+        } else if ('22:00' <= timeOfDay && timeOfDay <= '23:59'){
+          console.log('outside ');
+          $(".inner").append(`
+              <div>
+                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+                <h2 class="ms-5">Estamos Presentado</h1>
+                <h1 class="ms-5">El Poder del Amor</h2>
+                <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+              </div>`
+          );
+        }else{
+        }
   }
 
 });
