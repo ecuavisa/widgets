@@ -38,3 +38,34 @@ a.nav-link {
      50% { opacity: 0.0; }
     100% { opacity: 1.0; }
   }
+
+.contenedor{
+  position: relative;
+  display: inline-block;
+}
+.ms-5{
+  color: #fff;
+  position: absolute;
+  font-family: 'Barlow Semi Condensed';
+}
+   
+h2{   
+  top: 10px;
+  left: 10px;
+  font-size: 18pt;
+}
+h1{
+  top: 45px;
+  left: 10px;
+  font-size: 28pt;
+  font-weight: 900;
+}
+a{
+  top: 100px;
+  left: 10px;
+}
+.btn{
+  font-size: 17pt;
+  font-weight: 700;
+  padding: 2px 20px;
+}
