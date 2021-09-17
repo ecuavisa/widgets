@@ -8,8 +8,7 @@ a.nav-link {
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-.parpadea {
-  
+.parpadea {  
     animation-name: parpadeo;
     animation-duration: 1s;
     animation-timing-function: linear;
@@ -49,23 +48,99 @@ a.nav-link {
   font-family: 'Barlow Semi Condensed';
 }
    
-h2{   
+h2.ms-5{   
   top: 10px;
   left: 10px;
   font-size: 18pt;
 }
-h1{
-  top: 45px;
+h1.ms-5{
+  top: 40px;
   left: 10px;
   font-size: 28pt;
   font-weight: 900;
 }
-a{
-  top: 100px;
+a.ms-5{
+  top: 90px;
   left: 10px;
 }
 .btn{
   font-size: 17pt;
-  font-weight: 700;
+  font-weight: 500;
   padding: 2px 20px;
 }
+.imgcintillo{
+  width: 100%;
+}
+
+.imgcintillo.mov{
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .imgcintillo.desk{
+    display: none;
+  }
+  .imgcintillo.mov{
+    display: block;
+  }
+  h2.ms-5{   
+    top: 10px;
+    left: -30px;
+    font-size: 13pt;
+  }
+  h1.ms-5{
+    top: 40px;
+    left: -32px;
+    font-size: 15pt;
+  }
+  a.ms-5 {
+    top: 77px;
+    left: -32px;
+  }
+  .btn {
+    font-size: 14pt;
+  }
+}
+@media (min-width: 768px) {
+  .imgcintillo.mov{
+    display: none;
+  }
+  .imgcintillo.desk{
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  h2.ms-5{   
+    top: 8px;
+    font-size: 10pt;
+  }
+  h1.ms-5{
+    top: 25px;
+    font-size: 12pt;
+  }
+  a.ms-5{
+    top: 50px;
+  }
+  .btn {
+    font-size: 7pt;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  h2.ms-5{   
+    font-size: 12pt;
+  }
+  h1.ms-5{
+    top: 33px;
+    font-size: 15pt;
+  }
+  a.ms-5{
+    top: 65px;
+  }
+  .btn {
+    font-size: 11pt;
+  }
+
+}
+
