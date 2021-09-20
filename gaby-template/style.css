@@ -49,22 +49,22 @@ a.nav-link {
 }
    
 h2.ms-5{   
-  top: 10px;
+  top: 5px;
   left: 10px;
-  font-size: 18pt;
+  font-size: 16pt;
 }
 h1.ms-5{
-  top: 40px;
+  top: 33px;
   left: 10px;
-  font-size: 28pt;
+  font-size: 24pt;
   font-weight: 900;
 }
 a.ms-5{
-  top: 90px;
+  top: 75px;
   left: 10px;
 }
 .btn{
-  font-size: 17pt;
+  font-size: 15pt;
   font-weight: 500;
   padding: 2px 20px;
 }
