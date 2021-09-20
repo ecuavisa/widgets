@@ -127,7 +127,17 @@ $(document).ready(function () {
         }
   } else {
     console.log("es domingo"); //validacion de domingo
-    if ('19:00' <= timeOfDay && timeOfDay <= '20:00'){
+    if ('10:30' <= timeOfDay && timeOfDay <= '11:30'){
+          $(".inner").append(`
+              <div>
+                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
+                <h2 class="ms-5">Estamos Presentado</h1>
+                <h1 class="ms-5">Políticamente Correcto</h2>
+                <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
+              </div>`
+          );
+        } else if ('19:00' <= timeOfDay && timeOfDay <= '20:00'){
           $(".inner").append(`
               <div>
                 <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
