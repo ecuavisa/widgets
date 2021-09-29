@@ -24,7 +24,7 @@ $(document).ready(function () {
       console.log('inside');
       $(".inner").append(`
           <div>
-            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/contacto-directo.jpg" alt="imagen">
             <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen">           
             <h2 class="ms-5">Estamos Presentado</h1>
             <h1 class="ms-5">Contacto Directo</h2>
@@ -46,7 +46,7 @@ $(document).ready(function () {
       console.log('outside ');
       $(".inner").append(`
           <div>
-            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/en-contacto.jpg" alt="imagen">
             <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
             <h2 class="ms-5">Estamos Presentado</h1>
             <h1 class="ms-5">En Contacto</h2>
@@ -57,7 +57,7 @@ $(document).ready(function () {
       console.log('outside ');
       $(".inner").append(`
           <div>
-            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/noti-1pm.jpg" alt="imagen">
             <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
             <h2 class="ms-5">Estamos Presentado</h1>
             <h1 class="ms-5">Televistazo 13h00</h2>
@@ -79,7 +79,7 @@ $(document).ready(function () {
       console.log('outside ');
       $(".inner").append(`
           <div>
-            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/noticiero-7pm.jpg" alt="imagen">
             <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
             <h2 class="ms-5">Estamos Presentado</h1>
             <h1 class="ms-5">Televistazo 19h00</h2>
@@ -90,7 +90,7 @@ $(document).ready(function () {
       console.log('outside ');
       $(".inner").append(`
           <div>
-            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/novelas.jpg" alt="imagen">
             <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
             <h2 class="ms-5">Estamos Presentado</h1>
             <h1 class="ms-5">Novelas</h2>
@@ -105,7 +105,7 @@ $(document).ready(function () {
         if ('19:00' <= timeOfDay && timeOfDay <= '19:30'){
           $(".inner").append(`
               <div>
-                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/noticiero-7pm.jpg" alt="imagen">
                 <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
                 <h2 class="ms-5">Estamos Presentado</h1>
                 <h1 class="ms-5">Televistazo 19h00</h2>
@@ -140,7 +140,7 @@ $(document).ready(function () {
         } else if ('19:00' <= timeOfDay && timeOfDay <= '20:00'){
           $(".inner").append(`
               <div>
-                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/noticiero-7pm.jpg" alt="imagen">
                 <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
                 <h2 class="ms-5">Estamos Presentado</h1>
                 <h1 class="ms-5">Televistazo 19h00</h2>
