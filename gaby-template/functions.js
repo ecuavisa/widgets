@@ -20,7 +20,7 @@ $(document).ready(function () {
 
   // prueba si timeOfDay está dentro de un marco de tiempo determinado
   if ((day > 0 && day <= 5)) { //validacion de lunes a viernes
-    if ('07:00' <= timeOfDay && timeOfDay <= '07:29') {
+    if ('06:55' <= timeOfDay && timeOfDay <= '07:29') {
       console.log('inside');
       $(".inner").append(`
           <div>
