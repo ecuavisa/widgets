@@ -35,7 +35,7 @@ $(document).ready(function () {
       console.log('outside ');
       $(".inner").append(`
           <div>
-            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/televistazocomunidad.jpg" alt="imagen">
             <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
             <h2 class="ms-5">Estamos Presentado</h1>
             <h1 class="ms-5">Televistazo en la Comunidad</h2>
@@ -57,7 +57,7 @@ $(document).ready(function () {
       console.log('outside ');
       $(".inner").append(`
           <div>
-            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/noti-1pm.jpg" alt="imagen">
+            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/televistazo13h00.jpg" alt="imagen">
             <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
             <h2 class="ms-5">Estamos Presentado</h1>
             <h1 class="ms-5">Televistazo 13h00</h2>
@@ -68,7 +68,7 @@ $(document).ready(function () {
       console.log('outside ');
       $(".inner").append(`
           <div>
-            <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/elpoderdelamor.jpg" alt="imagen">
             <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
             <h2 class="ms-5">Estamos Presentado</h1>
             <h1 class="ms-5">El Poder del Amor</h2>
@@ -79,7 +79,7 @@ $(document).ready(function () {
       console.log('outside ');
       $(".inner").append(`
           <div>
-            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/noticiero-7pm.jpg" alt="imagen">
+            <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/televistazo19h00.jpg" alt="imagen">
             <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
             <h2 class="ms-5">Estamos Presentado</h1>
             <h1 class="ms-5">Televistazo 19h00</h2>
@@ -105,7 +105,7 @@ $(document).ready(function () {
         if ('19:00' <= timeOfDay && timeOfDay <= '19:30'){
           $(".inner").append(`
               <div>
-                <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/noticiero-7pm.jpg" alt="imagen">
+                <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/televistazo19h00.jpg" alt="imagen">
                 <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
                 <h2 class="ms-5">Estamos Presentado</h1>
                 <h1 class="ms-5">Televistazo 19h00</h2>
@@ -116,7 +116,7 @@ $(document).ready(function () {
           console.log('outside ');
           $(".inner").append(`
               <div>
-                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/elpoderdelamor.jpg" alt="imagen">
                 <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
                 <h2 class="ms-5">Estamos Presentado</h1>
                 <h1 class="ms-5">El Poder del Amor</h2>
@@ -130,7 +130,7 @@ $(document).ready(function () {
     if ('10:30' <= timeOfDay && timeOfDay <= '11:30'){
           $(".inner").append(`
               <div>
-                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/politicamentecorrecto.jpg" alt="imagen">
                 <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
                 <h2 class="ms-5">Estamos Presentado</h1>
                 <h1 class="ms-5">Políticamente Correcto</h2>
@@ -140,7 +140,7 @@ $(document).ready(function () {
         } else if ('19:00' <= timeOfDay && timeOfDay <= '20:00'){
           $(".inner").append(`
               <div>
-                <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/noticiero-7pm.jpg" alt="imagen">
+                <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/televistazo19h00.jpg" alt="imagen">
                 <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
                 <h2 class="ms-5">Estamos Presentado</h1>
                 <h1 class="ms-5">Televistazo 19h00</h2>
@@ -151,7 +151,7 @@ $(document).ready(function () {
           console.log('outside ');
           $(".inner").append(`
               <div>
-                <img class="imgcintillo desk" src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
+                <img class="imgcintillo desk" src="https://www.ecuavisa.com/ecuavisa/main/envivo/elpoderdelamor.jpg" alt="imagen">
                 <img class="imgcintillo mov" src=" https://i.imgur.com/vz5qSNV.png" alt="imagen"> 
                 <h2 class="ms-5">Estamos Presentado</h1>
                 <h1 class="ms-5">El Poder del Amor</h2>
