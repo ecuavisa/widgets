@@ -348,7 +348,7 @@ function getVideoList(json) {
 }
 
 
-function getPlaylist(playlist = "603e76e0dc619107be83606a") {
+function getPlaylist(playlist = "615ce9dff4437b082916b75d") {
     $.ajax({
         url: "https://platform.mediastre.am/api/playlist/" + playlist,
         type: "GET",
