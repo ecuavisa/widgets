@@ -1,0 +1,146 @@
+
+
+a.nav-link {
+    background-color: #046cdf;
+    color: yellow !IMPORTANT;
+    padding: 10px;
+    text-transform: uppercase;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.parpadea {  
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  
+    -webkit-animation-name:parpadeo;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  }
+  
+  @-moz-keyframes parpadeo{  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }
+  
+  @-webkit-keyframes parpadeo {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+  }
+  
+  @keyframes parpadeo {  
+    0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }
+
+.contenedor{
+  position: relative;
+  display: inline-block;
+}
+.ms-5{
+  color: #fff;
+  position: absolute;
+  font-family: 'Barlow Semi Condensed';
+}
+   
+h2.ms-5{   
+  top: 5px;
+  left: 10px;
+  font-size: 16pt;
+}
+h1.ms-5{
+  top: 33px;
+  left: 10px;
+  font-size: 24pt;
+  font-weight: 900;
+}
+a.ms-5{
+  top: 75px;
+  left: 10px;
+}
+.btn{
+  font-size: 15pt;
+  font-weight: 500;
+  padding: 2px 20px;
+}
+.imgcintillo{
+  width: 100%;
+}
+
+.imgcintillo.mov{
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .imgcintillo.desk{
+    display: none;
+  }
+  .imgcintillo.mov{
+    display: block;
+  }
+  h2.ms-5{   
+    top: 10px;
+    left: -30px;
+    font-size: 13pt;
+  }
+  h1.ms-5{
+    top: 40px;
+    left: -32px;
+    font-size: 15pt;
+  }
+  a.ms-5 {
+    top: 77px;
+    left: -32px;
+  }
+  .btn {
+    font-size: 14pt;
+  }
+}
+@media (min-width: 768px) {
+  .imgcintillo.mov{
+    display: none;
+  }
+  .imgcintillo.desk{
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  h2.ms-5{   
+    top: 8px;
+    font-size: 10pt;
+  }
+  h1.ms-5{
+    top: 25px;
+    font-size: 12pt;
+  }
+  a.ms-5{
+    top: 50px;
+  }
+  .btn {
+    font-size: 7pt;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  h2.ms-5{   
+    font-size: 12pt;
+  }
+  h1.ms-5{
+    top: 33px;
+    font-size: 15pt;
+  }
+  a.ms-5{
+    top: 65px;
+  }
+  .btn {
+    font-size: 11pt;
+  }
+
+}
+
