@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>EN VIVO</title>
+<title>MAPA</title>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,25 +10,42 @@
 </head>
 
 
-<div class="contenedor">
-  <div class="inner"></div>
-</div>
+<div id="mod_map_rutas">
+    <p class="titulo">LAS RUTAS DE ESCAPE DEL TRIÁNGULO NORTE</p>
+    <!-- Div contenedor del mapa -->
+    <div id="mapatiempos"></div>
 
-  <!-- <div class="contenedor">
-    <div>
-      <img  src="https://i.imgur.com/RcqFJuy.png" alt="imagen">
-      <h2 class="ms-5">Estamos Presentado</h1>
-      <h1 class="ms-5"> Televistazo 13h00</h2>
-      <a href="https://www.ecuavisa.com/envivo" class="ms-5 btn btn-primary stretched-link ">VER EN VIVO</a>
-    </div>
-  </div> -->
+ <p class="piedefoto">Fuentes: FM4 Paso Libre - Dignidad y Justicia en el Camino A.C.</br></br>INTERACTIVO</p>
 
+    <button type="button" name="button" id="b_ferrocarril" class="boton_capas"><i style="color: #cc9bff;" class="fa fa-circle"
+            aria-hidden="true"></i> Ferrocarriles</button>
+    <button type="button" name="button" id="b_poi" class="boton_capas"><i style="color: #ffc724;" class="fa fa-circle"
+            aria-hidden="true"></i> P.O.I.</button>
+    <button type="button" name="button" id="b_r_norte" class="boton_capas"><i style="color: #FF1414;" class="fa fa-circle"
+            aria-hidden="true"></i> Rutas del norte</button>
+    <button type="button" name="button" id="b_r_intermedia" class="boton_capas"><i style="color: #FF721C;" class="fa fa-circle"
+            aria-hidden="true"></i> Ruta intermedia</button>
+    <button type="button" name="button" id="b_r_golfo" class="boton_capas"><i style="color: #37C6E8;" class="fa fa-circle"
+            aria-hidden="true"></i> Ruta del golfo</button>
+    <button type="button" name="button" id="b_r_entrada" class="boton_capas"><i style="color: #377F3A;" class="fa fa-circle"
+            aria-hidden="true"></i> Rutas de entrada</button>    
 
+<script type="text/javascript">
+  // ===== Scroll to Top ====
+  $(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
+      $('#return-to-top').fadeIn(200); // Fade in the arrow
+    } else {
+      $('#return-to-top').fadeOut(200); // Else fade out the arrow
+    }
+  });
+  $('#return-to-top').click(function() { // When arrow is clicked
+    $('body,html').animate({
+      scrollTop: 0 // Scroll to top of body
+    }, 500);
+  });
+</script>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
- <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-  <script src="functions.js"></script>
 </html>
 
 

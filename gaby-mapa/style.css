@@ -1,146 +1,342 @@
+    #mapatiempos {
+      width: 80%;
+      height: 75vh;
+      margin: 0 auto;
+    }
 
+    /*Estilo de los modales*/
 
-a.nav-link {
-    background-color: #046cdf;
-    color: yellow !IMPORTANT;
-    padding: 10px;
-    text-transform: uppercase;
-    font-family: 'Barlow Semi Condensed', sans-serif;
-}
+    .historia {
+      border-radius: 10px;
+      padding: 0;
+      background-color: white;
+      width: 55vw;
+      height: 80vh;
+      text-align: center;
+      background-image: url("https://www.antena3.com/newa3flash/modulos_blancos/tiempos_de_guerra/mapa/img/rice-paper-2.png");
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
 
-.parpadea {  
-    animation-name: parpadeo;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  
-    -webkit-animation-name:parpadeo;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-  }
-  
-  @-moz-keyframes parpadeo{  
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
-  }
-  
-  @-webkit-keyframes parpadeo {  
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-     100% { opacity: 1.0; }
-  }
-  
-  @keyframes parpadeo {  
-    0% { opacity: 1.0; }
-     50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
-  }
+    .historia img {
+      margin-top: 0px;
+      position: relative;
+      z-index: 9;
+      width: 100%;
+    }
 
-.contenedor{
-  position: relative;
-  display: inline-block;
-}
-.ms-5{
-  color: #fff;
-  position: absolute;
-  font-family: 'Barlow Semi Condensed';
-}
-   
-h2.ms-5{   
-  top: 5px;
-  left: 10px;
-  font-size: 16pt;
-}
-h1.ms-5{
-  top: 33px;
-  left: 10px;
-  font-size: 24pt;
-  font-weight: 900;
-}
-a.ms-5{
-  top: 75px;
-  left: 10px;
-}
-.btn{
-  font-size: 15pt;
-  font-weight: 500;
-  padding: 2px 20px;
-}
-.imgcintillo{
-  width: 100%;
-}
+    .historia h4 {
+      font-weight: 600;
+      font-size: 30px;
+      font-family: 'Oswald', serif;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
 
-.imgcintillo.mov{
-  display: none;
-}
+    .historia p {
+      font-family: 'Oswald', serif;
+      font-style: italic;
+      font-size: 20px;
+      margin: 20px 0;
+    }
 
-@media (max-width: 600px) {
-  .imgcintillo.desk{
-    display: none;
-  }
-  .imgcintillo.mov{
-    display: block;
-  }
-  h2.ms-5{   
-    top: 10px;
-    left: -30px;
-    font-size: 13pt;
-  }
-  h1.ms-5{
-    top: 40px;
-    left: -32px;
-    font-size: 15pt;
-  }
-  a.ms-5 {
-    top: 77px;
-    left: -32px;
-  }
-  .btn {
-    font-size: 14pt;
-  }
-}
-@media (min-width: 768px) {
-  .imgcintillo.mov{
-    display: none;
-  }
-  .imgcintillo.desk{
-    display: block;
-  }
-}
+    .historia span {
+      font-family: roboto condensed;
+      display: block;
+      margin-bottom: 30px;
+      font-size: 15px;
+      color: #393939;
+      font-weight: 300;
+    }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-  h2.ms-5{   
-    top: 8px;
-    font-size: 10pt;
-  }
-  h1.ms-5{
-    top: 25px;
-    font-size: 12pt;
-  }
-  a.ms-5{
-    top: 50px;
-  }
-  .btn {
-    font-size: 7pt;
-  }
-}
+    .historia span a {
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px dotted black;
+    }
 
-@media (min-width: 992px) and (max-width: 1024px) {
-  h2.ms-5{   
-    font-size: 12pt;
-  }
-  h1.ms-5{
-    top: 33px;
-    font-size: 15pt;
-  }
-  a.ms-5{
-    top: 65px;
-  }
-  .btn {
-    font-size: 11pt;
-  }
+    .historia .ch {
+      padding: 0 60px;
+      margin: 0 auto;
+      padding-bottom: 20px;
+      position: relative;
+    }
 
-}
+    .contenedor-responsive {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
 
+    .contenedor-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .custom .leaflet-popup-tip,
+    .custom .leaflet-popup-content-wrapper {
+      background: #ebebeb;
+      color: rgb(29, 29, 29);
+      font-family: 'Oswald', serif;
+    }
+
+    .texto_popup {
+      font-size: 14pt;
+      font-weight: 400;
+    }
+
+    .leaflet-popup-content p {
+      margin: 0px 0;
+    }
+
+    .boton_capas {
+      border: none;
+      background-color: black;
+      cursor: pointer;
+      font-family: 'Oswald', sans-serif;
+      color: #ffc724;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      transition: 0.3s ease;
+      border: 2px solid #ffc724;
+      margin: 0 0 5px 0;
+    }
+
+    .boton_capas:hover {
+      transform: scale(1.04);
+      transition: 0.1s ease;
+    }
+    .boton_capas:active {
+      transform: scale(0.98);
+      transition: 0.3s ease;
+    }
+
+    .boton_capas_seleccionado {
+      background-color: grey !important;
+      transition: 0.3s ease;
+    }
+
+    .boton_capas_seleccionado i {
+      opacity: 0.7;
+      transition: 0.3s ease;
+    }
+
+    #mod_map_rutas {
+      width: 100%;
+      box-sizing: border-box;
+      color: black;
+      font-family: 'Oswald', sans-serif;
+      line-height: 1.1;
+      text-align: center;
+      padding-bottom: 25px;
+    }
+
+    #mod_map_rutas p.piedefoto {
+      font-size: 16px;
+      color: #6e6b6b;
+      margin-top: 15px;
+      font-weight: lighter;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    #mod_map_rutas p.titulo {
+      font-size: 45px;
+      margin: 0;
+      padding: 2% 0 1% 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    #mod_map_rutas p.subtitulo {
+      font-size: 25px;
+      color: #6e6b6b;
+      margin: 0 auto;
+      text-transform: uppercase;
+      padding: 0% 0 2% 0;
+      width: 85%;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    #mod_map_rutas p.entradilla {
+      font-size: 40px;
+      line-height: 1.1;
+      padding: 3% 8% 3% 8%;
+      margin: 0 auto;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    #mod_map_rutas p.desarrollo {
+      font-size: 25px;
+      padding: 1% 8% 1% 8%;
+      margin: 0;
+      line-height: 1.5;
+      font-weight: lighter;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    /*Efecto botón*/
+
+    #mod_map_rutas .actionBtn2 {
+      overflow: hidden;
+      position: relative;
+      margin: auto;
+      line-height: 80px;
+      border: 1px solid #ffc724;
+      color: #ffc724;
+      text-align: center;
+      text-decoration: none;
+      font-size: 30px;
+      padding: 5px 20px;
+      background-color: black;
+    }
+
+    #mod_map_rutas .actionBtn2 span {
+      position: relative;
+      transition: color .25s ease-out;
+      -webkit-transition: color .5s ease-out;
+      -moz-transition: color .5s ease-out;
+    }
+
+    #mod_map_rutas .actionBtn2:hover span {
+      color: black;
+    }
+
+    #mod_map_rutas .actionBtn2 .hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #ffc724;
+      border: 1px solid transparent;
+      transform: scale(1, 0);
+      -webkit-transform: scale(1, 0);
+      -moz-transform: scale(1, 0);
+      -ms-transform: scale(1, 0);
+      transform-origin: center top;
+      -webkit-transform-origin: center top;
+      -moz-transform-origin: center top;
+      -ms-transform-origin: center top;
+      transition: all .2s ease-out;
+      -webkit-transition: all .2s ease-out;
+      -moz-transition: all .2s ease-out;
+    }
+
+    #mod_map_rutas .actionBtn2:hover .hover {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      -moz-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+    }
+
+    @media (orientation:landscape) and (max-device-width: 600px) {
+      #mapatiempos {
+        width: 80%;
+      }
+      .historia {
+        width: 70vw;
+      }
+
+      .historia p {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width:650px) {
+      #mapatiempos {
+        width: 100%;
+      }
+
+      .historia {
+        width: 90vw;
+      }
+
+      .historia .ch {
+        padding: 0 25px;
+      }
+
+      .historia p {
+        font-size: 18px;
+      }
+
+    }
+
+    @media (max-width: 1024px) {
+      #mod_map_rutas p.titulo {
+        font-size: 40px;
+      }
+      #mod_map_rutas p.subtitulo {
+        font-size: 20px;
+      }
+      #mod_map_rutas p.entradilla {
+        font-size: 30px;
+      }
+      #mod_map_rutas p.desarrollo {
+        font-size: 20px;
+      }
+      #mod_map_rutas a.leermas {
+        font-size: 20px;
+      }
+      #mod_map_rutas a.leermas span {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #mod_map_rutas p.titulo {
+        font-size: 30px;
+      }
+      #mod_map_rutas p.subtitulo {
+        font-size: 17px;
+        margin: 10px auto 0 auto;
+      }
+      #mod_map_rutas p.entradilla {
+        font-size: 20px;
+      }
+      #mod_map_rutas p.piedefoto {
+        font-size: 13px;
+      }
+      #mod_map_rutas p.desarrollo {
+        font-size: 18px;
+      }
+      #mod_map_rutas a.leermas {
+        font-size: 16px;
+      }
+      #mod_map_rutas a.leermas span {
+        font-size: 26px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #mod_map_rutas p.titulo {
+        font-size: 25px;
+      }
+      #mod_map_rutas p.subtitulo {
+        font-size: 15px;
+        margin: 10px auto 5px auto;
+      }
+      #mod_map_rutas p.piedefoto {
+        font-size: 11px;
+      }
+      #mod_map_rutas p.entradilla {
+        font-size: 16px;
+      }
+      #mod_map_rutas p.desarrollo {
+        font-size: 16px;
+      }
+      #mod_map_rutas a.leermas {
+        font-size: 13px;
+      }
+      #mod_map_rutas a.leermas span {
+        font-size: 26px;
+      }
+    }
