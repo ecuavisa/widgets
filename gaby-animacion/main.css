@@ -335,63 +335,63 @@
 
 /* cabecera */
 .z-he .csw { /* seccion y alertas */
+  display: none;
+}
+
+@media (min-width: 768px) {
+  
+  .z-he .x-ph {
+    min-height: 53px;
+  }
+  
+  .z-he .x.x-nf {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  .z-he .x-nf .x_w {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .z-he .x-nf .x_e { /* edicion */
     display: none;
   }
   
-  @media (min-width: 768px) {
-    
-    .z-he .x-ph {
-      min-height: 53px;
-    }
-    
-    .z-he .x.x-nf {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-    
-    .z-he .x-nf .x_w {
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-    
-    .z-he .x-nf .x_e { /* edicion */
-      display: none;
-    }
-    
-    .z-he .x-nf .x_bh { /* boton hamburguesa */
-      margin-top: 0;
-    }
-    
-    .z-he .x-nf .ep_l { /* contenedor logo EP */
-      grid-column: 4/6;
-      margin-top: 0;
-    }
-    
-    .z-he .x-nf .ep_l .ep_e { /* logo EP */
-      background-size: auto 28px;
-      background-position: center 2px;
-    }
-    
+  .z-he .x-nf .x_bh { /* boton hamburguesa */
+    margin-top: 0;
   }
   
-  @media (min-width: 1001px){
-    
-    .z-he .x-nf .ep_l { /* contenedor logo EP */
-      grid-column: 5/9;
-    }
-    
+  .z-he .x-nf .ep_l { /* contenedor logo EP */
+    grid-column: 4/6;
+    margin-top: 0;
   }
   
-  /* apertura */
-  #elpais_gpt-SKIN,
-  #elpais_gpt-INTER,
-  #elpais_gpt-NSTD1,
-  #elpais_gpt-SKY1,
-  #elpais_gpt-SKY2,
-  #fusion-app .ad-giga-1 { /* siempre quitamos publidad de los skys y cabecera porque choca con las aperturas */
-    display: none !important;
+  .z-he .x-nf .ep_l .ep_e { /* logo EP */
+    background-size: auto 28px;
+    background-position: center 2px;
   }
   
-  .apertura {
-    height: calc(100vh - 53px); /* 52 = cabecera */
+}
+
+@media (min-width: 1001px){
+  
+  .z-he .x-nf .ep_l { /* contenedor logo EP */
+    grid-column: 5/9;
   }
+  
+}
+
+/* apertura */
+#elpais_gpt-SKIN,
+#elpais_gpt-INTER,
+#elpais_gpt-NSTD1,
+#elpais_gpt-SKY1,
+#elpais_gpt-SKY2,
+#fusion-app .ad-giga-1 { /* siempre quitamos publidad de los skys y cabecera porque choca con las aperturas */
+  display: none !important;
+}
+
+.apertura {
+  height: calc(100vh - 53px); /* 52 = cabecera */
+}
