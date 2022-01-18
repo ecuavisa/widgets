@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div class="apertura_fotos">
-    <span class="apertura_fotos_a">
-      <picture>
-        <source media="(max-width: 999px)" srcset="//ep01.epimg.net/estaticos/arc/2021/11/teletrabajo/img/apertura-a-m.jpg">
-        <img src="//ep01.epimg.net/estaticos/arc/2021/11/teletrabajo/img/apertura-a.jpg" alt="Persona con teletrabajo">
-      </picture>
-    </span>
-    <span class="apertura_fotos_b">
-      <picture>
-        <source media="(max-width: 999px)" srcset="//ep01.epimg.net/estaticos/arc/2021/11/teletrabajo/img/apertura-b-m.jpg">
-        <img src="//ep01.epimg.net/estaticos/arc/2021/11/teletrabajo/img/apertura-b.jpg" alt="Persona en la oficina">
-      </picture>
-    </span>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="raw_html">
+      <div class="apertura">
+        <div class="apertura_textos">
+          <h1>¿En tu casa <strong>o en la oficina?</strong></h1>
+          <h2>
+            Así transcurre la jornada laboral de dos mujeres que trabajan para
+            la misma empresa farmacéutica a distancia y en sus instalaciones
+          </h2>
+          <a id="btnBajar" class="bajar" href="#apertura"
+            ><span>ir al contenido</span></a
+          >
+        </div>
+        <div class="apertura_fotos">
+          <span class="apertura_fotos_a">
+            <img src="assets/apertura-a.jpg" alt="Persona con teletrabajo" />
+          </span>
+          <span class="apertura_fotos_b">
+            <img src="assets/apertura-b.jpg" alt="Persona en la oficina" />
+          </span>
+        </div>
+      </div>
+    </div>
 
-</body>
+    <div>hola sii</div>
+
+    <script>
+      document
+        .getElementById("btnBajar")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          let offset = 53;
+          let newTop = window.innerHeight - offset;
+          scroll({
+            top: newTop,
+            behavior: "smooth",
+          });
+        });
+    </script>
+  </body>
 </html>
-
-
-
