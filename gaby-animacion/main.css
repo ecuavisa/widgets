@@ -402,3 +402,32 @@
 .apertura {
   height: calc(100vh - 53px); /* 52 = cabecera */
 }
+
+.textvideo{
+  width: 45%;
+  margin: 70px auto;
+  text-align: center;
+}
+
+.titprin{
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    font-style: normal;
+    font-weight: 900;
+    color: #00638F;
+}
+
+h2 {
+  color: rgba(0,29,41,0.71);
+  font-style: normal;
+  font-weight: 400;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    opacity: 0.8;
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
