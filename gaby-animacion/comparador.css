@@ -146,9 +146,9 @@
 }
 
 .comparador-videos .cv-v > div.ocultar {
-  /* opacity: 0;
+  opacity: 0;
   visibility: hidden;
-  z-index: 1; */
+  z-index: 1;
 }
 
 .comparador-videos .cv-b {
@@ -188,10 +188,20 @@
   display: none;
 }
 
-.comparador-videos .cv-b a.cv-b_x {
+.comparador-videos .cv-b a.cv-b_x.der {
   opacity: 0;
   visibility: hidden;
   transition: all 0.25s;
+}
+
+.comparador-videos .cv-b a.cv-b_x.izq {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s;
+}
+
+.comparador-videos .cv-b_x.der{
+  position: absolute;
 }
 
 .comparador-videos.activo .cv-b a.cv-b_x {
