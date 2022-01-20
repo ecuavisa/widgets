@@ -95,7 +95,7 @@
   opacity: 1;
   visibility: visible;
   transition-delay: 0s;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   z-index: 2;
