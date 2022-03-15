@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Load the JavaScript library -->
+
+    <!-- Create the element that will contain the iframe. You will use the #ID later -->
+    <!-- <div>
+      <a id="go-to-10min" href="#">Go to minute 10 &rarr;</a>
+    </div> -->
+
+    <div id="mdstrm-player"></div>
+    <div id="trackVideos"></div>
+    <!-- Create a new player using the JavaScript API -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- <script src="main.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script src="https://platform-static.cdn.mdstrm.com/js/player_api.js"></script>
+
+    <style>
+      #mdstrm-player iframe {
+        width: 100%;
+      }
+    </style>
+
+    <script>
+      var playerOptions = {
+        width: 720,
+        height: 480,
+        type: "media",
+        id: "6218e17ae71bd4082823e577",
+        autoplay: false,
+        events: {},
+      };
+      var idPlayer = playerOptions.id;
+      console.log("consola", idPlayer);
+      var player = new MediastreamPlayer("mdstrm-player", playerOptions);
+      player.videoPlay();
+      if (playerOptions.id) {
+        console.log("yes_player");
+      } else {
+        console.log("not_player");
+      }
+    </script>
+    <script>
+      function clickSeg(goToSegundos) {
+        if ($("#go-to-seg-" + goToSegundos).length == 0) {
+          console.log("si hay");
+          player.seekTo(goToSegundos);
+          console.log("desde la function", goToSegundos);
+          // $("#go-to-seg-" + goToSegundos).click((e) => {
+          //   e.preventDefault();
+          // });
+        } else {
+          console.log("no hay");
+        }
+      }
+
+      function getVideos(url) {
+        $.ajax({
+          url: url,
+          type: "GET",
+          dataType: "json",
+          //data: data,
+          // headers: {
+          //   "X-API-Token": "215979b6242fdd636897c19bb6428cb5",
+          // },
+          //contentType: "application/json",
+          success: function (result) {
+            var data = result.data;
+
+            $.each(data, function (key, video, id) {
+              if (video != null) {
+                var tracks = "";
+                var valiMin = "";
+                var goToSegundos = "";
+                if (video.tracks.length > 0) {
+                  console.log("lleno");
+                } else {
+                  console.log("vacio");
+                  $("#trackVideos").hide();
+                }
+                if (video.tracks) {
+                  video.tracks.forEach((track) => {
+                    var goToSegundos = track.position;
+                    const duration = moment.duration(track.position, "seconds");
+
+                    const h = duration.hours(); // 1F
+                    const m = duration.minutes(); // 20
+                    const s = duration.seconds(); //('ss'); // 25
+
+                    // console.log("segundos", goToSegundos);
+                    console.log("minutos", h);
+
+                    if (h >= 1) {
+                      valiMin = ` ${h}:0${m}:${s} `;
+                    } else {
+                      valiMin = ` ${m}:${s} `;
+                    }
+
+                    tracks += `
+                    <a class="link-dark track-item" href="javascript:;"  onclick="clickSeg(${track.position})">
+                      <p><b>${track.name} </b></p>
+                      <h6 class="valmin">${valiMin} </h6>
+                    </a>`;
+                  });
+                }
+
+                var dateVideo = dateToYMD(video.date_created);
+                $("#trackVideos").append(
+                  "<div class='video-popular-track'><div><div class='content'><h4>Contenido destacado del video</h4><div class='tracks multiple-items'>" +
+                    tracks +
+                    "</div></div></div></div>"
+                );
+                //  var goToSegundos = goToSegundos;
+              }
+            });
+            // document
+            //   .getElementById("go-to-seg-" + goToSegundos)
+            //   .addEventListener("click", (e) => {
+            //     e.preventDefault();
+            //     player.seekTo(goToSegundos);
+            //     console.log(goToSegundos);
+            //   });
+
+            $(".multiple-items").slick({
+              infinite: false,
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              arrows: false,
+              dots: true,
+              responsive: [
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    infinite: false,
+                    dots: true,
+                  },
+                },
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                  },
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                  },
+                },
+              ],
+            });
+          },
+          error: function (error) {},
+        });
+      }
+
+      function dateToYMD(date) {
+        var date = new Date(date);
+        var d = date.getDate();
+        var m = date.getMonth() + 1;
+        var y = date.getFullYear();
+        return (
+          "" + (d <= 9 ? "0" + d : d) + "/" + (m <= 9 ? "0" + m : m) + "/" + y
+        );
+      }
+      function sortByKeyAsc(array, key) {
+        return array.sort(function (a, b) {
+          var x = b[key];
+          var y = a[key];
+          x = parseInt(x.replace(/[^0-9.]+/g, ""));
+          y = parseInt(y.replace(/[^0-9.]+/g, ""));
+          return x > y ? -1 : x < y ? 1 : 0;
+        });
+      }
+
+      $(document).ready(function () {
+        var url =
+          "https://platform.mediastre.am/api/media?id=" +
+          idPlayer +
+          "&limit=10&token=215979b6242fdd636897c19bb6428cb5";
+        getVideos(url);
+      });
+
+      // The class MediastreamPlayer is used to create a new player instance
+      // First argument is the #ID of the containing element. Second argument is an Object of options
+
+      // $("#go-to-10min").click((e) => {
+      //   e.preventDefault();
+      //   player.seekTo(seg);
+      //   console.log(seg);
+      // });
+      // document.getElementById("go-to-10min").addEventListener("click", (e) => {
+      //   e.preventDefault();
+      //   player.seekTo(seg);
+      //   //window.screenPlayer.stopAds();
+      // });
+    </script>
+  </body>
+</html>

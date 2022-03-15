@@ -18,9 +18,9 @@
       <div >Grilla de horarios</div>
     </div>
     <div class="tab">
-      <a class="tablinks active" href="index.html">Costa</a>
+      <a class="tablinks " href="index.html">Costa</a>
       <a class="tablinks" href="sierra.html">Sierra</a>
-      <a class="tablinks" href="inter.html">Internacional</a>
+      <a class="tablinks active" href="inter.html">Internacional</a>
     </div>
 
     <div class="m-2">
@@ -71,22 +71,8 @@
         } else if (today.getDate() == "20") {
           console.log(today.getDate());
           tempDate.setDate(today.getDate() + 1);
-        }else if (today.getDate() == "21") {
-          tempDate.setDate(today.getDate() + 7);
-        }else if (today.getDate() == "22") {
-          tempDate.setDate(today.getDate() + 6);
-        }else if (today.getDate() == "23") {
-          tempDate.setDate(today.getDate() + 5);
-        }else if (today.getDate() == "24") {
+        } else {
           tempDate.setDate(today.getDate() + 4);
-        }else if (today.getDate() == "25") {
-          tempDate.setDate(today.getDate() + 3);
-        }else if (today.getDate() == "26") {
-          tempDate.setDate(today.getDate() + 2);
-        }else if (today.getDate() == "27") {
-          tempDate.setDate(today.getDate() + 1);
-        }else{
-          tempDate.setDate(today.getDate() + 1);
         }
 
         for (var i = 7; i > 0; i--) {
@@ -133,7 +119,7 @@
       sheetrock({
         url: principalSheet,
 
-        query: "select A,B,C,D,E,F,G,H,I,J,K,L,M,N where C = 3",
+        query: "select A,B,C,D,E,F,G,H,I,J,K,L,M,N where C = 5",
         fetchSize: 1500,
         callback: function (data, sheetrock, response) {
           let rows = response.raw.table.rows;
@@ -157,12 +143,12 @@
                 let detalleFormat = detalle == "FALSO" ? "" : detalle;
 
                 let claseActiva = "";
+                
                 if (
                   horaActual >= horaInicio.format("HH:mm") &&
                   horaActual <= horaFin.format("HH:mm") &&
                   diasSemana[fi] == diaActual
                 ) {
-                  // claseActiva = "bg-paleta";
                   claseActiva = `<h6 class="ahora">AHORA</h6>`;
                 }
                 $("#tbody-" + clase).append(`<tr class="">

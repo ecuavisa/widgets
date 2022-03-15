@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tracks</title>
+  </head>
+  <body>
+    <div id="bread"></div>
+
+    <script>
+      function getBreadcrumbs() {
+        const pathURL = location.href.split("/").slice(3);
+        // let url =
+        //   "https://www.ecuavisa.com/noticias/ecuador/covid-19-msp-investiga-si-el-92-de-la-poblacion-ecuatoriana-ya-es-inmune-al-coronavirus-LM1358926";
+        // const pathURL = url.split("/").slice(3);
+        pathURL.splice(-1, 1);
+        // console.log(pathURL)
+        const parts = [{ text: "HOME", link: "/" }];
+        // console.log(parts)
+
+        for (let i = 0; i < pathURL.length; i++) {
+          const part = pathURL[i];
+          // console.log(part)
+          const text = decodeURIComponent(part).toUpperCase().split(".")[0];
+          // console.log(text)
+          const link = "/" + pathURL.slice(0, i + 1).join("/");
+          console.log(link);
+          parts.push({ text: text, link: link });
+          // console.log(parts)
+        }
+        return parts
+          .map((part) => {
+            return '<a href="' + part.link + '">' + part.text + "</a>";
+          })
+          .join('<span style="padding: 5px">/</span>');
+      }
+
+      document.getElementById("bread").innerHTML = getBreadcrumbs();
+    </script>
+  </body>
+</html>

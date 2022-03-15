@@ -1,3 +1,111 @@
-.ldBar-label{
+.ldBar-label {
   font-weight: bold;
+}
+
+.hora {
+  margin-bottom: 0rem;
+}
+p {
+  margin: 0px !important;
+}
+
+.nav {
+  justify-content: center;
+  flex-wrap: nowrap !important;
+  white-space: nowrap;
+  overflow: auto;
+  padding-bottom: 10px;
+}
+
+.nav-link {
+  color: #a9a9a9 !important;
+  font-weight: 700;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  border-bottom: 3px solid #333;
+  color: #333 !important;
+  background-color: transparent !important;
+}
+.nav-pills .nav-link {
+  border-radius: inherit !important;
+}
+
+.bg-paleta {
+  background-color: #046cdf;
+  color: white;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: #046cdf;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+  border-radius: 15px;
+}
+
+/* Style the buttons inside the tab */
+.tab .tablinks {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+/* Change background color of buttons on hover */
+.tab .tablinks:hover {
+  background-color: rgb(0 0 0 / 20%);
+}
+
+.titulo {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px;
+  text-transform: uppercase;
+}
+
+/* Create an active/current tablink class */
+.tab .tablinks.active {
+  background-color: rgb(0 0 0 / 20%);
+  color: white;
+}
+
+.ahora {
+  background: #046cdf;
+  padding: 3px 7px;
+  margin: 5px auto;
+  border-radius: 5px;
+  color: #fff;
+  width: 72px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.table > :not(caption) > * > * {
+  padding: 1.5rem 0.5rem !important;
+  vertical-align: middle;
+}
+
+@media (max-width: 630px) {
+  .nav {
+    justify-content: start;
+  }
 }

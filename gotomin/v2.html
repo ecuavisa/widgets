@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Load the JavaScript library -->
+
+    <!-- Create the element that will contain the iframe. You will use the #ID later -->
+    <!-- <div>
+      <a id="go-to-10min" href="#">Go to minute 10 &rarr;</a>
+    </div> -->
+
+    <div class="responsive-video content__tracks">
+      <div id="mdstrm-player">
+        <iframe
+          src="https://mdstrm.com/embed/6213c19add25b9082a667939?jsapi=true&amp;autoplay=false"
+          width="640"
+          height="360"
+          frameborder="0"
+          allow="autoplay; fullscreen; encrypted-media"
+          allowfullscreen=""
+          allowscriptaccess="always"
+          scrolling="no"
+        ></iframe>
+      </div>
+      <script>
+        /*<![CDATA[*/ var playerOptions = {
+          width: 640,
+          height: 360,
+          type: "media",
+          id: "6213c19add25b9082a667939",
+          autoplay: false,
+          events: {},
+        };
+        var player = new MediastreamPlayer("mdstrm-player", playerOptions);
+        player.videoPlay();
+        if (playerOptions.id) {
+          console.log("yes_player");
+        } else {
+          console.log("not_player");
+        } /*]]>*/
+      </script>
+      <iframe
+        src="https://962284b24feb38a9abaf5976dc25faa9.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html"
+        style="visibility: hidden; display: none"
+      ></iframe>
+    </div>
+    <!-- Create a new player using the JavaScript API -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- <script src="main.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script src="https://platform-static.cdn.mdstrm.com/js/player_api.js"></script>
+
+    <script>
+      var iframeSrc = $(".responsive-video iframe").attr("src");
+      // console.log(iframeSrc);
+
+      function getBreadcrumbs() {
+        const pathURL = iframeSrc.split("/").slice(3);
+        //const pathURL = location.href.split("/").slice(3);
+        pathURL.splice(-2, 1);
+        const parts = [{  link: "" }];
+        for (let i = 0; i < pathURL.length; i++) {
+          const part = pathURL[i];
+          const text = decodeURIComponent(part).toUpperCase().split(".")[0];
+          const link = pathURL.slice(0, i + 1).join("");
+          parts.push({ link: link });
+        }
+        return parts
+          .map((part) => {
+            return part.link;
+          })
+          .join("");
+      }
+
+      let urlprotect = getBreadcrumbs();
+
+      console.log("URL MEDIA:",urlprotect);
+    </script>
+  </body>
+</html>
