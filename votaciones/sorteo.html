@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sorteo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      /* Specific to example one */
+
+      #example-one {
+        background: #eee;
+        padding: 10px;
+        margin: 0 0 20px 0;
+        box-shadow: 0 0 5px #666;
+      }
+
+      #example-one .nav {
+        overflow: hidden;
+        margin: 0 0 10px 0;
+      }
+      #example-one .nav li {
+        width: 97px;
+        float: left;
+        margin: 0 10px 0 0;
+      }
+      #example-one .nav li.last {
+        margin-right: 0;
+      }
+      #example-one .nav li a {
+        display: block;
+        padding: 5px;
+        background: #959290;
+        color: white;
+        font-size: 10px;
+        text-align: center;
+        border: 0;
+      }
+      #example-one .nav li a:hover {
+        background-color: #111;
+      }
+
+      #example-one ul {
+        list-style: none;
+      }
+      #example-one ul li a {
+        display: block;
+        border-bottom: 1px solid #666;
+        padding: 4px;
+        color: #666;
+      }
+      #example-one ul li a:hover {
+        background: #fe4902;
+        color: white;
+      }
+      #example-one ul li:last-child a {
+        border: none;
+      }
+
+      #example-one ul li.nav-one a.current,
+      #example-one ul.featured li a:hover {
+        background-color: #0575f4;
+        color: white;
+      }
+      #example-one ul li.nav-two a.current,
+      #example-one ul.core li a:hover {
+        background-color: #d30000;
+        color: white;
+      }
+      #example-one ul li.nav-three a.current,
+      #example-one ul.jquerytuts li a:hover {
+        background-color: #8d01b0;
+        color: white;
+      }
+      #example-one ul li.nav-four a.current,
+      #example-one ul.classics li a:hover {
+        background-color: #fe4902;
+        color: white;
+      }
+
+      /* Specific to example two */
+
+      #example-two .list-wrap {
+        background: #eee;
+        padding: 10px;
+        margin: 0 0 15px 0;
+      }
+
+      #example-two ul {
+        list-style: none;
+      }
+      #example-two ul li a {
+        display: block;
+        border-bottom: 1px solid #666;
+        padding: 4px;
+        color: #666;
+      }
+      #example-two ul li a:hover {
+        background: #333;
+        color: white;
+      }
+      #example-two ul li:last-child a {
+        border: none;
+      }
+
+      #example-two .nav {
+        overflow: hidden;
+      }
+      #example-two .nav li {
+        width: 97px;
+        float: left;
+        margin: 0 10px 0 0;
+      }
+      #example-two .nav li.last {
+        margin-right: 0;
+      }
+      #example-two .nav li a {
+        display: block;
+        padding: 5px;
+        background: #666;
+        color: white;
+        font-size: 10px;
+        text-align: center;
+        border: 0;
+      }
+
+      #example-two li a.current,
+      #example-two li a.current:hover {
+        background-color: #eee !important;
+        color: black;
+      }
+      #example-two .nav li a:hover,
+      #example-two .nav li a:focus {
+        background: #999;
+      }
+
+      /* Generic Utility */
+      .hide {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font: 12px Georgia, serif;
+        margin: 1rem;
+      }
+      html {
+        overflow-y: scroll;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:focus {
+        outline: 0;
+      }
+      p {
+        font-size: 15px;
+        margin: 0 0 20px 0;
+      }
+      #page-wrap {
+        width: 440px;
+        margin: 80px auto;
+      }
+      h1 {
+        font: bold 40px Sans-Serif;
+        margin: 0 0 20px 0;
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // $("#holaiframe").scrollTop(400);
+      // $('.container').contents().find("head").append($("<style type='text/css'> body{color:red;}</style>"));
+
+      // var testElements = document.getElementsByClassName('holaiframe');
+
+      //var scrollTop = $("#holaiframe").scrollTop(200);
+
+      // $('#holaiframe').scrollTop(438);
+
+      // var ele =  document.getElementById('holaiframe').scrollTop = 438;
+      //$('#holaiframe').contents().scrollTop(400);
+
+      // function myFunction() {
+      //     const element = document.getElementById("holaiframe");
+      //     element.scrollLeft = 50;
+      //     element.scrollTop = 300;
+      //     }
+
+      // myFunction();
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#home"
+            type="button"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+          >
+            Home
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#profile"
+            type="button"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false"
+          >
+            Profile
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="contact-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#contact"
+            type="button"
+            role="tab"
+            aria-controls="contact"
+            aria-selected="false"
+          >
+            Contact
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <iframe
+            id="holaiframe"
+            scrolling="no"
+            src="iframe.html"
+            
+          ></iframe>
+          <style>
+            iframe {
+              width: 400px;
+              height: 300px
+            }
+          </style>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="profile"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+        >
+          ...
+        </div>
+        <div
+          class="tab-pane fade"
+          id="contact"
+          role="tabpanel"
+          aria-labelledby="contact-tab"
+        >
+          ...
+        </div>
+      </div>
+    </div>
+
+    <div id="example-one">
+      <ul class="nav">
+        <li class="nav-one">
+          <a href="#featured" class="current">Featured</a>
+        </li>
+        <li class="nav-two"><a href="#core">Core</a></li>
+        <li class="nav-three"><a href="#jquerytuts">jQuery</a></li>
+        <li class="nav-four last"><a href="#classics">Classics</a></li>
+      </ul>
+      <div class="list-wrap">
+        <ul id="featured">
+          <iframe
+            id="holaiframe"
+            scrolling="no"
+            src="iframe.html"
+          ></iframe>
+          
+          <li>
+            <a href="http://css-tricks.com/perfect-full-page-background-image/"
+              >Full Page Background Images</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/designing-for-wordpress-complete-series-downloads/"
+              >Designing for WordPress</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/build-your-own-social-home/"
+              >Build Your Own Social Home!</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/absolute-positioning-inside-relative-positioning/"
+              >Absolute Positioning Inside Relative Positioning</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/ie-css-bugs-thatll-get-you-every-time/"
+              >IE CSS Bugs That'll Get You Every Time</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/404-best-practices/"
+              >404 Best Practices</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/date-display-with-sprites/"
+              >Date Display with Sprites</a
+            >
+          </li>
+        </ul>
+        <ul id="core" class="hide">
+          <li>
+            <a
+              href="http://css-tricks.com/video-screencasts/58-html-css-the-very-basics/"
+              >The VERY Basics of HTML &amp; CSS</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/the-difference-between-id-and-class/"
+              >Classes and IDs</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/the-css-box-model/"
+              >The CSS Box Model</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/all-about-floats/"
+              >All About Floats</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/the-css-overflow-property/"
+              >CSS Overflow Property</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/css-font-size/"
+              >CSS Font Size - (px - em - % - pt - keyword)</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/css-transparency-settings-for-all-broswers/"
+              >CSS Transparency / Opacity</a
+            >
+          </li>
+          <li><a href="http://css-tricks.com/css-sprites/">CSS Sprites</a></li>
+          <li>
+            <a
+              href="http://css-tricks.com/nine-techniques-for-css-image-replacement/"
+              >CSS Image Replacement</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/what-is-vertical-align/"
+              >CSS Vertial Align</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/the-css-overflow-property/"
+              >The CSS Overflow Property</a
+            >
+          </li>
+        </ul>
+        <ul id="jquerytuts" class="hide">
+          <li>
+            <a href="http://css-tricks.com/anythingslider-jquery-plugin/"
+              >Anything Slider jQuery Plugin</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/moving-boxes/">Moving Boxes</a>
+          </li>
+          <li>
+            <a href="http://css-tricks.com/simple-jquery-dropdowns/"
+              >Simple jQuery Dropdowns</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/creating-a-slick-auto-playing-featured-content-slider/"
+              >Featured Content Slider</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/startstop-slider/"
+              >Start/Stop Slider</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/banner-code-displayer-thing/"
+              >Banner Code Displayer Thing</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/highlight-certain-number-of-characters/"
+              >Highlight Certain Number of Characters</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/auto-moving-parallax-background/"
+              >Auto-Moving Parallax Background</a
+            >
+          </li>
+        </ul>
+        <ul id="classics" class="hide">
+          <li>
+            <a href="http://css-tricks.com/css-wishlist/"
+              >Top Designers CSS Wishlist</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/what-beautiful-html-code-looks-like/"
+              >What Beautiful HTML Code Looks Like</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/easily-password-protect-a-website-or-subdirectory/"
+              >Easily Password Protect a Website or Subdirectory</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/"
+              >IE-Only Stylesheets</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/ecommerce-considerations/"
+              >eCommerce Considerations</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/php-for-beginners-building-your-first-simple-cms/"
+              >PHP: Build Your First CMS</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p>
+      This is a plugin, so you can call it on multiple tabbed areas, which can
+      be styled totally differently
+    </p>
+    <div id="example-two">
+      <ul class="nav">
+        <li class="nav-one">
+          <a href="#featured2" class="current">Featured</a>
+        </li>
+        <li class="nav-two"><a href="#core2">Core</a></li>
+        <li class="nav-three"><a href="#jquerytuts2">jQuery</a></li>
+        <li class="nav-four last"><a href="#classics2">Classics</a></li>
+      </ul>
+      <div class="list-wrap">
+        <ul id="featured2">
+          <li>
+            <a href="http://css-tricks.com/perfect-full-page-background-image/"
+              >Full Page Background Images</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/designing-for-wordpress-complete-series-downloads/"
+              >Designing for WordPress</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/build-your-own-social-home/"
+              >Build Your Own Social Home!</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/absolute-positioning-inside-relative-positioning/"
+              >Absolute Positioning Inside Relative Positioning</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/ie-css-bugs-thatll-get-you-every-time/"
+              >IE CSS Bugs That'll Get You Every Time</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/404-best-practices/"
+              >404 Best Practices</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/date-display-with-sprites/"
+              >Date Display with Sprites</a
+            >
+          </li>
+        </ul>
+        <ul id="core2" class="hide">
+          <li>
+            <a
+              href="http://css-tricks.com/video-screencasts/58-html-css-the-very-basics/"
+              >The VERY Basics of HTML &amp; CSS</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/the-difference-between-id-and-class/"
+              >Classes and IDs</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/the-css-box-model/"
+              >The CSS Box Model</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/all-about-floats/"
+              >All About Floats</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/the-css-overflow-property/"
+              >CSS Overflow Property</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/css-font-size/"
+              >CSS Font Size - (px - em - % - pt - keyword)</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/css-transparency-settings-for-all-broswers/"
+              >CSS Transparency / Opacity</a
+            >
+          </li>
+          <li><a href="http://css-tricks.com/css-sprites/">CSS Sprites</a></li>
+          <li>
+            <a
+              href="http://css-tricks.com/nine-techniques-for-css-image-replacement/"
+              >CSS Image Replacement</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/what-is-vertical-align/"
+              >CSS Vertial Align</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/the-css-overflow-property/"
+              >The CSS Overflow Property</a
+            >
+          </li>
+        </ul>
+        <ul id="jquerytuts2" class="hide">
+          <li>
+            <a href="http://css-tricks.com/anythingslider-jquery-plugin/"
+              >Anything Slider jQuery Plugin</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/moving-boxes/">Moving Boxes</a>
+          </li>
+          <li>
+            <a href="http://css-tricks.com/simple-jquery-dropdowns/"
+              >Simple jQuery Dropdowns</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/creating-a-slick-auto-playing-featured-content-slider/"
+              >Featured Content Slider</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/startstop-slider/"
+              >Start/Stop Slider</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/banner-code-displayer-thing/"
+              >Banner Code Displayer Thing</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/highlight-certain-number-of-characters/"
+              >Highlight Certain Number of Characters</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/auto-moving-parallax-background/"
+              >Auto-Moving Parallax Background</a
+            >
+          </li>
+        </ul>
+        <ul id="classics2" class="hide">
+          <li>
+            <a href="http://css-tricks.com/css-wishlist/"
+              >Top Designers CSS Wishlist</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/what-beautiful-html-code-looks-like/"
+              >What Beautiful HTML Code Looks Like</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/easily-password-protect-a-website-or-subdirectory/"
+              >Easily Password Protect a Website or Subdirectory</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/"
+              >IE-Only Stylesheets</a
+            >
+          </li>
+          <li>
+            <a href="http://css-tricks.com/ecommerce-considerations/"
+              >eCommerce Considerations</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://css-tricks.com/php-for-beginners-building-your-first-simple-cms/"
+              >PHP: Build Your First CMS</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p>
+      This is some content below the tabs. I will be moved up or down to
+      accommodate the tabbed area above me.
+    </p>
+
+    <script>
+      (function ($) {
+        $.organicTabs = function (el, options) {
+          var base = this;
+          base.$el = $(el);
+          base.$nav = base.$el.find(".nav");
+
+          base.init = function () {
+            base.options = $.extend({}, $.organicTabs.defaultOptions, options);
+
+            // Accessible hiding fix
+            $(".hide").css({
+              position: "relative",
+              top: 0,
+              left: 0,
+              display: "none",
+            });
+
+            base.$nav.on("click", "li > a", function () {
+              // Figure out current list via CSS class
+              var curList = base.$el
+                  .find("a.current")
+                  .attr("href")
+                  .substring(1),
+                // List moving to
+                $newList = $(this),
+                // Figure out ID of new list
+                listID = $newList.attr("href").substring(1),
+                // Set outer wrapper height to (static) height of current inner list
+                $allListWrap = base.$el.find(".list-wrap"),
+                curListHeight = $allListWrap.height();
+              $allListWrap.height(curListHeight);
+
+              if (listID != curList && base.$el.find(":animated").length == 0) {
+                // Fade out current list
+                base.$el
+                  .find("#" + curList)
+                  .fadeOut(base.options.speed, function () {
+                    // Fade in new list on callback
+                    base.$el.find("#" + listID).fadeIn(base.options.speed);
+
+                    // Adjust outer wrapper to fit new list snuggly
+                    var newHeight = base.$el.find("#" + listID).height();
+                    $allListWrap.animate({
+                      height: newHeight,
+                    });
+
+                    // Remove highlighting - Add to just-clicked tab
+                    base.$el.find(".nav li a").removeClass("current");
+                    $newList.addClass("current");
+                  });
+              }
+
+              // Don't behave like a regular link
+              // Stop propegation and bubbling
+              return false;
+            });
+          };
+          base.init();
+        };
+
+        $.organicTabs.defaultOptions = {
+          speed: 300,
+        };
+
+        $.fn.organicTabs = function (options) {
+          return this.each(function () {
+            new $.organicTabs(this, options);
+          });
+        };
+      })(jQuery);
+
+      $("#example-one").organicTabs();
+
+      $("#example-two").organicTabs({
+        speed: 200,
+      });
+    </script>
+  </body>
+</html>

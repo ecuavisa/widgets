@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+
+    <style>
+      .choice {
+        padding: 10px;
+        border: 2px solid lightgrey;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 240px;
+        margin-bottom: 10px;
+      }
+
+      .results .choice {
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .results .vote-count {
+        font-weight: bold;
+      }
+
+      .choice span {
+        margin-left: 5px;
+      }
+      .choice span.percent {
+        margin-left: 0px;
+        font-weight: bold;
+      }
+
+      .choice .bg-bar .bar {
+        background: #0d6efd;
+        height: 24px;
+        border-radius: 3px;
+      }
+
+      .buttons-poll {
+        margin-left: 1.5rem;
+      }
+
+      .buttons-poll. svg {
+        vertical-align: sub;
+      }
+
+      .top-block .results {
+        margin-left: 1.5rem;
+      }
+
+      .form-check .form-check-input {
+        float: none;
+        margin-left: 0px;
+      }
+
+      .imagen-poll-1 img {
+        height: 200px;
+        margin-bottom: 0.5rem;
+        object-fit: cover;
+      }
+
+      .question-poll {
+        margin-left: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      input[type="radio"]:checked + label {
+        font-weight: bold;
+        border: 2px solid #333;
+      }
+
+      input[type="radio"]:checked,
+      input[type="radio"] {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="choices visible">
+      <form class="poll-form form-check mt-4" name="poll-form">
+        <input name="questionId" type="hidden" value="0-360993" />
+        <span data-choiceid="0-360994" class="dd123">
+          <input
+            class="form-check-input"
+            id="0-360994"
+            type="radio"
+            value="0-360994"
+            name="choiceId"
+          />
+          <label class="form-check-label choice" for="0-360994">
+            <div class="imagen-poll-1">
+              <img class="img-0-360994" src="" alt="image" width="100%" />
+            </div>
+            <span>Gaby</span>
+          </label>
+        </span>
+        <span data-choiceid="0-360995" class="dd123">
+          <input
+            class="form-check-input"
+            id="0-360995"
+            type="radio"
+            value="0-360995"
+            name="choiceId"
+          />
+          <label class="form-check-label choice" for="0-360995">
+            <div class="imagen-poll-1">
+              <img class="img-0-360995" src="" alt="image" width="100%" />
+            </div>
+            <span>Dora</span>
+          </label>
+        </span>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+      $(".form-check-label").click(function () {
+        swal("Good job!", "", "success").then(
+          () => {
+            // swal(`The returned value is: ${value}`);
+            window.location.reload();
+          }
+        );
+      });
+
+      // swal("Click on either the button or outside the modal.").then((value) => {
+      //   swal(`The returned value is: ${value}`);
+      // });
+
+      //window.location.reload();
+      var img1 =
+        "https://estadisticas.ecuavisa.com/sites/default/files/2022-03/Gaby-Diaz_0.jpg";
+
+      var img2 =
+        "https://estadisticas.ecuavisa.com/sites/default/files/2022-03/6001b69783184_0.png";
+
+      $(".img-0-360994").attr("src", img1);
+      $(".img-0-360995").attr("src", img2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorteo v2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      iframe {
+        width: 400px;
+        height: 265px;
+      }
+      .tabs-items {
+        display: flex;
+        justify-content: center;
+      }
+      .tabs-items .bloque-a,
+      .tabs-items .bloque-b,
+      .tabs-items .bloque-c {
+        background: #343a40;
+        display: block;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 5px;
+        /* border: 1px solid #ddd; */
+        box-shadow: 0 1px 8px 1px rgb(0 0 0 / 31%);
+      }
+      .tabs-content {
+        display: flex;
+        justify-content: center;
+      }
+      .tabs-content .bloque {
+        position: fixed;
+        top: 90px;
+      }
+      .tabs-items a:active,
+      .tabs-items a:focus {
+        background-color: #bb0000;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="tabs-items">
+      <a class="bloque-a" href="javascript:void(0);">Grupo A</a>
+      <a class="bloque-b" href="javascript:void(0);">Grupo B</a>
+      <a class="bloque-c" href="javascript:void(0);">Grupo C</a>
+      <a class="bloque-c" href="javascript:void(0);">Grupo D</a>
+      <a class="bloque-c" href="javascript:void(0);">Grupo E</a>
+      <a class="bloque-c" href="javascript:void(0);">Grupo F</a>
+      <a class="bloque-c" href="javascript:void(0);">Grupo G</a>
+      <a class="bloque-c" href="javascript:void(0);">Grupo H</a>
+    </div> -->
+
+    <!-- <div class="tabs-content">
+      <div class="bloque bloque-iframe-a">
+        <iframe
+          scrolling="no"
+          src="https://estadisticas.ecuavisa.com/grupo-a"
+          border="0"
+        ></iframe>
+      </div>
+      <div class="bloque bloque-iframe-b">
+        <iframe
+          scrolling="no"
+          src="https://estadisticas.ecuavisa.com/grupo-b"
+          border="0"
+        ></iframe>
+      </div>
+      <div class="bloque bloque-iframe-c">
+        <iframe
+          scrolling="no"
+          src="https://estadisticas.ecuavisa.com/grupo-c"
+          border="0"
+        ></iframe>
+      </div>
+      <div class="bloque bloque-iframe-d">
+        <iframe
+          scrolling="no"
+          src="https://estadisticas.ecuavisa.com/grupo-d"
+          border="0"
+        ></iframe>
+      </div>
+      <div class="bloque bloque-iframe-e">
+        <iframe
+          scrolling="no"
+          src="https://estadisticas.ecuavisa.com/grupo-e"
+          border="0"
+        ></iframe>
+      </div>
+      <div class="bloque bloque-iframe-f">
+        <iframe
+          scrolling="no"
+          src="https://estadisticas.ecuavisa.com/grupo-f"
+          border="0"
+        ></iframe>
+      </div>
+      <div class="bloque bloque-iframe-g">
+        <iframe
+          scrolling="no"
+          src="https://estadisticas.ecuavisa.com/grupo-g"
+          border="0"
+        ></iframe>
+      </div>
+      <div class="bloque bloque-iframe-h">
+        <iframe
+          scrolling="no"
+          src="https://estadisticas.ecuavisa.com/grupo-h"
+          border="0"
+        ></iframe>
+      </div>
+    </div> -->
+
+
+    <a href="sorteo2.html">ir a </a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(".bloque-iframe-a").attr("style", "opacity: 1");
+      $(".bloque-iframe-b").attr("style", "opacity: 0");
+      $(".bloque-iframe-c").attr("style", "opacity: 0");
+      $(".bloque-iframe-d").attr("style", "opacity: 0");
+      $(".bloque-iframe-e").attr("style", "opacity: 0");
+      $(".bloque-iframe-f").attr("style", "opacity: 0");
+      $(".bloque-iframe-g").attr("style", "opacity: 0");
+      $(".bloque-iframe-h").attr("style", "opacity: 0");
+
+      $(".bloque-a").click(function () {
+        $(".bloque-iframe-a").attr("style", "opacity: 1");
+        $(".bloque-iframe-b").attr("style", "opacity: 0");
+        $(".bloque-iframe-c").attr("style", "opacity: 0");
+        $(".bloque-iframe-d").attr("style", "opacity: 0");
+        $(".bloque-iframe-e").attr("style", "opacity: 0");
+        $(".bloque-iframe-f").attr("style", "opacity: 0");
+        $(".bloque-iframe-g").attr("style", "opacity: 0");
+        $(".bloque-iframe-h").attr("style", "opacity: 0");
+
+      });
+      $(".bloque-b").click(function () {
+        $(".bloque-iframe-a").attr("style", "opacity: 0");
+        $(".bloque-iframe-b").attr("style", "opacity: 1");
+        $(".bloque-iframe-c").attr("style", "opacity: 0");
+        $(".bloque-iframe-d").attr("style", "opacity: 0");
+        $(".bloque-iframe-e").attr("style", "opacity: 0");
+        $(".bloque-iframe-f").attr("style", "opacity: 0");
+        $(".bloque-iframe-g").attr("style", "opacity: 0");
+        $(".bloque-iframe-h").attr("style", "opacity: 0");
+      });
+      $(".bloque-c").click(function () {
+        $(".bloque-iframe-a").attr("style", "opacity: 0");
+        $(".bloque-iframe-b").attr("style", "opacity: 0");
+        $(".bloque-iframe-c").attr("style", "opacity: 1");
+        $(".bloque-iframe-d").attr("style", "opacity: 0");
+        $(".bloque-iframe-e").attr("style", "opacity: 0");
+        $(".bloque-iframe-f").attr("style", "opacity: 0");
+        $(".bloque-iframe-g").attr("style", "opacity: 0");
+        $(".bloque-iframe-h").attr("style", "opacity: 0");
+      });
+    </script>
+  </body>
+</html>
