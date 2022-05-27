@@ -1,171 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css" />
 
-    <title>Grilla</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="main.css" />
 
-  <body>
-    <div class="titulo">
-      <div >Grilla de horarios</div>
+  <title>Grilla</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="titulo">
+    <div>Grilla de horarios</div>
+  </div>
+  <div class="tab">
+    <a class="tablinks active" href="index.html">Costa</a>
+    <a class="tablinks" href="sierra.html">Sierra</a>
+    <a class="tablinks" href="inter.html">Internacional</a>
+  </div>
+
+  <div class="m-2">
+    <div id="parrilla">
+      <ul class="nav nav-pills mb-3 mt-3" id="pills-tab" role="tablist"></ul>
+      <div class="tab-content" id="pills-tabContent"></div>
     </div>
-    <div class="tab">
-      <a class="tablinks active" href="index.html">Costa</a>
-      <a class="tablinks" href="sierra.html">Sierra</a>
-      <a class="tablinks" href="inter.html">Internacional</a>
-    </div>
+  </div>
 
-    <div class="m-2">
-      <div id="parrilla">
-        <ul class="nav nav-pills mb-3 mt-3" id="pills-tab" role="tablist"></ul>
-        <div class="tab-content" id="pills-tabContent"></div>
-      </div>
-    </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script>
+    var principalSheet =
+      "https://docs.google.com/spreadsheets/d/1vG_S-4_31bAQPxwQ4OapK0WYIrVt8L2aDXY5sWLaNJk/edit#gid=316196714";
+    console.log(principalSheet);
 
-    <script>
-      var principalSheet =
-        "https://docs.google.com/spreadsheets/d/1vG_S-4_31bAQPxwQ4OapK0WYIrVt8L2aDXY5sWLaNJk/edit#gid=316196714";
-        console.log(principalSheet);
+    //window.valObject = {};
 
-      //window.valObject = {};
+    /**
+     * Extrayendo fechas de la semana
+     */
 
-      /**
-       * Extrayendo fechas de la semana
-       */
+    function fechasSemana() {
+      var dias = [];
+      var today = new Date();
+      var tempDate = new Date();
+      var day = today.getDay();
+      console.log(today);
 
-      function fechasSemana() {
-        var dias = [];
-        var today = new Date();
-        var tempDate = new Date();
-        var day = today.getDay();        
-
-        if (today.getDate() == "15") {
-          console.log(today.getDate());
-          tempDate.setDate(today.getDate() + 6);
-        } else if (today.getDate() == "16") {
-          console.log(today.getDate());
-          tempDate.setDate(today.getDate() + 5);
-        } else if (today.getDate() == "17") {
-          console.log(today.getDate());
-          tempDate.setDate(today.getDate() + 4);
-        } else if (today.getDate() == "18") {
-          console.log(today.getDate());
-          tempDate.setDate(today.getDate() + 3);
-        } else if (today.getDate() == "19") {
-          console.log(today.getDate());
-          tempDate.setDate(today.getDate() + 2);
-        } else if (today.getDate() == "20") {
-          console.log(today.getDate());
-          tempDate.setDate(today.getDate() + 1);
-        }else if (today.getDate() == "21") {
-          tempDate.setDate(today.getDate() + 7);
-        }else if (today.getDate() == "22") {
-          tempDate.setDate(today.getDate() + 6);
-        }else if (today.getDate() == "23") {
-          tempDate.setDate(today.getDate() + 5);
-        }else if (today.getDate() == "24") {
-          tempDate.setDate(today.getDate() + 4);
-        }else if (today.getDate() == "25") {
-          tempDate.setDate(today.getDate() + 3);
-        }else if (today.getDate() == "26") {
-          tempDate.setDate(today.getDate() + 2);
-        }else if (today.getDate() == "27") {
-          tempDate.setDate(today.getDate() + 1);
-        }else{
-          tempDate.setDate(today.getDate() + 1);
-        }
-
-        for (var i = 7; i > 0; i--) {
-          tempDate.setDate(tempDate.getDate() - 1);
-          dias.push(moment(tempDate, "DD/MM/YYYY", true).format("DD/MM/YYYY"));
-        }
-        dias.sort();
-        return dias;
+      if (today.getDate() == "27") {
+        tempDate.setDate(today.getDate() + 3);
+      } else if (today.getDate() == "28"){
+        tempDate.setDate(today.getDate() + 2);
       }
-      /**
-       * Generando template para tablas
-       */
-      var diasSemana = [
-        "Lunes",
-        "Martes",
-        "Miercoles",
-        "Jueves",
-        "Viernes",
-        "Sabado",
-        "Domingo",
-      ];
-      var fechaTemporal = new Date();
-      var diaActual = diasSemana[fechaTemporal.getDay() - 1];
+      else if (today.getDate() == "29"){
+        tempDate.setDate(today.getDate() + 1);
+      }
+      
+      else {
+        tempDate.setDate(today.getDate() + 1);
+      }
 
-      var fechas = fechasSemana();
-      console.log(fechas);
-      for (let ds = 0; ds < diasSemana.length; ds++) {
-        const diaSemana = diasSemana[ds];
-        let classA = "";
-        if (diaSemana == diaActual) {
-          classA = "active";
-        }
-        $("#pills-tab").append(` <li class="nav-item" role="presentation">
+      for (var i = 7; i > 0; i--) {
+        tempDate.setDate(tempDate.getDate() - 1);
+        dias.push(moment(tempDate, "DD/MM/YYYY", true).format("DD/MM/YYYY"));
+      }
+      dias.sort();
+      return dias;
+    }
+    /**
+     * Generando template para tablas
+     */
+    var diasSemana = [
+      "Lunes",
+      "Martes",
+      "Miercoles",
+      "Jueves",
+      "Viernes",
+      "Sabado",
+      "Domingo",
+    ];
+    var fechaTemporal = new Date();
+    var diaActual = diasSemana[fechaTemporal.getDay() - 1];
+
+    var fechas = fechasSemana();
+    console.log(fechas);
+    for (let ds = 0; ds < diasSemana.length; ds++) {
+      const diaSemana = diasSemana[ds];
+      let classA = "";
+      if (diaSemana == diaActual) {
+        classA = "active";
+      }
+      $("#pills-tab").append(` <li class="nav-item" role="presentation">
           <button class="nav-link ${classA}" id="pills-${diaSemana.toLowerCase()}-tab" data-bs-toggle="pill" data-bs-target="#pills-${diaSemana.toLowerCase()}"
             type="button" role="tab" aria-controls="pills-${diaSemana.toLowerCase()}" aria-selected="true">${diaSemana}</button>
         </li>`);
-        $("#pills-tabContent")
-          .append(`<div class="tab-pane fade show ${classA}" id="pills-${diaSemana.toLowerCase()}" role="tabpanel" aria-labelledby="pills-${diaSemana.toLowerCase()}-tab">
+      $("#pills-tabContent")
+        .append(`<div class="tab-pane fade show ${classA}" id="pills-${diaSemana.toLowerCase()}" role="tabpanel" aria-labelledby="pills-${diaSemana.toLowerCase()}-tab">
           <div class="table-responsive"><table id="${diaSemana.toLowerCase()}Sheet" class="table table-borderless table-striped"></table></div>
         </div>`);
-      }
+    }
 
-      let horaActual = moment().format("HH:mm");
-      sheetrock({
-        url: principalSheet,
+    let horaActual = moment().format("HH:mm");
+    sheetrock({
+      url: principalSheet,
 
-        query: "select A,B,C,D,E,F,G,H,I,J,K,L,M,N where C = 3",
-        fetchSize: 1500,
-        callback: function (data, sheetrock, response) {
-          let rows = response.raw.table.rows;
-          for (let fi = 0; fi < fechas.length; fi++) {
-            const fecha = fechas[fi];
-            const clase = diasSemana[fi].toLowerCase();
-            $("#" + clase + "Sheet").append(`<thead>
+      query: "select A,B,C,D,E,F,G,H,I,J,K,L,M,N where C = 3",
+      fetchSize: 1500,
+      callback: function (data, sheetrock, response) {
+        let rows = response.raw.table.rows;
+        for (let fi = 0; fi < fechas.length; fi++) {
+          const fecha = fechas[fi];
+          const clase = diasSemana[fi].toLowerCase();
+          $("#" + clase + "Sheet").append(`<thead>
               <tr>
                   
               </tr>
               </thead><tbody id="tbody-${clase}"></tbody>`);
-            rows.forEach((row, i) => {
-              let fechaRow = row.c[13].f;
-              let idshe = row.c[2].f;
+          rows.forEach((row, i) => {
+            let fechaRow = row.c[13].f;
+            let idshe = row.c[2].f;
 
-              if (fechaRow == fecha) {
-                let horaInicio = moment(row.c[7].f);
-                let horaFin = moment(row.c[8].f);
-                let nombre = row.c[0].v;
-                let detalle = row.c[1] ? row.c[1].v : "";
-                let detalleFormat = detalle == "FALSO" ? "" : detalle;
+            if (fechaRow == fecha) {
+              let horaInicio = moment(row.c[7].f);
+              let horaFin = moment(row.c[8].f);
+              let nombre = row.c[0].v;
+              let detalle = row.c[1] ? row.c[1].v : "";
+              let detalleFormat = detalle == "FALSO" ? "" : detalle;
 
-                let claseActiva = "";
-                if (
-                  horaActual >= horaInicio.format("HH:mm") &&
-                  horaActual <= horaFin.format("HH:mm") &&
-                  diasSemana[fi] == diaActual
-                ) {
-                  // claseActiva = "bg-paleta";
-                  claseActiva = `<h6 class="ahora">AHORA</h6>`;
-                }
-                $("#tbody-" + clase).append(`<tr class="">
+              let claseActiva = "";
+              if (
+                horaActual >= horaInicio.format("HH:mm") &&
+                horaActual <= horaFin.format("HH:mm") &&
+                diasSemana[fi] == diaActual
+              ) {
+                // claseActiva = "bg-paleta";
+                claseActiva = `<h6 class="ahora">AHORA</h6>`;
+              }
+              $("#tbody-" + clase).append(`<tr class="">
                   <td class="text-center" style="width: 16%"> 
                   <h5 class="hora">
                     ${horaInicio.format("HH:mm")}
@@ -180,11 +156,12 @@
                       <!--<p>${detalleFormat}</p> -->            
                   </td>                  
               </tr>`);
-              }
-            });
-          }
-        },
-      });
-    </script>
-  </body>
+            }
+          });
+        }
+      },
+    });
+  </script>
+</body>
+
 </html>

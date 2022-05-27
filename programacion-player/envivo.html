@@ -254,13 +254,15 @@
     } else if (day === 6) {
       //validacion de sabado
       console.log("es sabado");
-      if ("19:00" <= timeOfDay && timeOfDay <= "19:30") {
+      if ("19:00" <= timeOfDay && timeOfDay <= "19:29") {
         activePlayer();
         $(".title_programa").append("Televistazo 19h00");
       } else if ("19:30" <= timeOfDay && timeOfDay <= "21:45") {
         activePlayer();
         $(".title_programa").append("El Poder Del Amor");
-      } else {}
+      } else {
+        disabledPlayer();
+      }
 
     } else {
       //validacion de domingo
@@ -274,7 +276,9 @@
       } else if ("20:00" <= timeOfDay && timeOfDay <= "22:20") {
         activePlayer();
         $(".title_programa").append("El Poder Del Amor");
-      } else {}
+      } else {
+        disabledPlayer();
+      }
 
     }
   </script>

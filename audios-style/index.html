@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audios</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/5.0.5/mediaelementplayer.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/5.0.5/mediaelementplayer-legacy.min.css" />
+  <link rel="stylesheet" href="main.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/5.0.5/mediaelement-and-player.min.js"></script>
+</head>
+
+<body>
+
+  <article>
+    <div class="cont">
+      <h3>100: Big Ones</h3>
+      <time>JULY 26, 2016</time>
+    </div>
+    <audio class="audio" controls="controls">
+      <source type="audio/mpeg"
+        src="https://www.vistazo.com/binrepository/multimedia-09-05-2022-microvistazo_425960_20220509193831.mp3">
+    </audio>
+  </article>
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/5.0.5/lang/es.min.js"></script> -->
+
+  <script>
+    $('audio').mediaelementplayer({
+      features: ['playpause', 'progress', 'current', 'tracks', 'fullscreen'],
+      autoplay: true,
+    audioWidth: 250,
+    audioHeight: 40
+    });
+  </script>
+</body>
+
+</html>

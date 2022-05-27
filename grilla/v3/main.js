@@ -15,25 +15,6 @@ var principalSheet =
   
     if (today.getDate() == "15") {
       console.log(today.getDate());
-      tempDate.setDate(today.getDate() + 6);
-    } else if (today.getDate() == "16") {
-      console.log(today.getDate());
-      tempDate.setDate(today.getDate() + 5);
-  
-    }else if (today.getDate() == "17") {
-      console.log(today.getDate());
-      tempDate.setDate(today.getDate() + 4);
-  
-    }else if (today.getDate() == "18") {
-      console.log(today.getDate());
-      tempDate.setDate(today.getDate() + 3);
-  
-    }else if (today.getDate() == "19") {
-      console.log(today.getDate());
-      tempDate.setDate(today.getDate() + 2);
-  
-    }else if (today.getDate() == "20") {
-      console.log(today.getDate());
       tempDate.setDate(today.getDate() + 1);
   
     }else{

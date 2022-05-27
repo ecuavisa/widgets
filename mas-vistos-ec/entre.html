@@ -1,0 +1,180 @@
+<style>
+
+</style>
+<div id="playVideo" class="d-none"></div>
+<div id="allList" class="c_002_001 bxslider i4 bpn30">
+  <div id="mostVideos"></div>
+</div>
+
+
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@encontactoec/video/7081689904559688966" data-video-id="7081689904559688966" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@encontactoec" href="https://www.tiktok.com/@encontactoec">@encontactoec</a> <p>El encebollado es el encebollado 🏃‍♂️😬</p> <a target="_blank" title="♬ Earth Defense Force - Emetsound" href="https://www.tiktok.com/music/Earth-Defense-Force-7072864147993544706">♬ Earth Defense Force - Emetsound</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  var today = new Date();
+  var c_before = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+
+  today.setMonth(today.getMonth() - 1);
+  var c_after = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+  function dateToYMD(date) {
+    var date = new Date(date);
+    var d = date.getDate();
+    var m = date.getMonth() + 1; //Month from 0 to 11
+    var y = date.getFullYear();
+    return (
+      "" + (d <= 9 ? "0" + d : d) + "/" + (m <= 9 ? "0" + m : m) + "/" + y
+    );
+  }
+
+  function reproductor(id, serieid = "") {
+    if ($("#serieModal-" + serieid).length > 0) {
+      $("#serieModal-" + serieid + " .btn-close").click();
+    }
+    $("#allList").addClass("d-none");
+    $("#playVideo").addClass("position-fixed");
+    $("#closeVideo").addClass("position-fixed");
+
+
+    $("#playVideo").removeClass("d-none");
+    $("#closeVideo").removeClass("d-none");
+    $("#playVideo").empty();
+    $("#playVideo").html(
+      `<iframe class="videoecv" src="//mdstrm.com/embed/${id}?autoplay=true" allowfullscreen></iframe>`
+    );
+  }
+
+
+  let f_entretenimiento = "627bf7f3206119082effd935";
+
+
+  function getVideos(
+    url = "?sort=-views_stream_metrics&limit=12&status=OK"
+  ) {
+    $.ajax({
+      url: "https://platform.mediastre.am/api/media" + url,
+      type: "GET",
+      dataType: "json",
+
+      //data: data,
+      headers: {
+        "X-API-Token": "645e5b4a29d27769f60f12ecb708b872",
+      },
+      //contentType: "application/json",
+      success: function (result) {
+        let data = result.data;
+        console.log(data);
+        $.each(data, function (key, video) {
+          if (video != null) {
+            let thumbnail = "";
+            let id = key;
+            video.thumbnails.forEach((img) => {
+              if (img.size == '256x144') {
+                thumbnail = img.url;
+              }
+            });
+            if (thumbnail == "") {
+              thumbnail = video.thumbnails[0].url;
+            }
+            let categories = "";
+            let img_categories = "";
+
+            if (video.categories[0]._id == f_entretenimiento) {
+              categories += `
+                <img src="https://i.ibb.co/878LM4k/entretenimiento.png" alt="punto" loading="lazy" class="lazyload" alt="close" width="20" height="20">
+                <a class="category-item" href="javascript:;" onclick="showCategories('${video.categories[0]._id}', '${video.categories[0].name}')">
+                      <h2> ${video.categories[0].name} </h2>
+                </a>
+                `;
+            }
+
+            img_categories += `${categories}`;
+
+            let dateVideo = dateToYMD(video.date_created);
+            $("#mostVideos").append(`
+              
+                        <article class="article element  full-access norestricted" style="float: left; list-style: none; position: relative; max-width: 100%; margin-right: 30px;">
+                            <div class="IMG_TIT_INF2  video-popular">
+                                <div id="video-${id}">
+                                        <div class="content">
+                                        <a id="img-${id}" class="img-vid" href="javascript:;" onclick="reproductor('${video.id}')">
+                                            <img loading="lazy" class="lazyload netimg d-block w-100 h-200 hvr-grow" src="${thumbnail}" data-src="${thumbnail}" alt="${video.title}" width="256" height="100%">
+                                            <span class="iconPlay  left bottom"></span>
+                                        </a>
+                                        <a class="title" href="javascript:;" onclick="reproductor('${video.id}')">${video.title}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+            
+                     `);
+          }
+        });
+        var a = $("#allList").attr("class");
+        var e = $("#allList").width();
+        var c = 1;
+        if (a.indexOf("i2") != -1) {
+          c = 2;
+        }
+        if (a.indexOf("i3") != -1) {
+          c = 3;
+        }
+        if (a.indexOf("i4") != -1) {
+          c = 4;
+        }
+        if (e > 768 && e < 992) {
+          if (c > 3) {
+            c = 3;
+          }
+        }
+        if (e > 567 && e <= 768) {
+          if (c > 2) {
+            c = 2;
+          }
+        }
+        if (e <= 567) {
+          c = 1;
+        }
+        var b = 30 * c - 30;
+        e = e - b;
+        var d = parseInt(e / c);
+        $("#allList").find("#mostVideos").bxSlider({
+          mode: "horizontal",
+          speed: 1000,
+          controls: true,
+          pager: false,
+          auto: false,
+          pause: 8000,
+          autoControls: false,
+          infiniteLoop: false,
+          hideControlOnEnd: true,
+          slideWidth: d,
+          moveSlides: 1,
+          minSlides: 1,
+          maxSlides: 40,
+          nextText: "",
+          prevText: "",
+          slideMargin: 30,
+        });
+      },
+      error: function (error) {},
+    });
+  }
+
+  $(document).ready(function () {
+    let url = "?sort=-views_stream_metrics&limit=12&status=OK&created_after=" + c_after + "&created_before=" +
+      c_before + "&category_id=" + f_entretenimiento;
+    getVideos(url);
+    $("#closeVideo").on("click", function () {
+      $("#playVideo").addClass("d-none");
+      $("#playVideo").empty();
+      $("#closeVideo").addClass("d-none");
+      $("#allList").removeClass("d-none");
+      $("#playVideo").removeClass("position-fixed");
+      $("#closeVideo").removeClass("position-fixed");
+
+
+    });
+  });
+</script>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amor Like</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> -->
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" /> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+
+
+  <style>
+    .noticias article:nth-child(1) .DETAIL_TXT_Amor {
+      display: block;
+    }
+
+    .noticias article .DETAIL_TXT_Amor {
+      display: none;
+    }
+
+
+    .noticias article .headlineAmor {
+      background: #b6dbee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      align-content: center;
+      padding: 1rem 1rem;
+      cursor: pointer;
+      color: #7c7c7c;
+      padding: 20px 9px;
+    }
+
+    .noticias article .tit-sub_tit {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 5px;
+    }
+
+    .noticias article .text_read_moreAmor a {
+      text-decoration: none;
+      border: 2px solid #333;
+      border-radius: 15px;
+      padding: 10px 25px;
+      color: #333;
+      margin-right: 10px;
+    }
+
+    .noticias article .DETAIL_TXT_Amor iframe {
+      width: 100%;
+    }
+
+    .noticias article .headlineAmor .text_read_moreAmor::after {
+      font-family: 'FontAwesome';
+      content: "\2b";
+      border: 2px solid #333;
+      border-radius: 50%;
+      padding: 8px 10px;
+      transition: all .3s;
+    }
+
+    .noticias article .headlineAmor.active .text_read_moreAmor::after {
+      font-family: 'FontAwesome';
+      content: "\f068";
+    }
+
+    .noticias article .headlineAmor.active {
+      color: #333;
+    }
+
+    .noticias article .headlineAmor .multimediaAmor img {
+      position: initial !important;
+      width: 100px !important;
+
+    }
+
+    .noticias article .headlineAmor .multimediaAmor a div {
+      padding-top: 0px !important;
+    }
+
+
+    .layout-videos-capitulos {
+      background-image: url('https://estadisticas.ecuavisa.com/sites/default/files/2022-05/01_Home_Amor-a-Primer-like_Ecuavisa.webp');
+    }
+
+
+    .video-principal-amor a,
+    .videos-lista-amor a {
+      color: white;
+    }
+
+    @media (max-width: 1024px) {
+      .videos-lista-amor {
+        max-width: 730px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .videos-lista-amor {
+        max-width: 630px;
+        margin: 0 auto;
+      }
+
+      .video-principal-amor {
+        max-width: 630px;
+        margin: 0 auto;
+      }
+    }
+
+
+    .video-principal-amor .headline h2 {
+      font-size: 1.3rem;
+    }
+
+
+    @media (max-width: 600px) {
+      .videos-lista-amor {
+        max-width: 330px;
+        margin: 0 auto;
+      }
+
+      .videos-lista-amor .bx-prev {
+        left: -14%;
+      }
+
+      .videos-lista-amor .bx-next {
+        right: -14%;
+      }
+
+      .video-principal-amor {
+        max-width: 330px;
+        margin: 0 auto;
+      }
+    }
+
+    .video-principal-amor .responsive-video>iframe,
+    .video-principal-amor .responsive-video .jwplayer {
+      z-index: 9;
+    }
+
+    .likes-amor .like-derecha img,
+    .likes-amor .like-izquierda img {
+      display: none;
+    }
+
+    .likes-amor .like-derecha img {
+      position: absolute;
+      left: 1rem;
+      top: 61rem;
+      width: 110px;
+    }
+
+    .likes-amor .like-izquierda img {
+      position: absolute;
+      right: 1rem;
+      top: 61rem;
+      width: 110px;
+    }
+
+
+    .likes-amor .like-derecha img {
+      position: absolute;
+      left: 0rem;
+      top: 61rem;
+      width: 65px;
+    }
+
+    .likes-amor .like-izquierda img {
+      position: absolute;
+      right: 0rem;
+      top: 61rem;
+      width: 65px;
+    }
+
+
+    .layout-videos-capitulos .row.r01 {
+      margin: 0;
+    }
+
+
+    .descripcion_tinder.desktop {
+      display: none;
+    }
+
+    .tinder .slick-next,
+    .tinder .slick-prev {
+      display: none;
+    }
+
+    .tinder .col-md-9 {
+      width: 100%;
+    }
+
+    .tinder .col-md-3 {
+      width: 0%;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      #parent {
+        height: 40px;
+        width: 300px;
+        background: green;
+        padding: 10px;
+        margin: 0 auto;
+      }
+
+      #child {
+        height: 40px;
+        width: 150px;
+        margin: 0 auto;
+        color: yellow;
+      }
+    </style>
+  </head>
+
+  <body style="text-align:center;">
+    <div id="parent"></div>
+    <br>
+    <p id="child"> Hello World！ Hello World！</p>
+    <br>
+    <button onclick="myGeeks ()"> Mover </button>
+
+  </body>
+
+  </html>
+
+
+  <div class="likes-amor">
+    <div class="like-derecha">
+      <img src="https://estadisticas.ecuavisa.com/sites/default/files/2022-05/lik-der_0.png" alt="">
+    </div>
+
+    <div class="like-izquierda">
+      <img src="https://estadisticas.ecuavisa.com/sites/default/files/2022-05/lik-izq_0.png" alt="">
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <!-- <section class="noticias">
+    <article class=" article element  full-access norestricted" iteridart="XJ1784451">
+      <div class="IMG_TIT_TXT odd n1 ">
+        <div class="text_block ">
+          <div class="headlineAmor active">
+            <div class="multimedia">
+              <div class="multimediaIconMacroWrapper"> <a href="/especiales/amorlike/capitulo-1-XJ1784451"
+                  class="cutlineShow">
+                  <div frame="crop_78_100_H" style="position: relative; width: 100%; padding-top: 78.42%;"> <img
+                      itercontenttypein="TeaserImage" itercontenttypeout="Image"
+                      src="/binrepository/874x448/152c0/570d447/none/11007/MRIT/screenshot-2_438758_20220519100349.png"
+                      srcset="/binrepository/874x448/152c0/570d447/none/11007/MRIT/screenshot-2_438758_20220519100349.png 570w,/binrepository/728x373/127c0/475d373/none/11007/MROM/screenshot-2_438758_20220519100349.png 475w,/binrepository/583x299/101c0/380d298/none/11007/MRRG/screenshot-2_438758_20220519100349.png 380w,/binrepository/460x236/80c0/300d235/none/11007/MRAD/screenshot-2_438758_20220519100349.png 300w"
+                      width="570" height="447" style="bottom: 0; left: 0; top: 0; right: 0;
+    height: auto; width: auto;
+    max-height: 100%; max-width: 100%;
+    display: block; position: absolute; margin: auto;" iterimgid="438758" sizes="100vw" alt="Capítulo 1"
+                      title="Capítulo 1"> </div><span class="   "></span>
+                </a> </div>
+            </div>
+            <div class="tit-sub_tit">
+              <h3><span class="priority-content" mlnid="idcon=438787;order=2.0">Capítulo 1</span></h3> -
+              <h2><span class="priority-content" mlnid="idcon=438788;order=3.0">¿Como triunfar en Tinder? </span></h2>
+            </div>
+            <div class="text_read_moreAmor"> <a href="/especiales/amorlike/capitulo-1-XJ1784451">Ver ahora</a> </div>
+          </div>
+          <div class="DETAIL_TXT_Amor" style="">
+            <div class="text ">
+              <div class="html"> <iframe src="//mdstrm.com/embed/628629ec1bfd57082aac3b74" width="640" height="360"
+                  allow="autoplay; fullscreen; encrypted-media" frameborder="0" allowfullscreen=""
+                  allowscriptaccess="always" scrolling="no"></iframe> </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </article>
+    <article class=" article element  full-access norestricted" iteridart="AJ1784516">
+      <div class="IMG_TIT_TXT even n2 ">
+        <div class="text_block ">
+          <div class="headlineAmor">
+            <div class="multimedia">
+              <div class="multimediaIconMacroWrapper"> <a href="/especiales/amorlike/capitulo-2-AJ1784516"
+                  class="cutlineShow">
+                  <div frame="crop_78_100_H" style="position: relative; width: 100%; padding-top: 78.42%;"> <img
+                      itercontenttypein="TeaserImage" itercontenttypeout="Image"
+                      src="/binrepository/866x448/133c0/570d447/none/11007/VSNS/screenshot-3_438795_20220519100620.png"
+                      srcset="/binrepository/866x448/133c0/570d447/none/11007/VSNS/screenshot-3_438795_20220519100620.png 570w,/binrepository/722x373/111c0/475d373/none/11007/VSJS/screenshot-3_438795_20220519100620.png 475w,/binrepository/577x299/89c0/380d298/none/11007/VSCF/screenshot-3_438795_20220519100620.png 380w,/binrepository/456x236/70c0/300d235/none/11007/VSLX/screenshot-3_438795_20220519100620.png 300w"
+                      width="570" height="447" style="bottom: 0; left: 0; top: 0; right: 0;
+    height: auto; width: auto;
+    max-height: 100%; max-width: 100%;
+    display: block; position: absolute; margin: auto;" iterimgid="438795" sizes="100vw" alt="Capítulo 2"
+                      title="Capítulo 2"> </div><span class="   "></span>
+                </a> </div>
+            </div>
+            <div class="tit-sub_tit">
+              <h3><span class="priority-content" mlnid="idcon=438802;order=2.0">Capítulo 2</span></h3> -
+              <h2><span class="priority-content" mlnid="idcon=438803;order=3.0">Logrando la selfie perfecta</span></h2>
+            </div>
+            <div class="text_read_moreAmor"> <a href="/especiales/amorlike/capitulo-2-AJ1784516">Ver ahora</a> </div>
+          </div>
+          <div class="DETAIL_TXT_Amor">
+            <div class="text ">
+              <div class="html"> <iframe src="//mdstrm.com/embed/628639dfb83b290838698167" width="640" height="360"
+                  allow="autoplay; fullscreen; encrypted-media" frameborder="0" allowfullscreen=""
+                  allowscriptaccess="always" scrolling="no"></iframe> </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </article>
+    <article class=" article element  full-access norestricted" iteridart="YH1786001">
+      <div class="IMG_TIT_TXT odd n3 last">
+        <div class="text_block ">
+          <div class="headlineAmor">
+            <div class="multimedia">
+              <div class="multimediaIconMacroWrapper"> <a href="/especiales/amorlike/capitulo-3-YH1786001"
+                  class="cutlineShow">
+                  <div frame="crop_78_100_H" style="position: relative; width: 100%; padding-top: 78.42%;"> <img
+                      itercontenttypein="TeaserImage" itercontenttypeout="Image"
+                      src="/binrepository/876x447/273c0/570d447/none/11007/JJII/screenshot-4_438936_20220519105422.png"
+                      srcset="/binrepository/876x447/273c0/570d447/none/11007/JJII/screenshot-4_438936_20220519105422.png 570w,/binrepository/730x373/228c0/475d373/none/11007/JJST/screenshot-4_438936_20220519105422.png 475w,/binrepository/584x298/182c0/380d298/none/11007/JJIM/screenshot-4_438936_20220519105422.png 380w,/binrepository/461x235/144c0/300d235/none/11007/JJLP/screenshot-4_438936_20220519105422.png 300w"
+                      width="570" height="447" style="bottom: 0; left: 0; top: 0; right: 0;
+    height: auto; width: auto;
+    max-height: 100%; max-width: 100%;
+    display: block; position: absolute; margin: auto;" iterimgid="438936" sizes="100vw" alt="Capítulo 3"
+                      title="Capítulo 3"> </div><span class="   "></span>
+                </a> </div>
+            </div>
+            <div class="tit-sub_tit">
+              <h3><span class="priority-content" mlnid="idcon=438949;order=2.0">Capítulo 3</span></h3> -
+              <h2><span class="priority-content" mlnid="idcon=438950;order=3.0">¿Catfish?</span></h2>
+            </div>
+            <div class="text_read_moreAmor"> <a href="/especiales/amorlike/capitulo-3-YH1786001">Ver ahora</a> </div>
+          </div>
+          <div class="DETAIL_TXT_Amor">
+            <div class="text ">
+              <div class="html"> <iframe src="//mdstrm.com/embed/6262a035a2d005081b40469e" width="640" height="360"
+                  allow="autoplay; fullscreen; encrypted-media" frameborder="0" allowfullscreen=""
+                  allowscriptaccess="always" scrolling="no"></iframe> </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </article>
+  </section> -->
+
+
+
+  <section class="noticias ">
+    <article class=" article element  full-access norestricted" iteridart="AF1799507">
+      <div class="IMG_TIT_INF2 odd n1 ">
+        <div class="media_block">
+
+        </div>
+        <div class="text_block ">
+          <div class="headline"> <a href="/especiales/amorlike/perfil-tinder/jorge-ulloa-30-AF1799507">
+              <h3><span class="priority-content" mlnid="idcon=439752;order=2.0">Jorge Ulloa, 30</span></h3>
+            </a> </div>
+          <div class="subheadline">
+            <h3><span class="priority-content" mlnid="idcon=439753;order=3.0">Ut dapibus sagittis justo,
+                eget elementum enim vestibulum suscipit</span></h3>
+          </div>
+          <div class="active_tinder"> <span>Activo</span> </div>
+        </div>
+      </div>
+    </article>
+    <article class=" article element  full-access norestricted" iteridart="DF1799476">
+      <div class="IMG_TIT_INF2 even n2 ">
+        <div class="media_block">
+
+        </div>
+        <div class="text_block ">
+          <div class="headline"> <a href="/especiales/amorlike/perfil-tinder/danilo-carrera-33-DF1799476">
+              <h3><span class="priority-content" mlnid="idcon=439738;order=2.0">Danilo Carrera, 33</span></h3>
+            </a> </div>
+          <div class="subheadline">
+            <h3><span class="priority-content" mlnid="idcon=439739;order=3.0">Donec sit amet diam tellus.
+                Suspendisse a orci eu mauris eleifend scelerisque a ac metus.</span></h3>
+          </div>
+          <div class="active_tinder"> <span>Activo</span> </div>
+        </div>
+      </div>
+    </article>
+    <article class=" article element  full-access norestricted" iteridart="GF1799329">
+      <div class="IMG_TIT_INF2 odd n3 last">
+        <div class="media_block">
+
+        </div>
+        <div class="text_block ">
+          <div class="headline"> <a href="/especiales/amorlike/perfil-tinder/maria-karla-gomez-33-GF1799329">
+              <h3><span class="priority-content" mlnid="idcon=439727;order=2.0">María Karla Gómez, 33</span></h3>
+            </a> </div>
+          <div class="subheadline">
+            <h3><span class="priority-content" mlnid="idcon=439728;order=3.0">Etiam egestas nisl ac magna
+                laoreet blandit. Nulla et felis at tortor accumsan cursus.</span></h3>
+          </div>
+          <div class="active_tinder"> <span>Activo</span> </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <style>
+    .slick-prev,
+    .slick-next {
+      color: black;
+      background: black;
+    }
+
+
+    .videos-lista-amor-mobile .bx-prev,
+    .videos-lista-amor-mobile .bx-next {
+      text-indent: 0;
+    }
+
+
+    .videos-lista-amor-mobile .slick-prev:before {
+      content: 'Anterior';
+      font-family: inherit;
+    }
+
+    .videos-lista-amor-mobile .slick-next:before {
+      content: 'Próximo';
+      font-family: inherit;
+    }
+
+    .video-principal-amor,
+    .videos-lista-amor {
+      display: none;
+    }
+
+    .videos-lista-amor-mobile {
+      display: block;
+    }
+
+    .videos-lista-amor-mobile .slick-prev,
+    .videos-lista-amor-mobile .slick-next {
+      top: 110%;
+    }
+
+    .videos-lista-amor-mobile .noticias article .headline a {
+      color: white;
+    }
+
+    .videos-lista-amor-mobile .noticias article .headline a h3 {
+      font-size: 1.2rem !important;
+      margin-top: 10px;
+    }
+
+    .videos-lista-amor-mobile .slick-prev:before,
+    .videos-lista-amor-mobile .slick-next:before {
+      color: white !important;
+      font-size: 20px !important;
+      font-family: inherit;
+      background: #f13554;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .videos-lista-amor-mobile .slick-prev:before {
+      content: 'Anterior';
+    }
+
+    .videos-lista-amor-mobile .slick-next:before {
+      content: 'Próximo Episodio';
+    }
+
+    .videos-lista-amor-mobile .noticias article .headline a::before {
+      content: "\2605";
+      position: absolute;
+      visibility: visible;
+      z-index: 5;
+      font-size: 2rem;
+      margin: 0 10px;
+      top: 50%;
+    }
+  </style>
+
+  <div class="slider-nav">
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>5</li>
+    <li>5</li>
+
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+
+  
+
+<!-- <div id="taboola-right-rail-thumbnails"></div>
+
+
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'organic-thumbnails-rr3',
+    container: 'taboola-right-rail-thumbnails',
+    placement: 'Right Rail Thumbnails',
+    target_type: 'mix'
+  });
+</script>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    flush: true
+  });
+</script>  -->
+
+
+
+  <!-- <script async defer src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" type="70a8e7ab7c96d9a68f217375-text/javascript"></script> 
+
+  <script data-cfasync="false" src="//delivery.pubgenius.io/ecuavisa-IeaGw6kf/shim-gpt.js"></script> -->
+
+
+
+  <script type='text/javascript'>
+    if (window.location.href.indexOf("tendencias/") > -1) {
+      var s = document.createElement("script");
+      s.type = "text/javascript";
+      s.setAttribute("data-cfasync", "false");
+      s.src = "//delivery.pubgenius.io/ecuavisa-IeaGw6kf/shim-gpt.js";
+      $("head").append(s);
+      console.log("pubgenius-principal-tendencias");
+    }
+  </script>
+
+
+
+  <script>
+    $('.videos-lista-amor-mobile .noticias').slick({
+      infinite: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      responsive: [{
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            arrows: true,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            arrows: true,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+
+
+
+    $(".menu-amor-like-videos .videos-lista-amor-mobile .bx-prev").append(`<div>Anterior</div>`);
+    $(".menu-amor-like-videos .videos-lista-amor-mobile .bx-next").append(`<div>Próximo</div>`);
+
+
+
+
+    $(document).ready(function () {
+      $('.noticias article:nth-child(1) .headlineAmor').addClass('active');
+      $('.noticias article:nth-child(1) .DETAIL_TXT_Amor').slideDown();
+      $('.headlineAmor').on('click', function () {
+        if ($(this).hasClass('active')) {
+          $(this).siblings('.DETAIL_TXT_Amor').slideUp();
+          $(this).removeClass('active');
+        } else {
+          $('.DETAIL_TXT_Amor').slideUp();
+          $('.headlineAmor').removeClass('active');
+          $(this).siblings('.DETAIL_TXT_Amor').slideToggle();
+          $(this).toggleClass('active');
+        }
+      });
+
+
+    });
+
+
+    $('.noticias').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: false,
+      asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      asNavFor: '.noticias',
+      arrows: true,
+      dots: false
+    });
+  </script>
+</body>
+
+</html>
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni qui a doloremque, porro recusandae minus consequatur
+alias id rem nemo dignissimos voluptatibus, ipsa cumque iure quia dolore autem tempora? Facilis?
